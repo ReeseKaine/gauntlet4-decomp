@@ -1,0 +1,114 @@
+00000c3a d040 add.w D0w,D0w
+00000c3c 33c000ffe77e move.w D0w,(0x00ffe77e).l
+00000c42 33c000ffe780 move.w D0w,(0x00ffe780).l
+00000c48 423900ffe79b clr.b (0x00ffe79b).l
+00000c4e 7000 moveq 0x0,D0
+00000c50 610001ca bsr.w 0x00000e1c
+00000c54 423900ffe7bb clr.b (0x00ffe7bb).l
+00000c5a 33fc000200ffe73a move.w #0x2,(0x00ffe73a).l
+00000c62 33fc000100ffe760 move.w #0x1,(0x00ffe760).l
+00000c6a 33f900ffe76000ffe782 move.w (0x00ffe760).l,(0x00ffe782).l
+00000c74 33fc000100ffe758 move.w #0x1,(0x00ffe758).l
+00000c7c 6100345a bsr.w 0x000040d8
+00000c80 423900ffe866 clr.b (0x00ffe866).l
+00000c86 423900ffe78e clr.b (0x00ffe78e).l
+00000c8c 4cdf0001 movem.l (SP)+,{ D0}
+00000c90 4e75 rts
+00000c92 48e7fffe movem.l {  A6 A5 A4 A3 A2 A1 A0 D7 D6 D5 D4 D3 D2 D1 D0},-(SP)
+00000c96 50f900ffe79b st (0x00ffe79b).l
+00000c9c 70ff moveq -0x1,D0
+00000c9e 6100017c bsr.w 0x00000e1c
+00000ca2 50f900ffe7bb st (0x00ffe7bb).l
+00000ca8 33fc000200ffe73a move.w #0x2,(0x00ffe73a).l
+00000cb0 13fc000000ffe871 move.b #0x0,(0x00ffe871).l
+00000cb8 33fc000100ffe760 move.w #0x1,(0x00ffe760).l
+00000cc0 33fc000100ffe846 move.w #0x1,(0x00ffe846).l
+00000cc8 33fc000000ffe860 move.w #0x0,(0x00ffe860).l
+00000cd0 33fc000000ffe862 move.w #0x0,(0x00ffe862).l
+00000cd8 33fc000000ffe844 move.w #0x0,(0x00ffe844).l
+00000ce0 13fc000000ffe869 move.b #0x0,(0x00ffe869).l
+00000ce8 13fc000000ffe86f move.b #0x0,(0x00ffe86f).l
+00000cf0 13fc000000ffe872 move.b #0x0,(0x00ffe872).l
+00000cf8 13fc000000ffe866 move.b #0x0,(0x00ffe866).l
+00000d00 423900ffe78e clr.b (0x00ffe78e).l
+00000d06 43f900001c66 lea (0x1c66).l,A1
+00000d0c 4a3900ffe86b tst.b (0x00ffe86b).l
+00000d12 6706 beq.b 0x00000d1a
+00000d14 43f900001c6a lea (0x1c6a).l,A1
+00000d1a 23d100ffe848 move.l (A1),(0x00ffe848).l
+00000d20 33fc000100ffe842 move.w #0x1,(0x00ffe842).l
+00000d28 33fc008e00ffe758 move.w #0x8e,(0x00ffe758).l
+00000d30 610033a6 bsr.w 0x000040d8
+00000d34 4cdf7fff movem.l (SP)+,{ D0 D1 D2 D3 D4 D5 D6 D7 A0 A1 A2 A3 A4 A5 A6}
+00000d38 4e75 rts
+00000d3a 48e7c000 movem.l {  D1 D0},-(SP)
+00000d3e 303900ffe77c move.w (0x00ffe77c).l,D0w
+00000d44 e748 lsl.w #0x3,D0w
+00000d46 4a3900ffe790 tst.b (0x00ffe790).l
+00000d4c 6702 beq.b 0x00000d50
+00000d4e d040 add.w D0w,D0w
+00000d50 33c000ffe77e move.w D0w,(0x00ffe77e).l
+00000d56 33c000ffe780 move.w D0w,(0x00ffe780).l
+00000d5c 423900ffe79b clr.b (0x00ffe79b).l
+00000d62 610000b8 bsr.w 0x00000e1c
+00000d66 13c000ffe7bb move.b D0b,(0x00ffe7bb).l
+00000d6c 33fc000200ffe73a move.w #0x2,(0x00ffe73a).l
+00000d74 33fc000100ffe760 move.w #0x1,(0x00ffe760).l
+00000d7c 33fc000100ffe95a move.w #0x1,(0x00ffe95a).l
+00000d84 4a7900ffe962 tst.w (0x00ffe962).l
+00000d8a 6614 bne.b 0x00000da0
+00000d8c 323c000c move.w #0xc,D1w
+00000d90 4eb9000041b8 jsr 0x000041b8.l
+00000d96 06400081 addi.w #0x81,D0w
+00000d9a 33c000ffe962 move.w D0w,(0x00ffe962).l
+00000da0 33f900ffe96200ffe758 move.w (0x00ffe962).l,(0x00ffe758).l
+00000daa 6100332c bsr.w 0x000040d8
+00000dae 423900ffe866 clr.b (0x00ffe866).l
+00000db4 423900ffe78e clr.b (0x00ffe78e).l
+00000dba 41f900ff0040 lea (0xff0040).l,A0
+00000dc0 7203 moveq 0x3,D1
+00000dc2 50e800ec st (0xec,A0)
+00000dc6 50e800ed st (0xed,A0)
+00000dca 41e802c4 lea (0x2c4,A0),A0
+00000dce 51c9fff2 dbf D1w,0x00000dc2
+00000dd2 4cdf0003 movem.l (SP)+,{ D0 D1}
+00000dd6 4e75 rts
+00000dd8 48e7c000 movem.l {  D1 D0},-(SP)
+00000ddc 7000 moveq 0x0,D0
+00000dde 613c bsr.b 0x00000e1c
+00000de0 423900ffe7bb clr.b (0x00ffe7bb).l
+00000de6 423900ffe866 clr.b (0x00ffe866).l
+00000dec 33fc000200ffe73a move.w #0x2,(0x00ffe73a).l
+00000df4 610032e2 bsr.w 0x000040d8
+00000df8 0c79000100ffe760 cmpi.w #0x1,(0x00ffe760).l
+00000e00 6714 beq.b 0x00000e16
+00000e02 7205 moveq 0x5,D1
+00000e04 4eb9000041b8 jsr 0x000041b8.l
+00000e0a 06400006 addi.w #0x6,D0w
+00000e0e 3200 move.w D0w,D1w
+00000e10 4eb90001f664 jsr 0x0001f664.l
+00000e16 4cdf0003 movem.l (SP)+,{ D0 D1}
+00000e1a 4e75 rts
+00000e1c 13c000ffe79c move.b D0b,(0x00ffe79c).l
+00000e22 13c000ffe79d move.b D0b,(0x00ffe79d).l
+00000e28 13c000ffe79e move.b D0b,(0x00ffe79e).l
+00000e2e 13c000ffe79f move.b D0b,(0x00ffe79f).l
+00000e34 13c000ffe7a0 move.b D0b,(0x00ffe7a0).l
+00000e3a 13c000ffe7a1 move.b D0b,(0x00ffe7a1).l
+00000e40 13c000ffe7a2 move.b D0b,(0x00ffe7a2).l
+00000e46 13c000ffe7a3 move.b D0b,(0x00ffe7a3).l
+00000e4c 13c000ffe7a4 move.b D0b,(0x00ffe7a4).l
+00000e52 13c000ffe7a5 move.b D0b,(0x00ffe7a5).l
+00000e58 13c000ffe7a6 move.b D0b,(0x00ffe7a6).l
+00000e5e 13c000ffe7a7 move.b D0b,(0x00ffe7a7).l
+00000e64 13c000ffe7a8 move.b D0b,(0x00ffe7a8).l
+00000e6a 13c000ffe7a9 move.b D0b,(0x00ffe7a9).l
+00000e70 13c000ffe7aa move.b D0b,(0x00ffe7aa).l
+00000e76 13c000ffe7ac move.b D0b,(0x00ffe7ac).l
+00000e7c 13c000ffe7ad move.b D0b,(0x00ffe7ad).l
+00000e82 13c000ffe7ae move.b D0b,(0x00ffe7ae).l
+00000e88 13c000ffe7af move.b D0b,(0x00ffe7af).l
+00000e8e 13c000ffe7b0 move.b D0b,(0x00ffe7b0).l
+00000e94 13c000ffe7b1 move.b D0b,(0x00ffe7b1).l
+00000e9a 13c000ffe7b2 move.b D0b,(0x00ffe7b2).l
+00000ea0 4e75 rts

@@ -1,0 +1,50 @@
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001db14(void)
+
+{
+  short sVar1;
+  undefined2 extraout_D1w;
+  int extraout_A0;
+  undefined4 *puVar2;
+  bool bVar3;
+  
+  FUN_0002055a();
+  _DAT_00c00004 = 0x8104;
+  if (DAT_00ffeb5c != '\0') {
+    sVar1 = 0x3eff;
+    puVar2 = &DAT_00ff0000;
+    do {
+      *puVar2 = 0;
+      sVar1 = sVar1 + -1;
+      puVar2 = puVar2 + 1;
+    } while (sVar1 != -1);
+    DAT_00ffeb0c = 0xffff;
+    DAT_00ffeb5c = -1;
+  }
+  FUN_0001dc2c();
+  FUN_00020572();
+  FUN_000205a0();
+  FUN_0001dbb0();
+  FUN_0001dc8c();
+  FUN_0001dcf4();
+  bVar3 = true;
+  FUN_000206a6();
+  DAT_00ffe816 = extraout_D1w;
+  if (bVar3) {
+    DAT_00ffe816 = 1;
+  }
+  FUN_0001f8be();
+  FUN_0001ccfa(&PTR_DAT_000349f8);
+  FUN_0001e310();
+  FUN_0001e4de();
+  FUN_0001e2ac();
+  FUN_0001e35e();
+  FUN_0001e99a();
+  *(undefined2 *)(extraout_A0 + 4) = 0x8144;
+  return;
+}
+
+
+CALLEES: ["FUN_0001dbb0", "FUN_0001dc8c", "FUN_000206a6", "FUN_0001e2ac", "FUN_0001e35e", "FUN_000205a0", "FUN_0001e99a", "FUN_0001e4de", "FUN_0002055a", "FUN_0001dcf4", "FUN_00020572", "FUN_0001e310", "FUN_0001f8be", "FUN_0001dc2c", "FUN_0001ccfa"]

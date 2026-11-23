@@ -1,0 +1,1842 @@
+; ===== routine 01a270  (1840 instructions)
+01a270  48e7fffe             movem.l d0-d7/a0-a6, -(a7)
+01a274  4a3900ffeb5a         tst.b $ffeb5a.l
+01a27a  66001572             bne.w $1b7ee
+01a27e  4a3900ffeb59         tst.b $ffeb59.l
+01a284  670e                 beq.b $1a294
+01a286  6100156c             bsr.w $1b7f4
+01a28a  4eb9000fe008         jsr $fe008.l
+01a290  6000152e             bra.w $1b7c0
+01a294  4df900c00000         lea.l $c00000.l, a6
+01a29a  33fcfffa00ffeb6a     move.w #$fffa, $ffeb6a.l
+01a2a2  33fc022e00ff001a     move.w #$22e, $ff001a.l
+01a2aa  4a3900ffe874         tst.b $ffe874.l
+01a2b0  671a                 beq.b $1a2cc
+01a2b2  4a3900ffe8e4         tst.b $ffe8e4.l
+01a2b8  67000146             beq.w $1a400
+01a2bc  423900ffe8e4         clr.b $ffe8e4.l
+01a2c2  4eb90001eb98         jsr $1eb98.l
+01a2c8  60000136             bra.w $1a400
+01a2cc  4a7900ffeb64         tst.w $ffeb64.l
+01a2d2  6e00012c             bgt.w $1a400
+01a2d6  6050                 bra.b $1a328
+01a328  33fc000300ffeb64     move.w #$3, $ffeb64.l
+01a330  303900ffeb62         move.w $ffeb62.l, d0
+01a336  5440                 addq.w #$2, d0
+01a338  0240001e             andi.w #$1e, d0
+01a33c  33c000ffeb62         move.w d0, $ffeb62.l
+01a342  343b0094             move.w $1a2d8(pc, d0.w), d2
+01a346  323b00b0             move.w $1a2f8(pc, d0.w), d1
+01a34a  0240000e             andi.w #$e, d0
+01a34e  303b00c8             move.w $1a318(pc, d0.w), d0
+01a352  2639000042ee         move.l $42ee.l, d3
+01a358  48c0                 ext.l d0
+01a35a  48c1                 ext.l d1
+01a35c  48c2                 ext.l d2
+01a35e  d083                 add.l d3, d0
+01a360  d283                 add.l d3, d1
+01a362  d483                 add.l d3, d2
+01a364  2040                 movea.l d0, a0
+01a366  2241                 movea.l d1, a1
+01a368  2442                 movea.l d2, a2
+01a36a  303c1640             move.w #$1640, d0
+01a36e  4eb9000205ce         jsr $205ce.l
+01a374  4cd8387c             movem.l (a0)+, d2-d6/a3-a5
+01a378  2c82                 move.l d2, (a6)
+01a37a  2c83                 move.l d3, (a6)
+01a37c  2c84                 move.l d4, (a6)
+01a37e  2c85                 move.l d5, (a6)
+01a380  2c86                 move.l d6, (a6)
+01a382  2c8b                 move.l a3, (a6)
+01a384  2c8c                 move.l a4, (a6)
+01a386  2c8d                 move.l a5, (a6)
+01a388  303c16a0             move.w #$16a0, d0
+01a38c  4eb9000205ce         jsr $205ce.l
+01a392  4cd8387c             movem.l (a0)+, d2-d6/a3-a5
+01a396  2c82                 move.l d2, (a6)
+01a398  2c83                 move.l d3, (a6)
+01a39a  2c84                 move.l d4, (a6)
+01a39c  2c85                 move.l d5, (a6)
+01a39e  2c86                 move.l d6, (a6)
+01a3a0  2c8b                 move.l a3, (a6)
+01a3a2  2c8c                 move.l a4, (a6)
+01a3a4  2c8d                 move.l a5, (a6)
+01a3a6  303c1700             move.w #$1700, d0
+01a3aa  4eb9000205ce         jsr $205ce.l
+01a3b0  4cd8387c             movem.l (a0)+, d2-d6/a3-a5
+01a3b4  2c82                 move.l d2, (a6)
+01a3b6  2c83                 move.l d3, (a6)
+01a3b8  2c84                 move.l d4, (a6)
+01a3ba  2c85                 move.l d5, (a6)
+01a3bc  2c86                 move.l d6, (a6)
+01a3be  2c8b                 move.l a3, (a6)
+01a3c0  2c8c                 move.l a4, (a6)
+01a3c2  2c8d                 move.l a5, (a6)
+01a3c4  303ccfa0             move.w #$cfa0, d0
+01a3c8  4eb9000205ce         jsr $205ce.l
+01a3ce  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a3d2  2c82                 move.l d2, (a6)
+01a3d4  2c83                 move.l d3, (a6)
+01a3d6  2c84                 move.l d4, (a6)
+01a3d8  2c85                 move.l d5, (a6)
+01a3da  2c86                 move.l d6, (a6)
+01a3dc  2c8b                 move.l a3, (a6)
+01a3de  2c8c                 move.l a4, (a6)
+01a3e0  2c8d                 move.l a5, (a6)
+01a3e2  303ccfc0             move.w #$cfc0, d0
+01a3e6  4eb9000205ce         jsr $205ce.l
+01a3ec  4cda387c             movem.l (a2)+, d2-d6/a3-a5
+01a3f0  2c82                 move.l d2, (a6)
+01a3f2  2c83                 move.l d3, (a6)
+01a3f4  2c84                 move.l d4, (a6)
+01a3f6  2c85                 move.l d5, (a6)
+01a3f8  2c86                 move.l d6, (a6)
+01a3fa  2c8b                 move.l a3, (a6)
+01a3fc  2c8c                 move.l a4, (a6)
+01a3fe  2c8d                 move.l a5, (a6)
+01a400  23fcc06a000000c00004 move.l #$c06a0000, $c00004.l
+01a40a  3cb900ffe814         move.w $ffe814.l, (a6)
+01a410  7203                 moveq #$3, d1
+01a412  41f900ff0040         lea.l $ff0040.l, a0
+01a418  4a280066             tst.b $66(a0)
+01a41c  6714                 beq.b $1a432
+01a41e  117c00000066         move.b #$0, $66(a0)
+01a424  23fcc06a000000c00004 move.l #$c06a0000, $c00004.l
+01a42e  3ca800d8             move.w $d8(a0), (a6)
+01a432  41e802c4             lea.l $2c4(a0), a0
+01a436  51c9ffe0             dbra d1, $1a418
+01a43a  323900ffe838         move.w $ffe838.l, d1
+01a440  d241                 add.w d1, d1
+01a442  d241                 add.w d1, d1
+01a444  207b1020             movea.l $1a466(pc, d1.w), a0
+01a448  323900ffeb66         move.w $ffeb66.l, d1
+01a44e  024101f8             andi.w #$1f8, d1
+01a452  e449                 lsr.w #$2, d1
+01a454  23fcc004000000c00004 move.l #$c0040000, $c00004.l
+01a45e  3cb01000             move.w (a0, d1.w), (a6)
+01a462  60000112             bra.w $1a576
+01a576  303cc800             move.w #$c800, d0
+01a57a  4eb9000205ce         jsr $205ce.l
+01a580  303c0200             move.w #$200, d0
+01a584  907900ffe740         sub.w $ffe740.l, d0
+01a58a  3c80                 move.w d0, (a6)
+01a58c  3c80                 move.w d0, (a6)
+01a58e  7000                 moveq #$0, d0
+01a590  4eb900020638         jsr $20638.l
+01a596  303900ffe742         move.w $ffe742.l, d0
+01a59c  3c80                 move.w d0, (a6)
+01a59e  3c80                 move.w d0, (a6)
+01a5a0  4a3900ffe8e2         tst.b $ffe8e2.l
+01a5a6  670001fc             beq.w $1a7a4
+01a5aa  13fc000000ffe8e2     move.b #$0, $ffe8e2.l
+01a5b2  227900ffe8ec         movea.l $ffe8ec.l, a1
+01a5b8  303900ffe8f4         move.w $ffe8f4.l, d0
+01a5be  4eb9000205ce         jsr $205ce.l
+01a5c4  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a5c8  2c82                 move.l d2, (a6)
+01a5ca  2c83                 move.l d3, (a6)
+01a5cc  2c84                 move.l d4, (a6)
+01a5ce  2c85                 move.l d5, (a6)
+01a5d0  2c86                 move.l d6, (a6)
+01a5d2  2c8b                 move.l a3, (a6)
+01a5d4  2c8c                 move.l a4, (a6)
+01a5d6  2c8d                 move.l a5, (a6)
+01a5d8  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a5dc  2c82                 move.l d2, (a6)
+01a5de  2c83                 move.l d3, (a6)
+01a5e0  2c84                 move.l d4, (a6)
+01a5e2  2c85                 move.l d5, (a6)
+01a5e4  2c86                 move.l d6, (a6)
+01a5e6  2c8b                 move.l a3, (a6)
+01a5e8  2c8c                 move.l a4, (a6)
+01a5ea  2c8d                 move.l a5, (a6)
+01a5ec  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a5f0  2c82                 move.l d2, (a6)
+01a5f2  2c83                 move.l d3, (a6)
+01a5f4  2c84                 move.l d4, (a6)
+01a5f6  2c85                 move.l d5, (a6)
+01a5f8  2c86                 move.l d6, (a6)
+01a5fa  2c8b                 move.l a3, (a6)
+01a5fc  2c8c                 move.l a4, (a6)
+01a5fe  2c8d                 move.l a5, (a6)
+01a600  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a604  2c82                 move.l d2, (a6)
+01a606  2c83                 move.l d3, (a6)
+01a608  2c84                 move.l d4, (a6)
+01a60a  2c85                 move.l d5, (a6)
+01a60c  2c86                 move.l d6, (a6)
+01a60e  2c8b                 move.l a3, (a6)
+01a610  2c8c                 move.l a4, (a6)
+01a612  2c8d                 move.l a5, (a6)
+01a614  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a618  2c82                 move.l d2, (a6)
+01a61a  2c83                 move.l d3, (a6)
+01a61c  2c84                 move.l d4, (a6)
+01a61e  2c85                 move.l d5, (a6)
+01a620  2c86                 move.l d6, (a6)
+01a622  2c8b                 move.l a3, (a6)
+01a624  2c8c                 move.l a4, (a6)
+01a626  2c8d                 move.l a5, (a6)
+01a628  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a62c  2c82                 move.l d2, (a6)
+01a62e  2c83                 move.l d3, (a6)
+01a630  2c84                 move.l d4, (a6)
+01a632  2c85                 move.l d5, (a6)
+01a634  2c86                 move.l d6, (a6)
+01a636  2c8b                 move.l a3, (a6)
+01a638  2c8c                 move.l a4, (a6)
+01a63a  2c8d                 move.l a5, (a6)
+01a63c  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a640  2c82                 move.l d2, (a6)
+01a642  2c83                 move.l d3, (a6)
+01a644  2c84                 move.l d4, (a6)
+01a646  2c85                 move.l d5, (a6)
+01a648  2c86                 move.l d6, (a6)
+01a64a  2c8b                 move.l a3, (a6)
+01a64c  2c8c                 move.l a4, (a6)
+01a64e  2c8d                 move.l a5, (a6)
+01a650  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a654  2c82                 move.l d2, (a6)
+01a656  2c83                 move.l d3, (a6)
+01a658  2c84                 move.l d4, (a6)
+01a65a  2c85                 move.l d5, (a6)
+01a65c  2c86                 move.l d6, (a6)
+01a65e  2c8b                 move.l a3, (a6)
+01a660  2c8c                 move.l a4, (a6)
+01a662  2c8d                 move.l a5, (a6)
+01a664  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a668  2c82                 move.l d2, (a6)
+01a66a  2c83                 move.l d3, (a6)
+01a66c  2c84                 move.l d4, (a6)
+01a66e  2c85                 move.l d5, (a6)
+01a670  2c86                 move.l d6, (a6)
+01a672  2c8b                 move.l a3, (a6)
+01a674  2c8c                 move.l a4, (a6)
+01a676  2c8d                 move.l a5, (a6)
+01a678  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a67c  2c82                 move.l d2, (a6)
+01a67e  2c83                 move.l d3, (a6)
+01a680  2c84                 move.l d4, (a6)
+01a682  2c85                 move.l d5, (a6)
+01a684  2c86                 move.l d6, (a6)
+01a686  2c8b                 move.l a3, (a6)
+01a688  2c8c                 move.l a4, (a6)
+01a68a  2c8d                 move.l a5, (a6)
+01a68c  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a690  2c82                 move.l d2, (a6)
+01a692  2c83                 move.l d3, (a6)
+01a694  2c84                 move.l d4, (a6)
+01a696  2c85                 move.l d5, (a6)
+01a698  2c86                 move.l d6, (a6)
+01a69a  2c8b                 move.l a3, (a6)
+01a69c  2c8c                 move.l a4, (a6)
+01a69e  2c8d                 move.l a5, (a6)
+01a6a0  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a6a4  2c82                 move.l d2, (a6)
+01a6a6  2c83                 move.l d3, (a6)
+01a6a8  2c84                 move.l d4, (a6)
+01a6aa  2c85                 move.l d5, (a6)
+01a6ac  2c86                 move.l d6, (a6)
+01a6ae  2c8b                 move.l a3, (a6)
+01a6b0  2c8c                 move.l a4, (a6)
+01a6b2  2c8d                 move.l a5, (a6)
+01a6b4  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a6b8  2c82                 move.l d2, (a6)
+01a6ba  2c83                 move.l d3, (a6)
+01a6bc  2c84                 move.l d4, (a6)
+01a6be  2c85                 move.l d5, (a6)
+01a6c0  2c86                 move.l d6, (a6)
+01a6c2  2c8b                 move.l a3, (a6)
+01a6c4  2c8c                 move.l a4, (a6)
+01a6c6  2c8d                 move.l a5, (a6)
+01a6c8  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a6cc  2c82                 move.l d2, (a6)
+01a6ce  2c83                 move.l d3, (a6)
+01a6d0  2c84                 move.l d4, (a6)
+01a6d2  2c85                 move.l d5, (a6)
+01a6d4  2c86                 move.l d6, (a6)
+01a6d6  2c8b                 move.l a3, (a6)
+01a6d8  2c8c                 move.l a4, (a6)
+01a6da  2c8d                 move.l a5, (a6)
+01a6dc  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a6e0  2c82                 move.l d2, (a6)
+01a6e2  2c83                 move.l d3, (a6)
+01a6e4  2c84                 move.l d4, (a6)
+01a6e6  2c85                 move.l d5, (a6)
+01a6e8  2c86                 move.l d6, (a6)
+01a6ea  2c8b                 move.l a3, (a6)
+01a6ec  2c8c                 move.l a4, (a6)
+01a6ee  2c8d                 move.l a5, (a6)
+01a6f0  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a6f4  2c82                 move.l d2, (a6)
+01a6f6  2c83                 move.l d3, (a6)
+01a6f8  2c84                 move.l d4, (a6)
+01a6fa  2c85                 move.l d5, (a6)
+01a6fc  2c86                 move.l d6, (a6)
+01a6fe  2c8b                 move.l a3, (a6)
+01a700  2c8c                 move.l a4, (a6)
+01a702  2c8d                 move.l a5, (a6)
+01a704  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a708  2c82                 move.l d2, (a6)
+01a70a  2c83                 move.l d3, (a6)
+01a70c  2c84                 move.l d4, (a6)
+01a70e  2c85                 move.l d5, (a6)
+01a710  2c86                 move.l d6, (a6)
+01a712  2c8b                 move.l a3, (a6)
+01a714  2c8c                 move.l a4, (a6)
+01a716  2c8d                 move.l a5, (a6)
+01a718  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a71c  2c82                 move.l d2, (a6)
+01a71e  2c83                 move.l d3, (a6)
+01a720  2c84                 move.l d4, (a6)
+01a722  2c85                 move.l d5, (a6)
+01a724  2c86                 move.l d6, (a6)
+01a726  2c8b                 move.l a3, (a6)
+01a728  2c8c                 move.l a4, (a6)
+01a72a  2c8d                 move.l a5, (a6)
+01a72c  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a730  2c82                 move.l d2, (a6)
+01a732  2c83                 move.l d3, (a6)
+01a734  2c84                 move.l d4, (a6)
+01a736  2c85                 move.l d5, (a6)
+01a738  2c86                 move.l d6, (a6)
+01a73a  2c8b                 move.l a3, (a6)
+01a73c  2c8c                 move.l a4, (a6)
+01a73e  2c8d                 move.l a5, (a6)
+01a740  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a744  2c82                 move.l d2, (a6)
+01a746  2c83                 move.l d3, (a6)
+01a748  2c84                 move.l d4, (a6)
+01a74a  2c85                 move.l d5, (a6)
+01a74c  2c86                 move.l d6, (a6)
+01a74e  2c8b                 move.l a3, (a6)
+01a750  2c8c                 move.l a4, (a6)
+01a752  2c8d                 move.l a5, (a6)
+01a754  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a758  2c82                 move.l d2, (a6)
+01a75a  2c83                 move.l d3, (a6)
+01a75c  2c84                 move.l d4, (a6)
+01a75e  2c85                 move.l d5, (a6)
+01a760  2c86                 move.l d6, (a6)
+01a762  2c8b                 move.l a3, (a6)
+01a764  2c8c                 move.l a4, (a6)
+01a766  2c8d                 move.l a5, (a6)
+01a768  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a76c  2c82                 move.l d2, (a6)
+01a76e  2c83                 move.l d3, (a6)
+01a770  2c84                 move.l d4, (a6)
+01a772  2c85                 move.l d5, (a6)
+01a774  2c86                 move.l d6, (a6)
+01a776  2c8b                 move.l a3, (a6)
+01a778  2c8c                 move.l a4, (a6)
+01a77a  2c8d                 move.l a5, (a6)
+01a77c  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a780  2c82                 move.l d2, (a6)
+01a782  2c83                 move.l d3, (a6)
+01a784  2c84                 move.l d4, (a6)
+01a786  2c85                 move.l d5, (a6)
+01a788  2c86                 move.l d6, (a6)
+01a78a  2c8b                 move.l a3, (a6)
+01a78c  2c8c                 move.l a4, (a6)
+01a78e  2c8d                 move.l a5, (a6)
+01a790  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a794  2c82                 move.l d2, (a6)
+01a796  2c83                 move.l d3, (a6)
+01a798  2c84                 move.l d4, (a6)
+01a79a  2c85                 move.l d5, (a6)
+01a79c  2c86                 move.l d6, (a6)
+01a79e  2c8b                 move.l a3, (a6)
+01a7a0  2c8c                 move.l a4, (a6)
+01a7a2  2c8d                 move.l a5, (a6)
+01a7a4  4a3900ffe8e3         tst.b $ffe8e3.l
+01a7aa  670001fc             beq.w $1a9a8
+01a7ae  13fc000000ffe8e3     move.b #$0, $ffe8e3.l
+01a7b6  227900ffe8f0         movea.l $ffe8f0.l, a1
+01a7bc  303900ffe8f8         move.w $ffe8f8.l, d0
+01a7c2  4eb9000205ce         jsr $205ce.l
+01a7c8  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a7cc  2c82                 move.l d2, (a6)
+01a7ce  2c83                 move.l d3, (a6)
+01a7d0  2c84                 move.l d4, (a6)
+01a7d2  2c85                 move.l d5, (a6)
+01a7d4  2c86                 move.l d6, (a6)
+01a7d6  2c8b                 move.l a3, (a6)
+01a7d8  2c8c                 move.l a4, (a6)
+01a7da  2c8d                 move.l a5, (a6)
+01a7dc  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a7e0  2c82                 move.l d2, (a6)
+01a7e2  2c83                 move.l d3, (a6)
+01a7e4  2c84                 move.l d4, (a6)
+01a7e6  2c85                 move.l d5, (a6)
+01a7e8  2c86                 move.l d6, (a6)
+01a7ea  2c8b                 move.l a3, (a6)
+01a7ec  2c8c                 move.l a4, (a6)
+01a7ee  2c8d                 move.l a5, (a6)
+01a7f0  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a7f4  2c82                 move.l d2, (a6)
+01a7f6  2c83                 move.l d3, (a6)
+01a7f8  2c84                 move.l d4, (a6)
+01a7fa  2c85                 move.l d5, (a6)
+01a7fc  2c86                 move.l d6, (a6)
+01a7fe  2c8b                 move.l a3, (a6)
+01a800  2c8c                 move.l a4, (a6)
+01a802  2c8d                 move.l a5, (a6)
+01a804  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a808  2c82                 move.l d2, (a6)
+01a80a  2c83                 move.l d3, (a6)
+01a80c  2c84                 move.l d4, (a6)
+01a80e  2c85                 move.l d5, (a6)
+01a810  2c86                 move.l d6, (a6)
+01a812  2c8b                 move.l a3, (a6)
+01a814  2c8c                 move.l a4, (a6)
+01a816  2c8d                 move.l a5, (a6)
+01a818  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a81c  2c82                 move.l d2, (a6)
+01a81e  2c83                 move.l d3, (a6)
+01a820  2c84                 move.l d4, (a6)
+01a822  2c85                 move.l d5, (a6)
+01a824  2c86                 move.l d6, (a6)
+01a826  2c8b                 move.l a3, (a6)
+01a828  2c8c                 move.l a4, (a6)
+01a82a  2c8d                 move.l a5, (a6)
+01a82c  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a830  2c82                 move.l d2, (a6)
+01a832  2c83                 move.l d3, (a6)
+01a834  2c84                 move.l d4, (a6)
+01a836  2c85                 move.l d5, (a6)
+01a838  2c86                 move.l d6, (a6)
+01a83a  2c8b                 move.l a3, (a6)
+01a83c  2c8c                 move.l a4, (a6)
+01a83e  2c8d                 move.l a5, (a6)
+01a840  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a844  2c82                 move.l d2, (a6)
+01a846  2c83                 move.l d3, (a6)
+01a848  2c84                 move.l d4, (a6)
+01a84a  2c85                 move.l d5, (a6)
+01a84c  2c86                 move.l d6, (a6)
+01a84e  2c8b                 move.l a3, (a6)
+01a850  2c8c                 move.l a4, (a6)
+01a852  2c8d                 move.l a5, (a6)
+01a854  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a858  2c82                 move.l d2, (a6)
+01a85a  2c83                 move.l d3, (a6)
+01a85c  2c84                 move.l d4, (a6)
+01a85e  2c85                 move.l d5, (a6)
+01a860  2c86                 move.l d6, (a6)
+01a862  2c8b                 move.l a3, (a6)
+01a864  2c8c                 move.l a4, (a6)
+01a866  2c8d                 move.l a5, (a6)
+01a868  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a86c  2c82                 move.l d2, (a6)
+01a86e  2c83                 move.l d3, (a6)
+01a870  2c84                 move.l d4, (a6)
+01a872  2c85                 move.l d5, (a6)
+01a874  2c86                 move.l d6, (a6)
+01a876  2c8b                 move.l a3, (a6)
+01a878  2c8c                 move.l a4, (a6)
+01a87a  2c8d                 move.l a5, (a6)
+01a87c  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a880  2c82                 move.l d2, (a6)
+01a882  2c83                 move.l d3, (a6)
+01a884  2c84                 move.l d4, (a6)
+01a886  2c85                 move.l d5, (a6)
+01a888  2c86                 move.l d6, (a6)
+01a88a  2c8b                 move.l a3, (a6)
+01a88c  2c8c                 move.l a4, (a6)
+01a88e  2c8d                 move.l a5, (a6)
+01a890  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a894  2c82                 move.l d2, (a6)
+01a896  2c83                 move.l d3, (a6)
+01a898  2c84                 move.l d4, (a6)
+01a89a  2c85                 move.l d5, (a6)
+01a89c  2c86                 move.l d6, (a6)
+01a89e  2c8b                 move.l a3, (a6)
+01a8a0  2c8c                 move.l a4, (a6)
+01a8a2  2c8d                 move.l a5, (a6)
+01a8a4  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a8a8  2c82                 move.l d2, (a6)
+01a8aa  2c83                 move.l d3, (a6)
+01a8ac  2c84                 move.l d4, (a6)
+01a8ae  2c85                 move.l d5, (a6)
+01a8b0  2c86                 move.l d6, (a6)
+01a8b2  2c8b                 move.l a3, (a6)
+01a8b4  2c8c                 move.l a4, (a6)
+01a8b6  2c8d                 move.l a5, (a6)
+01a8b8  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a8bc  2c82                 move.l d2, (a6)
+01a8be  2c83                 move.l d3, (a6)
+01a8c0  2c84                 move.l d4, (a6)
+01a8c2  2c85                 move.l d5, (a6)
+01a8c4  2c86                 move.l d6, (a6)
+01a8c6  2c8b                 move.l a3, (a6)
+01a8c8  2c8c                 move.l a4, (a6)
+01a8ca  2c8d                 move.l a5, (a6)
+01a8cc  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a8d0  2c82                 move.l d2, (a6)
+01a8d2  2c83                 move.l d3, (a6)
+01a8d4  2c84                 move.l d4, (a6)
+01a8d6  2c85                 move.l d5, (a6)
+01a8d8  2c86                 move.l d6, (a6)
+01a8da  2c8b                 move.l a3, (a6)
+01a8dc  2c8c                 move.l a4, (a6)
+01a8de  2c8d                 move.l a5, (a6)
+01a8e0  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a8e4  2c82                 move.l d2, (a6)
+01a8e6  2c83                 move.l d3, (a6)
+01a8e8  2c84                 move.l d4, (a6)
+01a8ea  2c85                 move.l d5, (a6)
+01a8ec  2c86                 move.l d6, (a6)
+01a8ee  2c8b                 move.l a3, (a6)
+01a8f0  2c8c                 move.l a4, (a6)
+01a8f2  2c8d                 move.l a5, (a6)
+01a8f4  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a8f8  2c82                 move.l d2, (a6)
+01a8fa  2c83                 move.l d3, (a6)
+01a8fc  2c84                 move.l d4, (a6)
+01a8fe  2c85                 move.l d5, (a6)
+01a900  2c86                 move.l d6, (a6)
+01a902  2c8b                 move.l a3, (a6)
+01a904  2c8c                 move.l a4, (a6)
+01a906  2c8d                 move.l a5, (a6)
+01a908  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a90c  2c82                 move.l d2, (a6)
+01a90e  2c83                 move.l d3, (a6)
+01a910  2c84                 move.l d4, (a6)
+01a912  2c85                 move.l d5, (a6)
+01a914  2c86                 move.l d6, (a6)
+01a916  2c8b                 move.l a3, (a6)
+01a918  2c8c                 move.l a4, (a6)
+01a91a  2c8d                 move.l a5, (a6)
+01a91c  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a920  2c82                 move.l d2, (a6)
+01a922  2c83                 move.l d3, (a6)
+01a924  2c84                 move.l d4, (a6)
+01a926  2c85                 move.l d5, (a6)
+01a928  2c86                 move.l d6, (a6)
+01a92a  2c8b                 move.l a3, (a6)
+01a92c  2c8c                 move.l a4, (a6)
+01a92e  2c8d                 move.l a5, (a6)
+01a930  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a934  2c82                 move.l d2, (a6)
+01a936  2c83                 move.l d3, (a6)
+01a938  2c84                 move.l d4, (a6)
+01a93a  2c85                 move.l d5, (a6)
+01a93c  2c86                 move.l d6, (a6)
+01a93e  2c8b                 move.l a3, (a6)
+01a940  2c8c                 move.l a4, (a6)
+01a942  2c8d                 move.l a5, (a6)
+01a944  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a948  2c82                 move.l d2, (a6)
+01a94a  2c83                 move.l d3, (a6)
+01a94c  2c84                 move.l d4, (a6)
+01a94e  2c85                 move.l d5, (a6)
+01a950  2c86                 move.l d6, (a6)
+01a952  2c8b                 move.l a3, (a6)
+01a954  2c8c                 move.l a4, (a6)
+01a956  2c8d                 move.l a5, (a6)
+01a958  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a95c  2c82                 move.l d2, (a6)
+01a95e  2c83                 move.l d3, (a6)
+01a960  2c84                 move.l d4, (a6)
+01a962  2c85                 move.l d5, (a6)
+01a964  2c86                 move.l d6, (a6)
+01a966  2c8b                 move.l a3, (a6)
+01a968  2c8c                 move.l a4, (a6)
+01a96a  2c8d                 move.l a5, (a6)
+01a96c  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a970  2c82                 move.l d2, (a6)
+01a972  2c83                 move.l d3, (a6)
+01a974  2c84                 move.l d4, (a6)
+01a976  2c85                 move.l d5, (a6)
+01a978  2c86                 move.l d6, (a6)
+01a97a  2c8b                 move.l a3, (a6)
+01a97c  2c8c                 move.l a4, (a6)
+01a97e  2c8d                 move.l a5, (a6)
+01a980  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a984  2c82                 move.l d2, (a6)
+01a986  2c83                 move.l d3, (a6)
+01a988  2c84                 move.l d4, (a6)
+01a98a  2c85                 move.l d5, (a6)
+01a98c  2c86                 move.l d6, (a6)
+01a98e  2c8b                 move.l a3, (a6)
+01a990  2c8c                 move.l a4, (a6)
+01a992  2c8d                 move.l a5, (a6)
+01a994  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01a998  2c82                 move.l d2, (a6)
+01a99a  2c83                 move.l d3, (a6)
+01a99c  2c84                 move.l d4, (a6)
+01a99e  2c85                 move.l d5, (a6)
+01a9a0  2c86                 move.l d6, (a6)
+01a9a2  2c8b                 move.l a3, (a6)
+01a9a4  2c8c                 move.l a4, (a6)
+01a9a6  2c8d                 move.l a5, (a6)
+01a9a8  45fa0934             lea.l $1b2de(pc), a2
+01a9ac  41f900ff0040         lea.l $ff0040.l, a0
+01a9b2  7e03                 moveq #$3, d7
+01a9b4  4a280062             tst.b $62(a0)
+01a9b8  67000ade             beq.w $1b498
+01a9bc  22680052             movea.l $52(a0), a1
+01a9c0  30280058             move.w $58(a0), d0
+01a9c4  4eb9000205ce         jsr $205ce.l
+01a9ca  4a280063             tst.b $63(a0)
+01a9ce  67000a0e             beq.w $1b3de
+01a9d2  117c00000063         move.b #$0, $63(a0)
+01a9d8  7400                 moveq #$0, d2
+01a9da  1419                 move.b (a1)+, d2
+01a9dc  12322000             move.b (a2, d2.w), d1
+01a9e0  e149                 lsl.w #$8, d1
+01a9e2  1419                 move.b (a1)+, d2
+01a9e4  12322000             move.b (a2, d2.w), d1
+01a9e8  3c81                 move.w d1, (a6)
+01a9ea  1419                 move.b (a1)+, d2
+01a9ec  12322000             move.b (a2, d2.w), d1
+01a9f0  e149                 lsl.w #$8, d1
+01a9f2  1419                 move.b (a1)+, d2
+01a9f4  12322000             move.b (a2, d2.w), d1
+01a9f8  3c81                 move.w d1, (a6)
+01a9fa  1419                 move.b (a1)+, d2
+01a9fc  12322000             move.b (a2, d2.w), d1
+01aa00  e149                 lsl.w #$8, d1
+01aa02  1419                 move.b (a1)+, d2
+01aa04  12322000             move.b (a2, d2.w), d1
+01aa08  3c81                 move.w d1, (a6)
+01aa0a  1419                 move.b (a1)+, d2
+01aa0c  12322000             move.b (a2, d2.w), d1
+01aa10  e149                 lsl.w #$8, d1
+01aa12  1419                 move.b (a1)+, d2
+01aa14  12322000             move.b (a2, d2.w), d1
+01aa18  3c81                 move.w d1, (a6)
+01aa1a  1419                 move.b (a1)+, d2
+01aa1c  12322000             move.b (a2, d2.w), d1
+01aa20  e149                 lsl.w #$8, d1
+01aa22  1419                 move.b (a1)+, d2
+01aa24  12322000             move.b (a2, d2.w), d1
+01aa28  3c81                 move.w d1, (a6)
+01aa2a  1419                 move.b (a1)+, d2
+01aa2c  12322000             move.b (a2, d2.w), d1
+01aa30  e149                 lsl.w #$8, d1
+01aa32  1419                 move.b (a1)+, d2
+01aa34  12322000             move.b (a2, d2.w), d1
+01aa38  3c81                 move.w d1, (a6)
+01aa3a  1419                 move.b (a1)+, d2
+01aa3c  12322000             move.b (a2, d2.w), d1
+01aa40  e149                 lsl.w #$8, d1
+01aa42  1419                 move.b (a1)+, d2
+01aa44  12322000             move.b (a2, d2.w), d1
+01aa48  3c81                 move.w d1, (a6)
+01aa4a  1419                 move.b (a1)+, d2
+01aa4c  12322000             move.b (a2, d2.w), d1
+01aa50  e149                 lsl.w #$8, d1
+01aa52  1419                 move.b (a1)+, d2
+01aa54  12322000             move.b (a2, d2.w), d1
+01aa58  3c81                 move.w d1, (a6)
+01aa5a  1419                 move.b (a1)+, d2
+01aa5c  12322000             move.b (a2, d2.w), d1
+01aa60  e149                 lsl.w #$8, d1
+01aa62  1419                 move.b (a1)+, d2
+01aa64  12322000             move.b (a2, d2.w), d1
+01aa68  3c81                 move.w d1, (a6)
+01aa6a  1419                 move.b (a1)+, d2
+01aa6c  12322000             move.b (a2, d2.w), d1
+01aa70  e149                 lsl.w #$8, d1
+01aa72  1419                 move.b (a1)+, d2
+01aa74  12322000             move.b (a2, d2.w), d1
+01aa78  3c81                 move.w d1, (a6)
+01aa7a  1419                 move.b (a1)+, d2
+01aa7c  12322000             move.b (a2, d2.w), d1
+01aa80  e149                 lsl.w #$8, d1
+01aa82  1419                 move.b (a1)+, d2
+01aa84  12322000             move.b (a2, d2.w), d1
+01aa88  3c81                 move.w d1, (a6)
+01aa8a  1419                 move.b (a1)+, d2
+01aa8c  12322000             move.b (a2, d2.w), d1
+01aa90  e149                 lsl.w #$8, d1
+01aa92  1419                 move.b (a1)+, d2
+01aa94  12322000             move.b (a2, d2.w), d1
+01aa98  3c81                 move.w d1, (a6)
+01aa9a  1419                 move.b (a1)+, d2
+01aa9c  12322000             move.b (a2, d2.w), d1
+01aaa0  e149                 lsl.w #$8, d1
+01aaa2  1419                 move.b (a1)+, d2
+01aaa4  12322000             move.b (a2, d2.w), d1
+01aaa8  3c81                 move.w d1, (a6)
+01aaaa  1419                 move.b (a1)+, d2
+01aaac  12322000             move.b (a2, d2.w), d1
+01aab0  e149                 lsl.w #$8, d1
+01aab2  1419                 move.b (a1)+, d2
+01aab4  12322000             move.b (a2, d2.w), d1
+01aab8  3c81                 move.w d1, (a6)
+01aaba  1419                 move.b (a1)+, d2
+01aabc  12322000             move.b (a2, d2.w), d1
+01aac0  e149                 lsl.w #$8, d1
+01aac2  1419                 move.b (a1)+, d2
+01aac4  12322000             move.b (a2, d2.w), d1
+01aac8  3c81                 move.w d1, (a6)
+01aaca  1419                 move.b (a1)+, d2
+01aacc  12322000             move.b (a2, d2.w), d1
+01aad0  e149                 lsl.w #$8, d1
+01aad2  1419                 move.b (a1)+, d2
+01aad4  12322000             move.b (a2, d2.w), d1
+01aad8  3c81                 move.w d1, (a6)
+01aada  1419                 move.b (a1)+, d2
+01aadc  12322000             move.b (a2, d2.w), d1
+01aae0  e149                 lsl.w #$8, d1
+01aae2  1419                 move.b (a1)+, d2
+01aae4  12322000             move.b (a2, d2.w), d1
+01aae8  3c81                 move.w d1, (a6)
+01aaea  1419                 move.b (a1)+, d2
+01aaec  12322000             move.b (a2, d2.w), d1
+01aaf0  e149                 lsl.w #$8, d1
+01aaf2  1419                 move.b (a1)+, d2
+01aaf4  12322000             move.b (a2, d2.w), d1
+01aaf8  3c81                 move.w d1, (a6)
+01aafa  1419                 move.b (a1)+, d2
+01aafc  12322000             move.b (a2, d2.w), d1
+01ab00  e149                 lsl.w #$8, d1
+01ab02  1419                 move.b (a1)+, d2
+01ab04  12322000             move.b (a2, d2.w), d1
+01ab08  3c81                 move.w d1, (a6)
+01ab0a  1419                 move.b (a1)+, d2
+01ab0c  12322000             move.b (a2, d2.w), d1
+01ab10  e149                 lsl.w #$8, d1
+01ab12  1419                 move.b (a1)+, d2
+01ab14  12322000             move.b (a2, d2.w), d1
+01ab18  3c81                 move.w d1, (a6)
+01ab1a  1419                 move.b (a1)+, d2
+01ab1c  12322000             move.b (a2, d2.w), d1
+01ab20  e149                 lsl.w #$8, d1
+01ab22  1419                 move.b (a1)+, d2
+01ab24  12322000             move.b (a2, d2.w), d1
+01ab28  3c81                 move.w d1, (a6)
+01ab2a  1419                 move.b (a1)+, d2
+01ab2c  12322000             move.b (a2, d2.w), d1
+01ab30  e149                 lsl.w #$8, d1
+01ab32  1419                 move.b (a1)+, d2
+01ab34  12322000             move.b (a2, d2.w), d1
+01ab38  3c81                 move.w d1, (a6)
+01ab3a  1419                 move.b (a1)+, d2
+01ab3c  12322000             move.b (a2, d2.w), d1
+01ab40  e149                 lsl.w #$8, d1
+01ab42  1419                 move.b (a1)+, d2
+01ab44  12322000             move.b (a2, d2.w), d1
+01ab48  3c81                 move.w d1, (a6)
+01ab4a  1419                 move.b (a1)+, d2
+01ab4c  12322000             move.b (a2, d2.w), d1
+01ab50  e149                 lsl.w #$8, d1
+01ab52  1419                 move.b (a1)+, d2
+01ab54  12322000             move.b (a2, d2.w), d1
+01ab58  3c81                 move.w d1, (a6)
+01ab5a  1419                 move.b (a1)+, d2
+01ab5c  12322000             move.b (a2, d2.w), d1
+01ab60  e149                 lsl.w #$8, d1
+01ab62  1419                 move.b (a1)+, d2
+01ab64  12322000             move.b (a2, d2.w), d1
+01ab68  3c81                 move.w d1, (a6)
+01ab6a  1419                 move.b (a1)+, d2
+01ab6c  12322000             move.b (a2, d2.w), d1
+01ab70  e149                 lsl.w #$8, d1
+01ab72  1419                 move.b (a1)+, d2
+01ab74  12322000             move.b (a2, d2.w), d1
+01ab78  3c81                 move.w d1, (a6)
+01ab7a  1419                 move.b (a1)+, d2
+01ab7c  12322000             move.b (a2, d2.w), d1
+01ab80  e149                 lsl.w #$8, d1
+01ab82  1419                 move.b (a1)+, d2
+01ab84  12322000             move.b (a2, d2.w), d1
+01ab88  3c81                 move.w d1, (a6)
+01ab8a  1419                 move.b (a1)+, d2
+01ab8c  12322000             move.b (a2, d2.w), d1
+01ab90  e149                 lsl.w #$8, d1
+01ab92  1419                 move.b (a1)+, d2
+01ab94  12322000             move.b (a2, d2.w), d1
+01ab98  3c81                 move.w d1, (a6)
+01ab9a  1419                 move.b (a1)+, d2
+01ab9c  12322000             move.b (a2, d2.w), d1
+01aba0  e149                 lsl.w #$8, d1
+01aba2  1419                 move.b (a1)+, d2
+01aba4  12322000             move.b (a2, d2.w), d1
+01aba8  3c81                 move.w d1, (a6)
+01abaa  1419                 move.b (a1)+, d2
+01abac  12322000             move.b (a2, d2.w), d1
+01abb0  e149                 lsl.w #$8, d1
+01abb2  1419                 move.b (a1)+, d2
+01abb4  12322000             move.b (a2, d2.w), d1
+01abb8  3c81                 move.w d1, (a6)
+01abba  1419                 move.b (a1)+, d2
+01abbc  12322000             move.b (a2, d2.w), d1
+01abc0  e149                 lsl.w #$8, d1
+01abc2  1419                 move.b (a1)+, d2
+01abc4  12322000             move.b (a2, d2.w), d1
+01abc8  3c81                 move.w d1, (a6)
+01abca  1419                 move.b (a1)+, d2
+01abcc  12322000             move.b (a2, d2.w), d1
+01abd0  e149                 lsl.w #$8, d1
+01abd2  1419                 move.b (a1)+, d2
+01abd4  12322000             move.b (a2, d2.w), d1
+01abd8  3c81                 move.w d1, (a6)
+01abda  1419                 move.b (a1)+, d2
+01abdc  12322000             move.b (a2, d2.w), d1
+01abe0  e149                 lsl.w #$8, d1
+01abe2  1419                 move.b (a1)+, d2
+01abe4  12322000             move.b (a2, d2.w), d1
+01abe8  3c81                 move.w d1, (a6)
+01abea  1419                 move.b (a1)+, d2
+01abec  12322000             move.b (a2, d2.w), d1
+01abf0  e149                 lsl.w #$8, d1
+01abf2  1419                 move.b (a1)+, d2
+01abf4  12322000             move.b (a2, d2.w), d1
+01abf8  3c81                 move.w d1, (a6)
+01abfa  1419                 move.b (a1)+, d2
+01abfc  12322000             move.b (a2, d2.w), d1
+01ac00  e149                 lsl.w #$8, d1
+01ac02  1419                 move.b (a1)+, d2
+01ac04  12322000             move.b (a2, d2.w), d1
+01ac08  3c81                 move.w d1, (a6)
+01ac0a  1419                 move.b (a1)+, d2
+01ac0c  12322000             move.b (a2, d2.w), d1
+01ac10  e149                 lsl.w #$8, d1
+01ac12  1419                 move.b (a1)+, d2
+01ac14  12322000             move.b (a2, d2.w), d1
+01ac18  3c81                 move.w d1, (a6)
+01ac1a  1419                 move.b (a1)+, d2
+01ac1c  12322000             move.b (a2, d2.w), d1
+01ac20  e149                 lsl.w #$8, d1
+01ac22  1419                 move.b (a1)+, d2
+01ac24  12322000             move.b (a2, d2.w), d1
+01ac28  3c81                 move.w d1, (a6)
+01ac2a  1419                 move.b (a1)+, d2
+01ac2c  12322000             move.b (a2, d2.w), d1
+01ac30  e149                 lsl.w #$8, d1
+01ac32  1419                 move.b (a1)+, d2
+01ac34  12322000             move.b (a2, d2.w), d1
+01ac38  3c81                 move.w d1, (a6)
+01ac3a  1419                 move.b (a1)+, d2
+01ac3c  12322000             move.b (a2, d2.w), d1
+01ac40  e149                 lsl.w #$8, d1
+01ac42  1419                 move.b (a1)+, d2
+01ac44  12322000             move.b (a2, d2.w), d1
+01ac48  3c81                 move.w d1, (a6)
+01ac4a  1419                 move.b (a1)+, d2
+01ac4c  12322000             move.b (a2, d2.w), d1
+01ac50  e149                 lsl.w #$8, d1
+01ac52  1419                 move.b (a1)+, d2
+01ac54  12322000             move.b (a2, d2.w), d1
+01ac58  3c81                 move.w d1, (a6)
+01ac5a  1419                 move.b (a1)+, d2
+01ac5c  12322000             move.b (a2, d2.w), d1
+01ac60  e149                 lsl.w #$8, d1
+01ac62  1419                 move.b (a1)+, d2
+01ac64  12322000             move.b (a2, d2.w), d1
+01ac68  3c81                 move.w d1, (a6)
+01ac6a  1419                 move.b (a1)+, d2
+01ac6c  12322000             move.b (a2, d2.w), d1
+01ac70  e149                 lsl.w #$8, d1
+01ac72  1419                 move.b (a1)+, d2
+01ac74  12322000             move.b (a2, d2.w), d1
+01ac78  3c81                 move.w d1, (a6)
+01ac7a  1419                 move.b (a1)+, d2
+01ac7c  12322000             move.b (a2, d2.w), d1
+01ac80  e149                 lsl.w #$8, d1
+01ac82  1419                 move.b (a1)+, d2
+01ac84  12322000             move.b (a2, d2.w), d1
+01ac88  3c81                 move.w d1, (a6)
+01ac8a  1419                 move.b (a1)+, d2
+01ac8c  12322000             move.b (a2, d2.w), d1
+01ac90  e149                 lsl.w #$8, d1
+01ac92  1419                 move.b (a1)+, d2
+01ac94  12322000             move.b (a2, d2.w), d1
+01ac98  3c81                 move.w d1, (a6)
+01ac9a  1419                 move.b (a1)+, d2
+01ac9c  12322000             move.b (a2, d2.w), d1
+01aca0  e149                 lsl.w #$8, d1
+01aca2  1419                 move.b (a1)+, d2
+01aca4  12322000             move.b (a2, d2.w), d1
+01aca8  3c81                 move.w d1, (a6)
+01acaa  1419                 move.b (a1)+, d2
+01acac  12322000             move.b (a2, d2.w), d1
+01acb0  e149                 lsl.w #$8, d1
+01acb2  1419                 move.b (a1)+, d2
+01acb4  12322000             move.b (a2, d2.w), d1
+01acb8  3c81                 move.w d1, (a6)
+01acba  1419                 move.b (a1)+, d2
+01acbc  12322000             move.b (a2, d2.w), d1
+01acc0  e149                 lsl.w #$8, d1
+01acc2  1419                 move.b (a1)+, d2
+01acc4  12322000             move.b (a2, d2.w), d1
+01acc8  3c81                 move.w d1, (a6)
+01acca  1419                 move.b (a1)+, d2
+01accc  12322000             move.b (a2, d2.w), d1
+01acd0  e149                 lsl.w #$8, d1
+01acd2  1419                 move.b (a1)+, d2
+01acd4  12322000             move.b (a2, d2.w), d1
+01acd8  3c81                 move.w d1, (a6)
+01acda  1419                 move.b (a1)+, d2
+01acdc  12322000             move.b (a2, d2.w), d1
+01ace0  e149                 lsl.w #$8, d1
+01ace2  1419                 move.b (a1)+, d2
+01ace4  12322000             move.b (a2, d2.w), d1
+01ace8  3c81                 move.w d1, (a6)
+01acea  1419                 move.b (a1)+, d2
+01acec  12322000             move.b (a2, d2.w), d1
+01acf0  e149                 lsl.w #$8, d1
+01acf2  1419                 move.b (a1)+, d2
+01acf4  12322000             move.b (a2, d2.w), d1
+01acf8  3c81                 move.w d1, (a6)
+01acfa  1419                 move.b (a1)+, d2
+01acfc  12322000             move.b (a2, d2.w), d1
+01ad00  e149                 lsl.w #$8, d1
+01ad02  1419                 move.b (a1)+, d2
+01ad04  12322000             move.b (a2, d2.w), d1
+01ad08  3c81                 move.w d1, (a6)
+01ad0a  1419                 move.b (a1)+, d2
+01ad0c  12322000             move.b (a2, d2.w), d1
+01ad10  e149                 lsl.w #$8, d1
+01ad12  1419                 move.b (a1)+, d2
+01ad14  12322000             move.b (a2, d2.w), d1
+01ad18  3c81                 move.w d1, (a6)
+01ad1a  1419                 move.b (a1)+, d2
+01ad1c  12322000             move.b (a2, d2.w), d1
+01ad20  e149                 lsl.w #$8, d1
+01ad22  1419                 move.b (a1)+, d2
+01ad24  12322000             move.b (a2, d2.w), d1
+01ad28  3c81                 move.w d1, (a6)
+01ad2a  1419                 move.b (a1)+, d2
+01ad2c  12322000             move.b (a2, d2.w), d1
+01ad30  e149                 lsl.w #$8, d1
+01ad32  1419                 move.b (a1)+, d2
+01ad34  12322000             move.b (a2, d2.w), d1
+01ad38  3c81                 move.w d1, (a6)
+01ad3a  1419                 move.b (a1)+, d2
+01ad3c  12322000             move.b (a2, d2.w), d1
+01ad40  e149                 lsl.w #$8, d1
+01ad42  1419                 move.b (a1)+, d2
+01ad44  12322000             move.b (a2, d2.w), d1
+01ad48  3c81                 move.w d1, (a6)
+01ad4a  1419                 move.b (a1)+, d2
+01ad4c  12322000             move.b (a2, d2.w), d1
+01ad50  e149                 lsl.w #$8, d1
+01ad52  1419                 move.b (a1)+, d2
+01ad54  12322000             move.b (a2, d2.w), d1
+01ad58  3c81                 move.w d1, (a6)
+01ad5a  1419                 move.b (a1)+, d2
+01ad5c  12322000             move.b (a2, d2.w), d1
+01ad60  e149                 lsl.w #$8, d1
+01ad62  1419                 move.b (a1)+, d2
+01ad64  12322000             move.b (a2, d2.w), d1
+01ad68  3c81                 move.w d1, (a6)
+01ad6a  1419                 move.b (a1)+, d2
+01ad6c  12322000             move.b (a2, d2.w), d1
+01ad70  e149                 lsl.w #$8, d1
+01ad72  1419                 move.b (a1)+, d2
+01ad74  12322000             move.b (a2, d2.w), d1
+01ad78  3c81                 move.w d1, (a6)
+01ad7a  1419                 move.b (a1)+, d2
+01ad7c  12322000             move.b (a2, d2.w), d1
+01ad80  e149                 lsl.w #$8, d1
+01ad82  1419                 move.b (a1)+, d2
+01ad84  12322000             move.b (a2, d2.w), d1
+01ad88  3c81                 move.w d1, (a6)
+01ad8a  1419                 move.b (a1)+, d2
+01ad8c  12322000             move.b (a2, d2.w), d1
+01ad90  e149                 lsl.w #$8, d1
+01ad92  1419                 move.b (a1)+, d2
+01ad94  12322000             move.b (a2, d2.w), d1
+01ad98  3c81                 move.w d1, (a6)
+01ad9a  1419                 move.b (a1)+, d2
+01ad9c  12322000             move.b (a2, d2.w), d1
+01ada0  e149                 lsl.w #$8, d1
+01ada2  1419                 move.b (a1)+, d2
+01ada4  12322000             move.b (a2, d2.w), d1
+01ada8  3c81                 move.w d1, (a6)
+01adaa  1419                 move.b (a1)+, d2
+01adac  12322000             move.b (a2, d2.w), d1
+01adb0  e149                 lsl.w #$8, d1
+01adb2  1419                 move.b (a1)+, d2
+01adb4  12322000             move.b (a2, d2.w), d1
+01adb8  3c81                 move.w d1, (a6)
+01adba  1419                 move.b (a1)+, d2
+01adbc  12322000             move.b (a2, d2.w), d1
+01adc0  e149                 lsl.w #$8, d1
+01adc2  1419                 move.b (a1)+, d2
+01adc4  12322000             move.b (a2, d2.w), d1
+01adc8  3c81                 move.w d1, (a6)
+01adca  1419                 move.b (a1)+, d2
+01adcc  12322000             move.b (a2, d2.w), d1
+01add0  e149                 lsl.w #$8, d1
+01add2  1419                 move.b (a1)+, d2
+01add4  12322000             move.b (a2, d2.w), d1
+01add8  3c81                 move.w d1, (a6)
+01adda  1419                 move.b (a1)+, d2
+01addc  12322000             move.b (a2, d2.w), d1
+01ade0  e149                 lsl.w #$8, d1
+01ade2  1419                 move.b (a1)+, d2
+01ade4  12322000             move.b (a2, d2.w), d1
+01ade8  3c81                 move.w d1, (a6)
+01adea  1419                 move.b (a1)+, d2
+01adec  12322000             move.b (a2, d2.w), d1
+01adf0  e149                 lsl.w #$8, d1
+01adf2  1419                 move.b (a1)+, d2
+01adf4  12322000             move.b (a2, d2.w), d1
+01adf8  3c81                 move.w d1, (a6)
+01adfa  1419                 move.b (a1)+, d2
+01adfc  12322000             move.b (a2, d2.w), d1
+01ae00  e149                 lsl.w #$8, d1
+01ae02  1419                 move.b (a1)+, d2
+01ae04  12322000             move.b (a2, d2.w), d1
+01ae08  3c81                 move.w d1, (a6)
+01ae0a  1419                 move.b (a1)+, d2
+01ae0c  12322000             move.b (a2, d2.w), d1
+01ae10  e149                 lsl.w #$8, d1
+01ae12  1419                 move.b (a1)+, d2
+01ae14  12322000             move.b (a2, d2.w), d1
+01ae18  3c81                 move.w d1, (a6)
+01ae1a  1419                 move.b (a1)+, d2
+01ae1c  12322000             move.b (a2, d2.w), d1
+01ae20  e149                 lsl.w #$8, d1
+01ae22  1419                 move.b (a1)+, d2
+01ae24  12322000             move.b (a2, d2.w), d1
+01ae28  3c81                 move.w d1, (a6)
+01ae2a  1419                 move.b (a1)+, d2
+01ae2c  12322000             move.b (a2, d2.w), d1
+01ae30  e149                 lsl.w #$8, d1
+01ae32  1419                 move.b (a1)+, d2
+01ae34  12322000             move.b (a2, d2.w), d1
+01ae38  3c81                 move.w d1, (a6)
+01ae3a  1419                 move.b (a1)+, d2
+01ae3c  12322000             move.b (a2, d2.w), d1
+01ae40  e149                 lsl.w #$8, d1
+01ae42  1419                 move.b (a1)+, d2
+01ae44  12322000             move.b (a2, d2.w), d1
+01ae48  3c81                 move.w d1, (a6)
+01ae4a  1419                 move.b (a1)+, d2
+01ae4c  12322000             move.b (a2, d2.w), d1
+01ae50  e149                 lsl.w #$8, d1
+01ae52  1419                 move.b (a1)+, d2
+01ae54  12322000             move.b (a2, d2.w), d1
+01ae58  3c81                 move.w d1, (a6)
+01ae5a  1419                 move.b (a1)+, d2
+01ae5c  12322000             move.b (a2, d2.w), d1
+01ae60  e149                 lsl.w #$8, d1
+01ae62  1419                 move.b (a1)+, d2
+01ae64  12322000             move.b (a2, d2.w), d1
+01ae68  3c81                 move.w d1, (a6)
+01ae6a  1419                 move.b (a1)+, d2
+01ae6c  12322000             move.b (a2, d2.w), d1
+01ae70  e149                 lsl.w #$8, d1
+01ae72  1419                 move.b (a1)+, d2
+01ae74  12322000             move.b (a2, d2.w), d1
+01ae78  3c81                 move.w d1, (a6)
+01ae7a  1419                 move.b (a1)+, d2
+01ae7c  12322000             move.b (a2, d2.w), d1
+01ae80  e149                 lsl.w #$8, d1
+01ae82  1419                 move.b (a1)+, d2
+01ae84  12322000             move.b (a2, d2.w), d1
+01ae88  3c81                 move.w d1, (a6)
+01ae8a  1419                 move.b (a1)+, d2
+01ae8c  12322000             move.b (a2, d2.w), d1
+01ae90  e149                 lsl.w #$8, d1
+01ae92  1419                 move.b (a1)+, d2
+01ae94  12322000             move.b (a2, d2.w), d1
+01ae98  3c81                 move.w d1, (a6)
+01ae9a  1419                 move.b (a1)+, d2
+01ae9c  12322000             move.b (a2, d2.w), d1
+01aea0  e149                 lsl.w #$8, d1
+01aea2  1419                 move.b (a1)+, d2
+01aea4  12322000             move.b (a2, d2.w), d1
+01aea8  3c81                 move.w d1, (a6)
+01aeaa  1419                 move.b (a1)+, d2
+01aeac  12322000             move.b (a2, d2.w), d1
+01aeb0  e149                 lsl.w #$8, d1
+01aeb2  1419                 move.b (a1)+, d2
+01aeb4  12322000             move.b (a2, d2.w), d1
+01aeb8  3c81                 move.w d1, (a6)
+01aeba  1419                 move.b (a1)+, d2
+01aebc  12322000             move.b (a2, d2.w), d1
+01aec0  e149                 lsl.w #$8, d1
+01aec2  1419                 move.b (a1)+, d2
+01aec4  12322000             move.b (a2, d2.w), d1
+01aec8  3c81                 move.w d1, (a6)
+01aeca  1419                 move.b (a1)+, d2
+01aecc  12322000             move.b (a2, d2.w), d1
+01aed0  e149                 lsl.w #$8, d1
+01aed2  1419                 move.b (a1)+, d2
+01aed4  12322000             move.b (a2, d2.w), d1
+01aed8  3c81                 move.w d1, (a6)
+01aeda  1419                 move.b (a1)+, d2
+01aedc  12322000             move.b (a2, d2.w), d1
+01aee0  e149                 lsl.w #$8, d1
+01aee2  1419                 move.b (a1)+, d2
+01aee4  12322000             move.b (a2, d2.w), d1
+01aee8  3c81                 move.w d1, (a6)
+01aeea  1419                 move.b (a1)+, d2
+01aeec  12322000             move.b (a2, d2.w), d1
+01aef0  e149                 lsl.w #$8, d1
+01aef2  1419                 move.b (a1)+, d2
+01aef4  12322000             move.b (a2, d2.w), d1
+01aef8  3c81                 move.w d1, (a6)
+01aefa  1419                 move.b (a1)+, d2
+01aefc  12322000             move.b (a2, d2.w), d1
+01af00  e149                 lsl.w #$8, d1
+01af02  1419                 move.b (a1)+, d2
+01af04  12322000             move.b (a2, d2.w), d1
+01af08  3c81                 move.w d1, (a6)
+01af0a  1419                 move.b (a1)+, d2
+01af0c  12322000             move.b (a2, d2.w), d1
+01af10  e149                 lsl.w #$8, d1
+01af12  1419                 move.b (a1)+, d2
+01af14  12322000             move.b (a2, d2.w), d1
+01af18  3c81                 move.w d1, (a6)
+01af1a  1419                 move.b (a1)+, d2
+01af1c  12322000             move.b (a2, d2.w), d1
+01af20  e149                 lsl.w #$8, d1
+01af22  1419                 move.b (a1)+, d2
+01af24  12322000             move.b (a2, d2.w), d1
+01af28  3c81                 move.w d1, (a6)
+01af2a  1419                 move.b (a1)+, d2
+01af2c  12322000             move.b (a2, d2.w), d1
+01af30  e149                 lsl.w #$8, d1
+01af32  1419                 move.b (a1)+, d2
+01af34  12322000             move.b (a2, d2.w), d1
+01af38  3c81                 move.w d1, (a6)
+01af3a  1419                 move.b (a1)+, d2
+01af3c  12322000             move.b (a2, d2.w), d1
+01af40  e149                 lsl.w #$8, d1
+01af42  1419                 move.b (a1)+, d2
+01af44  12322000             move.b (a2, d2.w), d1
+01af48  3c81                 move.w d1, (a6)
+01af4a  1419                 move.b (a1)+, d2
+01af4c  12322000             move.b (a2, d2.w), d1
+01af50  e149                 lsl.w #$8, d1
+01af52  1419                 move.b (a1)+, d2
+01af54  12322000             move.b (a2, d2.w), d1
+01af58  3c81                 move.w d1, (a6)
+01af5a  1419                 move.b (a1)+, d2
+01af5c  12322000             move.b (a2, d2.w), d1
+01af60  e149                 lsl.w #$8, d1
+01af62  1419                 move.b (a1)+, d2
+01af64  12322000             move.b (a2, d2.w), d1
+01af68  3c81                 move.w d1, (a6)
+01af6a  1419                 move.b (a1)+, d2
+01af6c  12322000             move.b (a2, d2.w), d1
+01af70  e149                 lsl.w #$8, d1
+01af72  1419                 move.b (a1)+, d2
+01af74  12322000             move.b (a2, d2.w), d1
+01af78  3c81                 move.w d1, (a6)
+01af7a  1419                 move.b (a1)+, d2
+01af7c  12322000             move.b (a2, d2.w), d1
+01af80  e149                 lsl.w #$8, d1
+01af82  1419                 move.b (a1)+, d2
+01af84  12322000             move.b (a2, d2.w), d1
+01af88  3c81                 move.w d1, (a6)
+01af8a  1419                 move.b (a1)+, d2
+01af8c  12322000             move.b (a2, d2.w), d1
+01af90  e149                 lsl.w #$8, d1
+01af92  1419                 move.b (a1)+, d2
+01af94  12322000             move.b (a2, d2.w), d1
+01af98  3c81                 move.w d1, (a6)
+01af9a  1419                 move.b (a1)+, d2
+01af9c  12322000             move.b (a2, d2.w), d1
+01afa0  e149                 lsl.w #$8, d1
+01afa2  1419                 move.b (a1)+, d2
+01afa4  12322000             move.b (a2, d2.w), d1
+01afa8  3c81                 move.w d1, (a6)
+01afaa  1419                 move.b (a1)+, d2
+01afac  12322000             move.b (a2, d2.w), d1
+01afb0  e149                 lsl.w #$8, d1
+01afb2  1419                 move.b (a1)+, d2
+01afb4  12322000             move.b (a2, d2.w), d1
+01afb8  3c81                 move.w d1, (a6)
+01afba  1419                 move.b (a1)+, d2
+01afbc  12322000             move.b (a2, d2.w), d1
+01afc0  e149                 lsl.w #$8, d1
+01afc2  1419                 move.b (a1)+, d2
+01afc4  12322000             move.b (a2, d2.w), d1
+01afc8  3c81                 move.w d1, (a6)
+01afca  1419                 move.b (a1)+, d2
+01afcc  12322000             move.b (a2, d2.w), d1
+01afd0  e149                 lsl.w #$8, d1
+01afd2  1419                 move.b (a1)+, d2
+01afd4  12322000             move.b (a2, d2.w), d1
+01afd8  3c81                 move.w d1, (a6)
+01afda  1419                 move.b (a1)+, d2
+01afdc  12322000             move.b (a2, d2.w), d1
+01afe0  e149                 lsl.w #$8, d1
+01afe2  1419                 move.b (a1)+, d2
+01afe4  12322000             move.b (a2, d2.w), d1
+01afe8  3c81                 move.w d1, (a6)
+01afea  1419                 move.b (a1)+, d2
+01afec  12322000             move.b (a2, d2.w), d1
+01aff0  e149                 lsl.w #$8, d1
+01aff2  1419                 move.b (a1)+, d2
+01aff4  12322000             move.b (a2, d2.w), d1
+01aff8  3c81                 move.w d1, (a6)
+01affa  1419                 move.b (a1)+, d2
+01affc  12322000             move.b (a2, d2.w), d1
+01b000  e149                 lsl.w #$8, d1
+01b002  1419                 move.b (a1)+, d2
+01b004  12322000             move.b (a2, d2.w), d1
+01b008  3c81                 move.w d1, (a6)
+01b00a  1419                 move.b (a1)+, d2
+01b00c  12322000             move.b (a2, d2.w), d1
+01b010  e149                 lsl.w #$8, d1
+01b012  1419                 move.b (a1)+, d2
+01b014  12322000             move.b (a2, d2.w), d1
+01b018  3c81                 move.w d1, (a6)
+01b01a  1419                 move.b (a1)+, d2
+01b01c  12322000             move.b (a2, d2.w), d1
+01b020  e149                 lsl.w #$8, d1
+01b022  1419                 move.b (a1)+, d2
+01b024  12322000             move.b (a2, d2.w), d1
+01b028  3c81                 move.w d1, (a6)
+01b02a  1419                 move.b (a1)+, d2
+01b02c  12322000             move.b (a2, d2.w), d1
+01b030  e149                 lsl.w #$8, d1
+01b032  1419                 move.b (a1)+, d2
+01b034  12322000             move.b (a2, d2.w), d1
+01b038  3c81                 move.w d1, (a6)
+01b03a  1419                 move.b (a1)+, d2
+01b03c  12322000             move.b (a2, d2.w), d1
+01b040  e149                 lsl.w #$8, d1
+01b042  1419                 move.b (a1)+, d2
+01b044  12322000             move.b (a2, d2.w), d1
+01b048  3c81                 move.w d1, (a6)
+01b04a  1419                 move.b (a1)+, d2
+01b04c  12322000             move.b (a2, d2.w), d1
+01b050  e149                 lsl.w #$8, d1
+01b052  1419                 move.b (a1)+, d2
+01b054  12322000             move.b (a2, d2.w), d1
+01b058  3c81                 move.w d1, (a6)
+01b05a  1419                 move.b (a1)+, d2
+01b05c  12322000             move.b (a2, d2.w), d1
+01b060  e149                 lsl.w #$8, d1
+01b062  1419                 move.b (a1)+, d2
+01b064  12322000             move.b (a2, d2.w), d1
+01b068  3c81                 move.w d1, (a6)
+01b06a  1419                 move.b (a1)+, d2
+01b06c  12322000             move.b (a2, d2.w), d1
+01b070  e149                 lsl.w #$8, d1
+01b072  1419                 move.b (a1)+, d2
+01b074  12322000             move.b (a2, d2.w), d1
+01b078  3c81                 move.w d1, (a6)
+01b07a  1419                 move.b (a1)+, d2
+01b07c  12322000             move.b (a2, d2.w), d1
+01b080  e149                 lsl.w #$8, d1
+01b082  1419                 move.b (a1)+, d2
+01b084  12322000             move.b (a2, d2.w), d1
+01b088  3c81                 move.w d1, (a6)
+01b08a  1419                 move.b (a1)+, d2
+01b08c  12322000             move.b (a2, d2.w), d1
+01b090  e149                 lsl.w #$8, d1
+01b092  1419                 move.b (a1)+, d2
+01b094  12322000             move.b (a2, d2.w), d1
+01b098  3c81                 move.w d1, (a6)
+01b09a  1419                 move.b (a1)+, d2
+01b09c  12322000             move.b (a2, d2.w), d1
+01b0a0  e149                 lsl.w #$8, d1
+01b0a2  1419                 move.b (a1)+, d2
+01b0a4  12322000             move.b (a2, d2.w), d1
+01b0a8  3c81                 move.w d1, (a6)
+01b0aa  1419                 move.b (a1)+, d2
+01b0ac  12322000             move.b (a2, d2.w), d1
+01b0b0  e149                 lsl.w #$8, d1
+01b0b2  1419                 move.b (a1)+, d2
+01b0b4  12322000             move.b (a2, d2.w), d1
+01b0b8  3c81                 move.w d1, (a6)
+01b0ba  1419                 move.b (a1)+, d2
+01b0bc  12322000             move.b (a2, d2.w), d1
+01b0c0  e149                 lsl.w #$8, d1
+01b0c2  1419                 move.b (a1)+, d2
+01b0c4  12322000             move.b (a2, d2.w), d1
+01b0c8  3c81                 move.w d1, (a6)
+01b0ca  1419                 move.b (a1)+, d2
+01b0cc  12322000             move.b (a2, d2.w), d1
+01b0d0  e149                 lsl.w #$8, d1
+01b0d2  1419                 move.b (a1)+, d2
+01b0d4  12322000             move.b (a2, d2.w), d1
+01b0d8  3c81                 move.w d1, (a6)
+01b0da  1419                 move.b (a1)+, d2
+01b0dc  12322000             move.b (a2, d2.w), d1
+01b0e0  e149                 lsl.w #$8, d1
+01b0e2  1419                 move.b (a1)+, d2
+01b0e4  12322000             move.b (a2, d2.w), d1
+01b0e8  3c81                 move.w d1, (a6)
+01b0ea  1419                 move.b (a1)+, d2
+01b0ec  12322000             move.b (a2, d2.w), d1
+01b0f0  e149                 lsl.w #$8, d1
+01b0f2  1419                 move.b (a1)+, d2
+01b0f4  12322000             move.b (a2, d2.w), d1
+01b0f8  3c81                 move.w d1, (a6)
+01b0fa  1419                 move.b (a1)+, d2
+01b0fc  12322000             move.b (a2, d2.w), d1
+01b100  e149                 lsl.w #$8, d1
+01b102  1419                 move.b (a1)+, d2
+01b104  12322000             move.b (a2, d2.w), d1
+01b108  3c81                 move.w d1, (a6)
+01b10a  1419                 move.b (a1)+, d2
+01b10c  12322000             move.b (a2, d2.w), d1
+01b110  e149                 lsl.w #$8, d1
+01b112  1419                 move.b (a1)+, d2
+01b114  12322000             move.b (a2, d2.w), d1
+01b118  3c81                 move.w d1, (a6)
+01b11a  1419                 move.b (a1)+, d2
+01b11c  12322000             move.b (a2, d2.w), d1
+01b120  e149                 lsl.w #$8, d1
+01b122  1419                 move.b (a1)+, d2
+01b124  12322000             move.b (a2, d2.w), d1
+01b128  3c81                 move.w d1, (a6)
+01b12a  1419                 move.b (a1)+, d2
+01b12c  12322000             move.b (a2, d2.w), d1
+01b130  e149                 lsl.w #$8, d1
+01b132  1419                 move.b (a1)+, d2
+01b134  12322000             move.b (a2, d2.w), d1
+01b138  3c81                 move.w d1, (a6)
+01b13a  1419                 move.b (a1)+, d2
+01b13c  12322000             move.b (a2, d2.w), d1
+01b140  e149                 lsl.w #$8, d1
+01b142  1419                 move.b (a1)+, d2
+01b144  12322000             move.b (a2, d2.w), d1
+01b148  3c81                 move.w d1, (a6)
+01b14a  1419                 move.b (a1)+, d2
+01b14c  12322000             move.b (a2, d2.w), d1
+01b150  e149                 lsl.w #$8, d1
+01b152  1419                 move.b (a1)+, d2
+01b154  12322000             move.b (a2, d2.w), d1
+01b158  3c81                 move.w d1, (a6)
+01b15a  1419                 move.b (a1)+, d2
+01b15c  12322000             move.b (a2, d2.w), d1
+01b160  e149                 lsl.w #$8, d1
+01b162  1419                 move.b (a1)+, d2
+01b164  12322000             move.b (a2, d2.w), d1
+01b168  3c81                 move.w d1, (a6)
+01b16a  1419                 move.b (a1)+, d2
+01b16c  12322000             move.b (a2, d2.w), d1
+01b170  e149                 lsl.w #$8, d1
+01b172  1419                 move.b (a1)+, d2
+01b174  12322000             move.b (a2, d2.w), d1
+01b178  3c81                 move.w d1, (a6)
+01b17a  1419                 move.b (a1)+, d2
+01b17c  12322000             move.b (a2, d2.w), d1
+01b180  e149                 lsl.w #$8, d1
+01b182  1419                 move.b (a1)+, d2
+01b184  12322000             move.b (a2, d2.w), d1
+01b188  3c81                 move.w d1, (a6)
+01b18a  1419                 move.b (a1)+, d2
+01b18c  12322000             move.b (a2, d2.w), d1
+01b190  e149                 lsl.w #$8, d1
+01b192  1419                 move.b (a1)+, d2
+01b194  12322000             move.b (a2, d2.w), d1
+01b198  3c81                 move.w d1, (a6)
+01b19a  1419                 move.b (a1)+, d2
+01b19c  12322000             move.b (a2, d2.w), d1
+01b1a0  e149                 lsl.w #$8, d1
+01b1a2  1419                 move.b (a1)+, d2
+01b1a4  12322000             move.b (a2, d2.w), d1
+01b1a8  3c81                 move.w d1, (a6)
+01b1aa  1419                 move.b (a1)+, d2
+01b1ac  12322000             move.b (a2, d2.w), d1
+01b1b0  e149                 lsl.w #$8, d1
+01b1b2  1419                 move.b (a1)+, d2
+01b1b4  12322000             move.b (a2, d2.w), d1
+01b1b8  3c81                 move.w d1, (a6)
+01b1ba  1419                 move.b (a1)+, d2
+01b1bc  12322000             move.b (a2, d2.w), d1
+01b1c0  e149                 lsl.w #$8, d1
+01b1c2  1419                 move.b (a1)+, d2
+01b1c4  12322000             move.b (a2, d2.w), d1
+01b1c8  3c81                 move.w d1, (a6)
+01b1ca  1419                 move.b (a1)+, d2
+01b1cc  12322000             move.b (a2, d2.w), d1
+01b1d0  e149                 lsl.w #$8, d1
+01b1d2  1419                 move.b (a1)+, d2
+01b1d4  12322000             move.b (a2, d2.w), d1
+01b1d8  3c81                 move.w d1, (a6)
+01b1da  1419                 move.b (a1)+, d2
+01b1dc  12322000             move.b (a2, d2.w), d1
+01b1e0  e149                 lsl.w #$8, d1
+01b1e2  1419                 move.b (a1)+, d2
+01b1e4  12322000             move.b (a2, d2.w), d1
+01b1e8  3c81                 move.w d1, (a6)
+01b1ea  1419                 move.b (a1)+, d2
+01b1ec  12322000             move.b (a2, d2.w), d1
+01b1f0  e149                 lsl.w #$8, d1
+01b1f2  1419                 move.b (a1)+, d2
+01b1f4  12322000             move.b (a2, d2.w), d1
+01b1f8  3c81                 move.w d1, (a6)
+01b1fa  1419                 move.b (a1)+, d2
+01b1fc  12322000             move.b (a2, d2.w), d1
+01b200  e149                 lsl.w #$8, d1
+01b202  1419                 move.b (a1)+, d2
+01b204  12322000             move.b (a2, d2.w), d1
+01b208  3c81                 move.w d1, (a6)
+01b20a  1419                 move.b (a1)+, d2
+01b20c  12322000             move.b (a2, d2.w), d1
+01b210  e149                 lsl.w #$8, d1
+01b212  1419                 move.b (a1)+, d2
+01b214  12322000             move.b (a2, d2.w), d1
+01b218  3c81                 move.w d1, (a6)
+01b21a  1419                 move.b (a1)+, d2
+01b21c  12322000             move.b (a2, d2.w), d1
+01b220  e149                 lsl.w #$8, d1
+01b222  1419                 move.b (a1)+, d2
+01b224  12322000             move.b (a2, d2.w), d1
+01b228  3c81                 move.w d1, (a6)
+01b22a  1419                 move.b (a1)+, d2
+01b22c  12322000             move.b (a2, d2.w), d1
+01b230  e149                 lsl.w #$8, d1
+01b232  1419                 move.b (a1)+, d2
+01b234  12322000             move.b (a2, d2.w), d1
+01b238  3c81                 move.w d1, (a6)
+01b23a  1419                 move.b (a1)+, d2
+01b23c  12322000             move.b (a2, d2.w), d1
+01b240  e149                 lsl.w #$8, d1
+01b242  1419                 move.b (a1)+, d2
+01b244  12322000             move.b (a2, d2.w), d1
+01b248  3c81                 move.w d1, (a6)
+01b24a  1419                 move.b (a1)+, d2
+01b24c  12322000             move.b (a2, d2.w), d1
+01b250  e149                 lsl.w #$8, d1
+01b252  1419                 move.b (a1)+, d2
+01b254  12322000             move.b (a2, d2.w), d1
+01b258  3c81                 move.w d1, (a6)
+01b25a  1419                 move.b (a1)+, d2
+01b25c  12322000             move.b (a2, d2.w), d1
+01b260  e149                 lsl.w #$8, d1
+01b262  1419                 move.b (a1)+, d2
+01b264  12322000             move.b (a2, d2.w), d1
+01b268  3c81                 move.w d1, (a6)
+01b26a  1419                 move.b (a1)+, d2
+01b26c  12322000             move.b (a2, d2.w), d1
+01b270  e149                 lsl.w #$8, d1
+01b272  1419                 move.b (a1)+, d2
+01b274  12322000             move.b (a2, d2.w), d1
+01b278  3c81                 move.w d1, (a6)
+01b27a  1419                 move.b (a1)+, d2
+01b27c  12322000             move.b (a2, d2.w), d1
+01b280  e149                 lsl.w #$8, d1
+01b282  1419                 move.b (a1)+, d2
+01b284  12322000             move.b (a2, d2.w), d1
+01b288  3c81                 move.w d1, (a6)
+01b28a  1419                 move.b (a1)+, d2
+01b28c  12322000             move.b (a2, d2.w), d1
+01b290  e149                 lsl.w #$8, d1
+01b292  1419                 move.b (a1)+, d2
+01b294  12322000             move.b (a2, d2.w), d1
+01b298  3c81                 move.w d1, (a6)
+01b29a  1419                 move.b (a1)+, d2
+01b29c  12322000             move.b (a2, d2.w), d1
+01b2a0  e149                 lsl.w #$8, d1
+01b2a2  1419                 move.b (a1)+, d2
+01b2a4  12322000             move.b (a2, d2.w), d1
+01b2a8  3c81                 move.w d1, (a6)
+01b2aa  1419                 move.b (a1)+, d2
+01b2ac  12322000             move.b (a2, d2.w), d1
+01b2b0  e149                 lsl.w #$8, d1
+01b2b2  1419                 move.b (a1)+, d2
+01b2b4  12322000             move.b (a2, d2.w), d1
+01b2b8  3c81                 move.w d1, (a6)
+01b2ba  1419                 move.b (a1)+, d2
+01b2bc  12322000             move.b (a2, d2.w), d1
+01b2c0  e149                 lsl.w #$8, d1
+01b2c2  1419                 move.b (a1)+, d2
+01b2c4  12322000             move.b (a2, d2.w), d1
+01b2c8  3c81                 move.w d1, (a6)
+01b2ca  1419                 move.b (a1)+, d2
+01b2cc  12322000             move.b (a2, d2.w), d1
+01b2d0  e149                 lsl.w #$8, d1
+01b2d2  1419                 move.b (a1)+, d2
+01b2d4  12322000             move.b (a2, d2.w), d1
+01b2d8  3c81                 move.w d1, (a6)
+01b2da  600001bc             bra.w $1b498
+01b3de  117c00000062         move.b #$0, $62(a0)
+01b3e4  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b3e8  2c82                 move.l d2, (a6)
+01b3ea  2c83                 move.l d3, (a6)
+01b3ec  2c84                 move.l d4, (a6)
+01b3ee  2c85                 move.l d5, (a6)
+01b3f0  2c86                 move.l d6, (a6)
+01b3f2  2c8b                 move.l a3, (a6)
+01b3f4  2c8c                 move.l a4, (a6)
+01b3f6  2c8d                 move.l a5, (a6)
+01b3f8  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b3fc  2c82                 move.l d2, (a6)
+01b3fe  2c83                 move.l d3, (a6)
+01b400  2c84                 move.l d4, (a6)
+01b402  2c85                 move.l d5, (a6)
+01b404  2c86                 move.l d6, (a6)
+01b406  2c8b                 move.l a3, (a6)
+01b408  2c8c                 move.l a4, (a6)
+01b40a  2c8d                 move.l a5, (a6)
+01b40c  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b410  2c82                 move.l d2, (a6)
+01b412  2c83                 move.l d3, (a6)
+01b414  2c84                 move.l d4, (a6)
+01b416  2c85                 move.l d5, (a6)
+01b418  2c86                 move.l d6, (a6)
+01b41a  2c8b                 move.l a3, (a6)
+01b41c  2c8c                 move.l a4, (a6)
+01b41e  2c8d                 move.l a5, (a6)
+01b420  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b424  2c82                 move.l d2, (a6)
+01b426  2c83                 move.l d3, (a6)
+01b428  2c84                 move.l d4, (a6)
+01b42a  2c85                 move.l d5, (a6)
+01b42c  2c86                 move.l d6, (a6)
+01b42e  2c8b                 move.l a3, (a6)
+01b430  2c8c                 move.l a4, (a6)
+01b432  2c8d                 move.l a5, (a6)
+01b434  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b438  2c82                 move.l d2, (a6)
+01b43a  2c83                 move.l d3, (a6)
+01b43c  2c84                 move.l d4, (a6)
+01b43e  2c85                 move.l d5, (a6)
+01b440  2c86                 move.l d6, (a6)
+01b442  2c8b                 move.l a3, (a6)
+01b444  2c8c                 move.l a4, (a6)
+01b446  2c8d                 move.l a5, (a6)
+01b448  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b44c  2c82                 move.l d2, (a6)
+01b44e  2c83                 move.l d3, (a6)
+01b450  2c84                 move.l d4, (a6)
+01b452  2c85                 move.l d5, (a6)
+01b454  2c86                 move.l d6, (a6)
+01b456  2c8b                 move.l a3, (a6)
+01b458  2c8c                 move.l a4, (a6)
+01b45a  2c8d                 move.l a5, (a6)
+01b45c  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b460  2c82                 move.l d2, (a6)
+01b462  2c83                 move.l d3, (a6)
+01b464  2c84                 move.l d4, (a6)
+01b466  2c85                 move.l d5, (a6)
+01b468  2c86                 move.l d6, (a6)
+01b46a  2c8b                 move.l a3, (a6)
+01b46c  2c8c                 move.l a4, (a6)
+01b46e  2c8d                 move.l a5, (a6)
+01b470  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b474  2c82                 move.l d2, (a6)
+01b476  2c83                 move.l d3, (a6)
+01b478  2c84                 move.l d4, (a6)
+01b47a  2c85                 move.l d5, (a6)
+01b47c  2c86                 move.l d6, (a6)
+01b47e  2c8b                 move.l a3, (a6)
+01b480  2c8c                 move.l a4, (a6)
+01b482  2c8d                 move.l a5, (a6)
+01b484  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b488  2c82                 move.l d2, (a6)
+01b48a  2c83                 move.l d3, (a6)
+01b48c  2c84                 move.l d4, (a6)
+01b48e  2c85                 move.l d5, (a6)
+01b490  2c86                 move.l d6, (a6)
+01b492  2c8b                 move.l a3, (a6)
+01b494  2c8c                 move.l a4, (a6)
+01b496  2c8d                 move.l a5, (a6)
+01b498  4a28007a             tst.b $7a(a0)
+01b49c  6764                 beq.b $1b502
+01b49e  117c0000007a         move.b #$0, $7a(a0)
+01b4a4  2268008e             movea.l $8e(a0), a1
+01b4a8  30280094             move.w $94(a0), d0
+01b4ac  4eb9000205ce         jsr $205ce.l
+01b4b2  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b4b6  2c82                 move.l d2, (a6)
+01b4b8  2c83                 move.l d3, (a6)
+01b4ba  2c84                 move.l d4, (a6)
+01b4bc  2c85                 move.l d5, (a6)
+01b4be  2c86                 move.l d6, (a6)
+01b4c0  2c8b                 move.l a3, (a6)
+01b4c2  2c8c                 move.l a4, (a6)
+01b4c4  2c8d                 move.l a5, (a6)
+01b4c6  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b4ca  2c82                 move.l d2, (a6)
+01b4cc  2c83                 move.l d3, (a6)
+01b4ce  2c84                 move.l d4, (a6)
+01b4d0  2c85                 move.l d5, (a6)
+01b4d2  2c86                 move.l d6, (a6)
+01b4d4  2c8b                 move.l a3, (a6)
+01b4d6  2c8c                 move.l a4, (a6)
+01b4d8  2c8d                 move.l a5, (a6)
+01b4da  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b4de  2c82                 move.l d2, (a6)
+01b4e0  2c83                 move.l d3, (a6)
+01b4e2  2c84                 move.l d4, (a6)
+01b4e4  2c85                 move.l d5, (a6)
+01b4e6  2c86                 move.l d6, (a6)
+01b4e8  2c8b                 move.l a3, (a6)
+01b4ea  2c8c                 move.l a4, (a6)
+01b4ec  2c8d                 move.l a5, (a6)
+01b4ee  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b4f2  2c82                 move.l d2, (a6)
+01b4f4  2c83                 move.l d3, (a6)
+01b4f6  2c84                 move.l d4, (a6)
+01b4f8  2c85                 move.l d5, (a6)
+01b4fa  2c86                 move.l d6, (a6)
+01b4fc  2c8b                 move.l a3, (a6)
+01b4fe  2c8c                 move.l a4, (a6)
+01b500  2c8d                 move.l a5, (a6)
+01b502  41e802c4             lea.l $2c4(a0), a0
+01b506  51cff4ac             dbra d7, $1a9b4
+01b50a  41f900ffa362         lea.l $ffa362.l, a0
+01b510  4a28004e             tst.b $4e(a0)
+01b514  670000ca             beq.w $1b5e0
+01b518  117c0000004e         move.b #$0, $4e(a0)
+01b51e  22680026             movea.l $26(a0), a1
+01b522  3028002c             move.w $2c(a0), d0
+01b526  4eb9000205ce         jsr $205ce.l
+01b52c  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b530  2c82                 move.l d2, (a6)
+01b532  2c83                 move.l d3, (a6)
+01b534  2c84                 move.l d4, (a6)
+01b536  2c85                 move.l d5, (a6)
+01b538  2c86                 move.l d6, (a6)
+01b53a  2c8b                 move.l a3, (a6)
+01b53c  2c8c                 move.l a4, (a6)
+01b53e  2c8d                 move.l a5, (a6)
+01b540  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b544  2c82                 move.l d2, (a6)
+01b546  2c83                 move.l d3, (a6)
+01b548  2c84                 move.l d4, (a6)
+01b54a  2c85                 move.l d5, (a6)
+01b54c  2c86                 move.l d6, (a6)
+01b54e  2c8b                 move.l a3, (a6)
+01b550  2c8c                 move.l a4, (a6)
+01b552  2c8d                 move.l a5, (a6)
+01b554  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b558  2c82                 move.l d2, (a6)
+01b55a  2c83                 move.l d3, (a6)
+01b55c  2c84                 move.l d4, (a6)
+01b55e  2c85                 move.l d5, (a6)
+01b560  2c86                 move.l d6, (a6)
+01b562  2c8b                 move.l a3, (a6)
+01b564  2c8c                 move.l a4, (a6)
+01b566  2c8d                 move.l a5, (a6)
+01b568  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b56c  2c82                 move.l d2, (a6)
+01b56e  2c83                 move.l d3, (a6)
+01b570  2c84                 move.l d4, (a6)
+01b572  2c85                 move.l d5, (a6)
+01b574  2c86                 move.l d6, (a6)
+01b576  2c8b                 move.l a3, (a6)
+01b578  2c8c                 move.l a4, (a6)
+01b57a  2c8d                 move.l a5, (a6)
+01b57c  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b580  2c82                 move.l d2, (a6)
+01b582  2c83                 move.l d3, (a6)
+01b584  2c84                 move.l d4, (a6)
+01b586  2c85                 move.l d5, (a6)
+01b588  2c86                 move.l d6, (a6)
+01b58a  2c8b                 move.l a3, (a6)
+01b58c  2c8c                 move.l a4, (a6)
+01b58e  2c8d                 move.l a5, (a6)
+01b590  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b594  2c82                 move.l d2, (a6)
+01b596  2c83                 move.l d3, (a6)
+01b598  2c84                 move.l d4, (a6)
+01b59a  2c85                 move.l d5, (a6)
+01b59c  2c86                 move.l d6, (a6)
+01b59e  2c8b                 move.l a3, (a6)
+01b5a0  2c8c                 move.l a4, (a6)
+01b5a2  2c8d                 move.l a5, (a6)
+01b5a4  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b5a8  2c82                 move.l d2, (a6)
+01b5aa  2c83                 move.l d3, (a6)
+01b5ac  2c84                 move.l d4, (a6)
+01b5ae  2c85                 move.l d5, (a6)
+01b5b0  2c86                 move.l d6, (a6)
+01b5b2  2c8b                 move.l a3, (a6)
+01b5b4  2c8c                 move.l a4, (a6)
+01b5b6  2c8d                 move.l a5, (a6)
+01b5b8  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b5bc  2c82                 move.l d2, (a6)
+01b5be  2c83                 move.l d3, (a6)
+01b5c0  2c84                 move.l d4, (a6)
+01b5c2  2c85                 move.l d5, (a6)
+01b5c4  2c86                 move.l d6, (a6)
+01b5c6  2c8b                 move.l a3, (a6)
+01b5c8  2c8c                 move.l a4, (a6)
+01b5ca  2c8d                 move.l a5, (a6)
+01b5cc  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b5d0  2c82                 move.l d2, (a6)
+01b5d2  2c83                 move.l d3, (a6)
+01b5d4  2c84                 move.l d4, (a6)
+01b5d6  2c85                 move.l d5, (a6)
+01b5d8  2c86                 move.l d6, (a6)
+01b5da  2c8b                 move.l a3, (a6)
+01b5dc  2c8c                 move.l a4, (a6)
+01b5de  2c8d                 move.l a5, (a6)
+01b5e0  41f900ffaf16         lea.l $ffaf16.l, a0
+01b5e6  7e03                 moveq #$3, d7
+01b5e8  4a280020             tst.b $20(a0)
+01b5ec  6750                 beq.b $1b63e
+01b5ee  117c00000020         move.b #$0, $20(a0)
+01b5f4  22680018             movea.l $18(a0), a1
+01b5f8  3028001e             move.w $1e(a0), d0
+01b5fc  4eb9000205ce         jsr $205ce.l
+01b602  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b606  2c82                 move.l d2, (a6)
+01b608  2c83                 move.l d3, (a6)
+01b60a  2c84                 move.l d4, (a6)
+01b60c  2c85                 move.l d5, (a6)
+01b60e  2c86                 move.l d6, (a6)
+01b610  2c8b                 move.l a3, (a6)
+01b612  2c8c                 move.l a4, (a6)
+01b614  2c8d                 move.l a5, (a6)
+01b616  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b61a  2c82                 move.l d2, (a6)
+01b61c  2c83                 move.l d3, (a6)
+01b61e  2c84                 move.l d4, (a6)
+01b620  2c85                 move.l d5, (a6)
+01b622  2c86                 move.l d6, (a6)
+01b624  2c8b                 move.l a3, (a6)
+01b626  2c8c                 move.l a4, (a6)
+01b628  2c8d                 move.l a5, (a6)
+01b62a  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b62e  2c82                 move.l d2, (a6)
+01b630  2c83                 move.l d3, (a6)
+01b632  2c84                 move.l d4, (a6)
+01b634  2c85                 move.l d5, (a6)
+01b636  2c86                 move.l d6, (a6)
+01b638  2c8b                 move.l a3, (a6)
+01b63a  2c8c                 move.l a4, (a6)
+01b63c  2c8d                 move.l a5, (a6)
+01b63e  41e80022             lea.l $22(a0), a0
+01b642  51cfffa4             dbra d7, $1b5e8
+01b646  41f900ffaf9e         lea.l $ffaf9e.l, a0
+01b64c  7e03                 moveq #$3, d7
+01b64e  4a280020             tst.b $20(a0)
+01b652  670000ca             beq.w $1b71e
+01b656  117c00000020         move.b #$0, $20(a0)
+01b65c  22680018             movea.l $18(a0), a1
+01b660  3028001e             move.w $1e(a0), d0
+01b664  4eb9000205ce         jsr $205ce.l
+01b66a  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b66e  2c82                 move.l d2, (a6)
+01b670  2c83                 move.l d3, (a6)
+01b672  2c84                 move.l d4, (a6)
+01b674  2c85                 move.l d5, (a6)
+01b676  2c86                 move.l d6, (a6)
+01b678  2c8b                 move.l a3, (a6)
+01b67a  2c8c                 move.l a4, (a6)
+01b67c  2c8d                 move.l a5, (a6)
+01b67e  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b682  2c82                 move.l d2, (a6)
+01b684  2c83                 move.l d3, (a6)
+01b686  2c84                 move.l d4, (a6)
+01b688  2c85                 move.l d5, (a6)
+01b68a  2c86                 move.l d6, (a6)
+01b68c  2c8b                 move.l a3, (a6)
+01b68e  2c8c                 move.l a4, (a6)
+01b690  2c8d                 move.l a5, (a6)
+01b692  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b696  2c82                 move.l d2, (a6)
+01b698  2c83                 move.l d3, (a6)
+01b69a  2c84                 move.l d4, (a6)
+01b69c  2c85                 move.l d5, (a6)
+01b69e  2c86                 move.l d6, (a6)
+01b6a0  2c8b                 move.l a3, (a6)
+01b6a2  2c8c                 move.l a4, (a6)
+01b6a4  2c8d                 move.l a5, (a6)
+01b6a6  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b6aa  2c82                 move.l d2, (a6)
+01b6ac  2c83                 move.l d3, (a6)
+01b6ae  2c84                 move.l d4, (a6)
+01b6b0  2c85                 move.l d5, (a6)
+01b6b2  2c86                 move.l d6, (a6)
+01b6b4  2c8b                 move.l a3, (a6)
+01b6b6  2c8c                 move.l a4, (a6)
+01b6b8  2c8d                 move.l a5, (a6)
+01b6ba  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b6be  2c82                 move.l d2, (a6)
+01b6c0  2c83                 move.l d3, (a6)
+01b6c2  2c84                 move.l d4, (a6)
+01b6c4  2c85                 move.l d5, (a6)
+01b6c6  2c86                 move.l d6, (a6)
+01b6c8  2c8b                 move.l a3, (a6)
+01b6ca  2c8c                 move.l a4, (a6)
+01b6cc  2c8d                 move.l a5, (a6)
+01b6ce  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b6d2  2c82                 move.l d2, (a6)
+01b6d4  2c83                 move.l d3, (a6)
+01b6d6  2c84                 move.l d4, (a6)
+01b6d8  2c85                 move.l d5, (a6)
+01b6da  2c86                 move.l d6, (a6)
+01b6dc  2c8b                 move.l a3, (a6)
+01b6de  2c8c                 move.l a4, (a6)
+01b6e0  2c8d                 move.l a5, (a6)
+01b6e2  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b6e6  2c82                 move.l d2, (a6)
+01b6e8  2c83                 move.l d3, (a6)
+01b6ea  2c84                 move.l d4, (a6)
+01b6ec  2c85                 move.l d5, (a6)
+01b6ee  2c86                 move.l d6, (a6)
+01b6f0  2c8b                 move.l a3, (a6)
+01b6f2  2c8c                 move.l a4, (a6)
+01b6f4  2c8d                 move.l a5, (a6)
+01b6f6  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b6fa  2c82                 move.l d2, (a6)
+01b6fc  2c83                 move.l d3, (a6)
+01b6fe  2c84                 move.l d4, (a6)
+01b700  2c85                 move.l d5, (a6)
+01b702  2c86                 move.l d6, (a6)
+01b704  2c8b                 move.l a3, (a6)
+01b706  2c8c                 move.l a4, (a6)
+01b708  2c8d                 move.l a5, (a6)
+01b70a  4cd9387c             movem.l (a1)+, d2-d6/a3-a5
+01b70e  2c82                 move.l d2, (a6)
+01b710  2c83                 move.l d3, (a6)
+01b712  2c84                 move.l d4, (a6)
+01b714  2c85                 move.l d5, (a6)
+01b716  2c86                 move.l d6, (a6)
+01b718  2c8b                 move.l a3, (a6)
+01b71a  2c8c                 move.l a4, (a6)
+01b71c  2c8d                 move.l a5, (a6)
+01b71e  41e80022             lea.l $22(a0), a0
+01b722  51cfff2a             dbra d7, $1b64e
+01b726  4a3900ffe81d         tst.b $ffe81d.l
+01b72c  673a                 beq.b $1b768
+01b72e  303ccc00             move.w #$cc00, d0
+01b732  4eb9000205ce         jsr $205ce.l
+01b738  45f900ffeb78         lea.l $ffeb78.l, a2
+01b73e  3e3900ffeb74         move.w $ffeb74.l, d7
+01b744  7a01                 moveq #$1, d5
+01b746  7c4f                 moveq #$4f, d6
+01b748  9c47                 sub.w d7, d6
+01b74a  5347                 subq.w #$1, d7
+01b74c  6b10                 bmi.b $1b75e
+01b74e  205a                 movea.l (a2)+, a0
+01b750  2218                 move.l (a0)+, d1
+01b752  8245                 or.w d5, d1
+01b754  2c81                 move.l d1, (a6)
+01b756  2c98                 move.l (a0)+, (a6)
+01b758  5245                 addq.w #$1, d5
+01b75a  51cffff2             dbra d7, $1b74e
+01b75e  4a46                 tst.w d6
+01b760  6b06                 bmi.b $1b768
+01b762  2cbc00000000         move.l #$0, (a6)
+01b768  4a3900ffe81e         tst.b $ffe81e.l
+01b76e  6628                 bne.b $1b798
+01b770  537900ffe810         subq.w #$1, $ffe810.l
+01b776  6a0e                 bpl.b $1b786
+01b778  33fc003c00ffe810     move.w #$3c, $ffe810.l
+01b780  50f900ffe828         st.b $ffe828.l
+01b786  527900ffe7ec         addq.w #$1, $ffe7ec.l
+01b78c  527900ffe7ee         addq.w #$1, $ffe7ee.l
+01b792  537900ffeb64         subq.w #$1, $ffeb64.l
+01b798  527900ffeb66         addq.w #$1, $ffeb66.l
+01b79e  527900ffeb68         addq.w #$1, $ffeb68.l
+01b7a4  41f900ffe7e6         lea.l $ffe7e6.l, a0
+01b7aa  3010                 move.w (a0), d0
+01b7ac  5240                 addq.w #$1, d0
+01b7ae  30c0                 move.w d0, (a0)+
+01b7b0  0240000f             andi.w #$f, d0
+01b7b4  3080                 move.w d0, (a0)
+01b7b6  61000682             bsr.w $1be3a
+01b7ba  4eb90001c986         jsr $1c986.l
+01b7c0  4eb90001eec2         jsr $1eec2.l
+01b7c6  50f900ffeb5a         st.b $ffeb5a.l
+01b7cc  46fc2300             move.w #$2300, sr
+01b7d0  4eb9000fe004         jsr $fe004.l
+01b7d6  4eb9000fe00c         jsr $fe00c.l
+01b7dc  46fc2700             move.w #$2700, sr
+01b7e0  13fc000000ffeb5a     move.b #$0, $ffeb5a.l
+01b7e8  50f900ffe81c         st.b $ffe81c.l
+01b7ee  4cdf7fff             movem.l (a7)+, d0-d7/a0-a6
+01b7f2  4e73                 rte 
+; calls: 01b7f4 01be3a 01c986 01eb98 01eec2 0205ce 020638 0fe004 0fe008 0fe00c

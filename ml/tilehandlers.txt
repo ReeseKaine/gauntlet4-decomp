@@ -1,0 +1,108 @@
+019658 6106                 bsr.b $19660
+01965a 4ef90001ddb8         jmp $1ddb8.l
+019660 48e7ff60             movem.l d0-d7/a1-a2, -(a7)
+019664 45f900031ede         lea.l $31ede.l, a2
+01966a d040                 add.w d0, d0
+01966c 3a320000             move.w (a2, d0.w), d5
+019670 6100f9e0             bsr.w $19052
+019674 dc46                 add.w d6, d6
+019676 de47                 add.w d7, d7
+019678 7209                 moveq #$9, d1
+01967a 7413                 moveq #$13, d2
+01967c 7800                 moveq #$0, d4
+01967e 162dfff4             move.b -$c(a5), d3
+019682 b601                 cmp.b d1, d3
+019684 6508                 bcs.b $1968e
+019686 b602                 cmp.b d2, d3
+019688 6404                 bcc.b $1968e
+01968a 00440002             ori.w #$2, d4
+01968e 162dfff5             move.b -$b(a5), d3
+019692 b601                 cmp.b d1, d3
+019694 6508                 bcs.b $1969e
+019696 b602                 cmp.b d2, d3
+019698 6404                 bcc.b $1969e
+01969a 00440004             ori.w #$4, d4
+01969e 162dfff6             move.b -$a(a5), d3
+0196a2 b601                 cmp.b d1, d3
+0196a4 6508                 bcs.b $196ae
+0196a6 b602                 cmp.b d2, d3
+0196a8 6404                 bcc.b $196ae
+0196aa 00440008             ori.w #$8, d4
+0196ae 162dfff7             move.b -$9(a5), d3
+0196b2 b601                 cmp.b d1, d3
+0196b4 6508                 bcs.b $196be
+0196b6 b602                 cmp.b d2, d3
+0196b8 6404                 bcc.b $196be
+0196ba 00440010             ori.w #$10, d4
+0196be 162dfff8             move.b -$8(a5), d3
+0196c2 b601                 cmp.b d1, d3
+0196c4 6508                 bcs.b $196ce
+0196c6 b602                 cmp.b d2, d3
+0196c8 6404                 bcc.b $196ce
+0196ca 00440020             ori.w #$20, d4
+0196ce 162dfff9             move.b -$7(a5), d3
+0196d2 b601                 cmp.b d1, d3
+0196d4 6508                 bcs.b $196de
+0196d6 b602                 cmp.b d2, d3
+0196d8 6404                 bcc.b $196de
+0196da 00440040             ori.w #$40, d4
+0196de 162dfffa             move.b -$6(a5), d3
+0196e2 b601                 cmp.b d1, d3
+0196e4 6508                 bcs.b $196ee
+0196e6 b602                 cmp.b d2, d3
+0196e8 6404                 bcc.b $196ee
+0196ea 00440080             ori.w #$80, d4
+0196ee 162dfffb             move.b -$5(a5), d3
+0196f2 b601                 cmp.b d1, d3
+0196f4 6508                 bcs.b $196fe
+0196f6 b602                 cmp.b d2, d3
+0196f8 6404                 bcc.b $196fe
+0196fa 00440100             ori.w #$100, d4
+0196fe 43f90001977a         lea.l $1977a.l, a1
+019704 30314000             move.w (a1, d4.w), d0
+019708 45f900031fae         lea.l $31fae.l, a2
+01970e 45f20000             lea.l (a2, d0.w), a2
+019712 7202                 moveq #$2, d1
+019714 301a                 move.w (a2)+, d0
+019716 d045                 add.w d5, d0
+019718 4eb90001dfb6         jsr $1dfb6.l
+01971e 301a                 move.w (a2)+, d0
+019720 d045                 add.w d5, d0
+019722 5246                 addq.w #$1, d6
+019724 4eb90001dfb6         jsr $1dfb6.l
+01972a 301a                 move.w (a2)+, d0
+01972c d045                 add.w d5, d0
+01972e 5247                 addq.w #$1, d7
+019730 5346                 subq.w #$1, d6
+019732 4eb90001dfb6         jsr $1dfb6.l
+019738 301a                 move.w (a2)+, d0
+01973a d045                 add.w d5, d0
+01973c 5246                 addq.w #$1, d6
+01973e 4eb90001dfb6         jsr $1dfb6.l
+019744 e24e                 lsr.w #$1, d6
+019746 e24f                 lsr.w #$1, d7
+019748 dc46                 add.w d6, d6
+01974a dc46                 add.w d6, d6
+01974c ef4f                 lsl.w #$7, d7
+01974e dc47                 add.w d7, d6
+019750 48c6                 ext.l d6
+019752 45f900ffd246         lea.l $ffd246.l, a2
+019758 d5c6                 adda.l d6, a2
+01975a 2212                 move.l (a2), d1
+01975c 6602                 bne.b $19760
+01975e 221e                 move.l (a6)+, d1
+019760 2241                 movea.l d1, a1
+019762 2489                 move.l a1, (a2)
+019764 234a0012             move.l a2, $12(a1)
+019768 45f90001997a         lea.l $1997a.l, a2
+01976e 33724000001c         move.w (a2, d4.w), $1c(a1)
+019774 4cdf06ff             movem.l (a7)+, d0-d7/a1-a2
+019778 4e75                 rts 
+01977a 009000980028         ori.l #$980028, (a0)
+019780 00180020             ori.b #$20, (a0)+
+019784 00b800a800400000     ori.l #$a80040, $0.w
+01978c 00b000a000380008     ori.l #$a00038, $8(a0, d0.w)
+019794 00100030             ori.b #$30, (a0)
+019798 0140                 bchg.b d0, d0
+01979a 009000980028         ori.l #$980028, (a0)
+0197a0 00180020             ori.b #$20, (a0)+

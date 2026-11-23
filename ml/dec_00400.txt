@@ -1,0 +1,55 @@
+
+/* WARNING: Removing unreachable block (ram,0x0000044e) */
+/* WARNING: Removing unreachable block (ram,0x00000450) */
+/* WARNING: Removing unreachable block (ram,0x00000456) */
+/* WARNING: Removing unreachable block (ram,0x0000045c) */
+/* WARNING: Removing unreachable block (ram,0x00000462) */
+/* WARNING: Removing unreachable block (ram,0x00000468) */
+/* WARNING: Removing unreachable block (ram,0x0000046e) */
+/* WARNING: Removing unreachable block (ram,0x00000472) */
+/* WARNING: Removing unreachable block (ram,0x00000478) */
+/* WARNING: Removing unreachable block (ram,0x0000047a) */
+/* WARNING: Removing unreachable block (ram,0x00000482) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void entry(void)
+
+{
+  short sVar1;
+  undefined1 uVar2;
+  
+  if (_DAT_00a10008 == 0 && _DAT_00a1000c == 0) {
+    sVar1 = 0x17;
+    do {
+      sVar1 = sVar1 + -1;
+    } while (sVar1 != -1);
+    do {
+    } while( true );
+  }
+  DAT_00ffeb5c = -(_DAT_00a1000c == 0);
+  FUN_0001db14();
+  FUN_00000584();
+  do {
+    do {
+      DAT_00ffe874 = 0;
+      uVar2 = 1;
+      FUN_00022504();
+      FUN_000236a4();
+    } while (!(bool)uVar2);
+    FUN_00000b5a();
+    DAT_00ffe798 = 0xff;
+    do {
+      FUN_000008c2();
+      if (DAT_00ffe792 != '\0') break;
+      FUN_00000edc();
+    } while (DAT_00ffe792 == '\0');
+    DAT_00ffe798 = 0;
+    DAT_00ffe78e = 0;
+    if (((7 < DAT_00ffe758) && (DAT_00ffe838 == 0)) && (DAT_00ffe866 == '\0')) {
+      DAT_00ffe762 = DAT_00ffe758;
+    }
+  } while( true );
+}
+
+
+CALLEES: ["FUN_00022504", "FUN_000236a4", "FUN_000008c2", "FUN_00000edc", "FUN_00000584", "FUN_00000b5a", "FUN_0001db14"]

@@ -1,0 +1,397 @@
+<title>Gauntlet 4 Level Atlas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: level picker | map (square canvas) | legend + record facts; stacks to one column on phones. */
+:root {
+  --bg: #e9ecef; --surface: #f8f9fa; --fg: #1b2027; --muted: #5a6470; --line: #cfd5dc;
+  --accent: #b86e0a; --accent-ink: #ffffff; --floor: #f1f2f0; --wall: #46505c; --chip: #e1e5ea;
+  --font-display: "Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121519; --surface: #1a1e23; --fg: #e3e6e9; --muted: #96a0ab; --line: #2b3139;
+  --accent: #e0a040; --accent-ink: #1a1206; --floor: #22272d; --wall: #8a95a3; --chip: #252b32; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121519; --surface: #1a1e23; --fg: #e3e6e9; --muted: #96a0ab; --line: #2b3139;
+  --accent: #e0a040; --accent-ink: #1a1206; --floor: #22272d; --wall: #8a95a3; --chip: #252b32; color-scheme: dark }
+
+html, body { background: var(--bg); color: var(--fg); }
+body { font-family: var(--font-body); font-size: 14px; line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 32px; }
+.wrap { max-width: 1320px; margin: 0 auto; display: grid; gap: 16px; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+h1 { font-family: var(--font-display); font-weight: 600; font-size: 26px; letter-spacing: .01em; margin: 0; text-wrap: balance; }
+.sub { color: var(--muted); }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--muted); margin: 0 0 8px; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+.main { display: grid; grid-template-columns: minmax(250px, 300px) minmax(0, 1fr) minmax(230px, 280px); gap: 16px; align-items: start; }
+@media (max-width: 1080px) { .main { grid-template-columns: minmax(0, 1fr) minmax(220px, 280px); } .picker { grid-column: 1 / -1; order: 2; } }
+@media (max-width: 720px) { .main { grid-template-columns: minmax(0, 1fr); } .picker { order: 2; } .side { order: 3; } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; min-width: 0; }
+
+/* picker */
+.tabs { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 10px; }
+.tab { font: 500 12px var(--font-body); border: 1px solid var(--line); background: transparent; color: var(--fg);
+  padding: 5px 9px; border-radius: 6px; cursor: pointer; }
+.tab[aria-selected="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.tabnote { color: var(--muted); font-size: 12px; margin: 0 0 10px; }
+.chips { display: grid; grid-template-columns: repeat(auto-fill, minmax(38px, 1fr)); gap: 4px; max-height: 520px; overflow-y: auto; padding-right: 2px; }
+@media (max-width: 1080px) { .chips { max-height: 260px; } }
+.chip { font: 500 12px var(--font-mono); font-variant-numeric: tabular-nums; border: 1px solid transparent; background: var(--chip);
+  color: var(--fg); border-radius: 5px; padding: 5px 0; cursor: pointer; position: relative; }
+.chip:hover { border-color: var(--muted); }
+.chip.same { color: var(--muted); }
+.chip.diff::after { content: ""; position: absolute; top: 3px; right: 3px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+.chip[aria-current="true"] { background: var(--accent); color: var(--accent-ink); }
+.chip[aria-current="true"].diff::after { background: var(--accent-ink); }
+button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* map */
+.mapbar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-bottom: 10px; }
+.mapbar .title { font-family: var(--font-display); font-weight: 600; font-size: 18px; margin-right: auto; }
+.mapbar label { display: flex; gap: 6px; align-items: center; color: var(--muted); font-size: 12px; }
+select { font: 13px var(--font-body); background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; }
+.step { font: 600 13px var(--font-body); border: 1px solid var(--line); background: transparent; color: var(--fg); border-radius: 6px; width: 30px; height: 28px; cursor: pointer; }
+.canvasbox { position: relative; width: 100%; max-width: 100%; aspect-ratio: 1; }
+canvas { width: 100%; height: 100%; display: block; border-radius: 4px; cursor: crosshair; touch-action: none; }
+.readout { margin-top: 8px; min-height: 1.5em; color: var(--muted); font-size: 12.5px; }
+.readout b { color: var(--fg); font-weight: 500; }
+
+/* legend + facts */
+.side { display: grid; gap: 16px; }
+.legend { display: grid; gap: 2px; max-height: 380px; overflow-y: auto; }
+.lg { display: grid; grid-template-columns: 18px 46px 1fr auto; gap: 8px; align-items: center; padding: 4px 6px; border-radius: 5px;
+  cursor: pointer; border: 1px solid transparent; background: transparent; color: var(--fg); text-align: left; font: inherit; }
+.lg:hover { border-color: var(--line); }
+.lg[aria-pressed="true"] { border-color: var(--accent); }
+.sw { width: 16px; height: 16px; border-radius: 3px; border: 1px solid var(--line); }
+.lg .n { color: var(--muted); font-size: 12px; }
+.lg .what { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; margin: 0; font-size: 12.5px; }
+dt { color: var(--muted); }
+dd { margin: 0; overflow-wrap: anywhere; }
+.notes { font-size: 13px; color: var(--muted); max-width: 72ch; }
+.notes p { margin: 0 0 6px; }
+.notes code { font-family: var(--font-mono); font-size: 12px; color: var(--fg); }
+@media (prefers-reduced-motion: no-preference) { .chip, .lg, .tab { transition: background-color .12s, border-color .12s; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Gauntlet 4 Level Atlas</h1>
+    <span class="sub" id="summary"></span>
+  </header>
+
+  <div class="main">
+    <section class="panel picker" aria-label="Level picker">
+      <h2>Level table</h2>
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <p class="tabnote" id="tabnote"></p>
+      <div class="chips" id="chips"></div>
+    </section>
+
+    <section class="panel" aria-label="Map">
+      <div class="mapbar">
+        <span class="title" id="maptitle"></span>
+        <button class="step" id="prev" title="Previous level (←)" aria-label="Previous level">‹</button>
+        <button class="step" id="next" title="Next level (→)" aria-label="Next level">›</button>
+        <label for="view">View
+          <select id="view">
+            <option value="gfx">Game graphics</option>
+            <option value="codes">Cell codes</option>
+          </select>
+        </label>
+        <label for="remap">Cells
+          <select id="remap"></select>
+        </label>
+        <label for="codes"><input type="checkbox" id="codes"> Show codes</label>
+      </div>
+      <div class="canvasbox"><canvas id="map" aria-label="32 by 32 level map"></canvas></div>
+      <div class="readout mono" id="readout">Hover a cell to read its position and codes. Click a code in the legend to highlight it.</div>
+    </section>
+
+    <aside class="side">
+      <section class="panel">
+        <h2>Codes on this map</h2>
+        <div class="legend" id="legend"></div>
+      </section>
+      <section class="panel">
+        <h2>Record</h2>
+        <dl id="facts"></dl>
+      </section>
+    </aside>
+  </div>
+
+  <section class="panel notes">
+    <h2>How to read this</h2>
+    <p>“Game graphics” is drawn by the game itself: the real ROM boots headless in an emulator, sets each level up with its own code (Arcade levels in Arcade mode, <code>81–8D</code> as Battle arenas, <code>8E</code> as the Quest hub, <code>8F</code> onward as Quest area and stage), and the picture is read back from video memory, with every monster, generator and item drawn from its sprite settings. Two random steps the game applies at level start (a random pick among several cells of one kind, and bonus food per player) are skipped, so each picture matches the cell grid exactly. The yellow 1P marks the player start, which the game draws as floor.</p>
+    <p>Each map is the 32×32 grid that the game's decompressor (<code>map_decode</code>, ROM <code>0x19122</code>) writes to <code>$FFE246</code>, decoded here by the C translation that matches the ROM bit for bit. “Raw” shows the decoded values 0–63; the other choices show them after one of the game's four remap tables, which is what the level builder actually reads.</p>
+    <p>Cell names come from the game code, not from guesses at the shapes: tile codes <code>00–2B</code> from the touch-handler table at <code>0x67F0</code> and the pickup messages each handler prints; object codes <code>80–DF</code> (packed as <code>1 tttt f ss</code>: type, generator flag, level) from the per-frame object table at <code>0xA89E</code>, whose entries call each monster's own intro text; <code>FC</code> from the level-start code that places player 1 there. Hover a legend row for the evidence. Quest objects are named from their code and sprites: <code>C2</code>/<code>CA</code> look like treasure but move and bite (mimics), <code>D0–D3</code> are the four tower gems, <code>D8</code> is an invisible effect trigger. Item <code>1F</code> appears in no map and is still unidentified.</p>
+    <p>The “Arcade alt” table (<code>0x25DC4</code>) is used when <code>$FFE790</code> is clear; levels marked with a dot use a different record from the main Arcade table. The source ROM is <code>__ROM__</code>.</p>
+  </section>
+</div>
+
+<script>
+const DATA = __DATA__;
+const TABLE_INFO = {
+  arcade:       { label: "Arcade", note: "Levels 1–128, table 0x25BC4 (used when $FFE790 is set). Also used by Record mode." },
+  arcade_alt:   { label: "Arcade alt", note: "Levels 1–128, table 0x25DC4 (used when $FFE790 is clear). A dot marks a level whose map differs from the main table." },
+  quest_battle: { label: "Quest / Battle", note: "Level numbers 0x81–0xC1 (hex), table 0x25FC4: 81–8D Battle arenas, 8E the Quest hub, then ten stages per tower (0x8F + area × 10 + stage − 1): Earth, Water, Fire, Wind, then the Castle." },
+};
+const REMAPS = [
+  ["raw", "Raw (before remap)"],
+  ["arcade", "Arcade / Battle / Record (0x31D2E)"],
+  ["quest", "Quest (0x31D6E)"],
+  ["quest_e842", "Quest, $FFE842 = 1 (0x31DAE)"],
+  ["quest_late", "Quest, later stages (0x31DEE)"],
+];
+const CODES = DATA.codes;                       // final cell code (hex) -> {name, cat, evidence}
+const info = v => CODES[hex2(v)];
+const MONSTER_HUE = { Ghost: 205, Grunt: 28, Demon: 2, Sorcerer: 300, Lobber: 88, Death: 0 };
+
+const $ = id => document.getElementById(id);
+const hex2 = v => v.toString(16).toUpperCase().padStart(2, "0");
+const B64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+const grids = DATA.recs.map(r => Array.from(r.g, ch => B64.indexOf(ch)));
+
+let state = { table: "arcade", slot: 0, remap: "auto", codes: false, focus: null, view: "gfx" };
+try { const s = JSON.parse(localStorage.getItem("g4atlas") || "null"); if (s) Object.assign(state, s, { focus: null }); } catch (e) {}
+function save() { try { localStorage.setItem("g4atlas", JSON.stringify({ table: state.table, slot: state.slot, remap: state.remap, codes: state.codes, view: state.view })); } catch (e) {} }
+
+const slotsBy = {};
+DATA.slots.forEach((s, i) => (slotsBy[s.t] ||= []).push(i));
+if (!slotsBy[state.table]) state.table = "arcade";
+if (state.view !== "codes") { state.view = "gfx"; state.remap = "auto"; }
+if (!slotsBy[state.table].includes(state.slot)) state.slot = slotsBy[state.table][0];
+
+const distinct = new Set(DATA.slots.map(s => s.r)).size;
+$("summary").textContent = `${DATA.slots.length} table slots · ${distinct} distinct maps · 32×32 cells`;
+
+// tabs
+for (const t of Object.keys(TABLE_INFO)) {
+  const b = document.createElement("button");
+  b.className = "tab"; b.role = "tab"; b.id = "tab-" + t; b.textContent = TABLE_INFO[t].label;
+  b.onclick = () => { state.table = t; state.slot = slotsBy[t][0]; state.focus = null; render(); };
+  $("tabs").append(b);
+}
+REMAPS.forEach(([k, l]) => { const o = document.createElement("option"); o.value = k; o.textContent = l; $("remap").append(o); });
+const auto = document.createElement("option"); auto.value = "auto"; auto.textContent = "Game default for this table"; $("remap").prepend(auto);
+$("remap").onchange = e => { state.remap = e.target.value; state.focus = null; render(); };
+$("codes").onchange = e => { state.codes = e.target.checked; draw(); save(); };
+$("view").onchange = e => { state.view = e.target.value; if (state.view === "gfx") state.remap = "auto"; state.focus = null; render(); };
+
+// rendered level images (img/<record>.png), loaded on demand
+const images = new Map();
+function levelImage(rec) {
+  const key = rec.a.toString(16).padStart(6, "0");
+  if (!images.has(key)) {
+    const im = new Image(); im.onload = () => { if (DATA.recs[DATA.slots[state.slot].r] === rec) draw(); };
+    im.onerror = () => { im.failed = true; draw(); };
+    im.src = `img/${key}.png`; images.set(key, im);
+  }
+  return images.get(key);
+}
+
+function levelLabel(s) { return s.t === "quest_battle" ? hex2(s.l) : String(s.l); }
+const AREAS = ["Earth tower", "Water tower", "Fire tower", "Wind tower", "Castle"];   // strings at 0x29DE6
+function questPlace(l) {
+  if (l < 0x8E) return "Battle arena";
+  if (l === 0x8E) return "Quest hub";
+  const n = l - 0x8F, a = Math.floor(n / 10);
+  return `${AREAS[a] || "Area " + a}, stage ${n % 10 + 1}`;
+}
+function remapName(s) { return state.remap === "auto" ? s.d : state.remap; }
+function cells(s) {
+  const g = grids[s.r], m = remapName(s);
+  return m === "raw" ? g : g.map(v => DATA.tables[m][v]);
+}
+
+// colours: fixed for floor / wall, golden-angle hues for the rest, by code range
+function isDark() {
+  const t = document.documentElement.dataset.theme;
+  return t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+}
+function colour(code, raw) {
+  const css = getComputedStyle(document.documentElement), tok = n => css.getPropertyValue(n).trim();
+  const dark = isDark(), L = (light, drk) => dark ? drk : light;
+  if (raw) {                                     // raw values have no fixed meaning: neutral hues
+    if (code === 0) return tok("--floor");
+    if (code === 1) return tok("--wall");
+    return `hsl(${(code * 137.508 + 160) % 360} 50% ${L(48, 58)}%)`;
+  }
+  const c = info(code);
+  if (!c) return `hsl(0 0% ${L(60, 45)}%)`;
+  const n = c.name;
+  switch (c.cat) {
+    case "floor": return tok("--floor");
+    case "wall": return n.includes("special") ? `hsl(215 14% ${L(58, 62)}%)` : tok("--wall");
+    case "door": return `hsl(30 55% ${L(42, 50)}%)`;
+    case "exit": return `hsl(145 60% ${L(38, 48)}%)`;
+    case "transporter": return `hsl(185 80% ${L(40, 50)}%)`;
+    case "trap": return `hsl(350 60% ${L(30, 42)}%)`;
+    case "powerup": return `hsl(275 55% ${L(52, 64)}%)`;
+    case "quest": return `hsl(225 65% ${L(55, 66)}%)`;
+    case "start": return code === 0xFC ? `hsl(52 100% ${L(50, 58)}%)` : `hsl(52 40% ${L(70, 40)}%)`;
+    case "item":
+      if (n.startsWith("Key")) return `hsl(55 95% ${L(48, 56)}%)`;
+      if (n.startsWith("Treasure")) return `hsl(40 90% ${L(45, 52)}%)`;
+      if (n.startsWith("Food")) return `hsl(95 45% ${L(42, 50)}%)`;
+      if (n.startsWith("Magic potion")) return `hsl(210 85% ${L(50, 60)}%)`;
+      if (n.startsWith("Invisibility")) return `hsl(170 30% ${L(65, 70)}%)`;
+      return `hsl(60 20% ${L(55, 60)}%)`;
+    case "monster": case "generator": {
+      const m = n.split(" ")[0], h = MONSTER_HUE[m] ?? 0, gen = c.cat === "generator";
+      if (m === "Death") return L("#111418", "#f2f4f6");
+      const lvl = +((n.match(/level (\d)/) || [0, 2])[1]);
+      return `hsl(${h} ${gen ? 35 : 75}% ${(gen ? L(30, 36) : L(42, 52)) + (lvl - 2) * 6}%)`;
+    }
+  }
+  return `hsl(0 0% ${L(60, 45)}%)`;
+}
+
+const cv = $("map"), ctx = cv.getContext("2d");
+function draw() {
+  const s = DATA.slots[state.slot], c = cells(s), raw = remapName(s) === "raw";
+  const box = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+  const size = Math.max(64, Math.round(box.width * dpr));
+  if (cv.width !== size) { cv.width = size; cv.height = size; }
+  const css = getComputedStyle(document.documentElement);
+  ctx.fillStyle = css.getPropertyValue("--line").trim(); ctx.fillRect(0, 0, size, size);
+  const im = state.view === "gfx" ? levelImage(DATA.recs[s.r]) : null;
+  if (im && im.complete && im.naturalWidth) { drawGfx(im, c, size, dpr, css); return; }
+  const cell = size / 32, gap = cell > 10 ? Math.max(1, dpr * 0.6) : 0;
+  const cache = {};
+  for (let i = 0; i < 1024; i++) {
+    const v = c[i], x = i % 32, y = (i / 32) | 0;
+    ctx.globalAlpha = state.focus === null || state.focus === v ? 1 : 0.18;
+    ctx.fillStyle = cache[v] ||= colour(v, raw);
+    ctx.fillRect(x * cell, y * cell, cell - gap, cell - gap);
+  }
+  ctx.globalAlpha = 1;
+  if (state.codes && cell >= 13) {
+    ctx.font = `500 ${Math.floor(cell * 0.42)}px ${css.getPropertyValue("--font-mono")}`;
+    ctx.textAlign = "center"; ctx.textBaseline = "middle";
+    for (let i = 0; i < 1024; i++) {
+      const v = c[i]; if (state.focus !== null && state.focus !== v) continue;
+      ctx.fillStyle = v === 0 ? css.getPropertyValue("--muted").trim() : (isDark() && v !== 0x09 ? "#10141a" : "#ffffff");
+      ctx.fillText(hex2(v), (i % 32 + 0.5) * cell - gap / 2, (((i / 32) | 0) + 0.52) * cell - gap / 2);
+    }
+  }
+}
+
+// game graphics: the rendered image, then the legend highlight, codes and player-start markers on top
+function drawGfx(im, c, size, dpr, css) {
+  const cell = size / 32;
+  ctx.imageSmoothingEnabled = false;
+  ctx.drawImage(im, 0, 0, size, size);
+  if (state.focus !== null) {
+    ctx.fillStyle = "rgba(0,0,0,0.62)";
+    for (let i = 0; i < 1024; i++) if (c[i] !== state.focus) ctx.fillRect((i % 32) * cell, ((i / 32) | 0) * cell, cell, cell);
+    ctx.strokeStyle = css.getPropertyValue("--accent").trim(); ctx.lineWidth = Math.max(1.5, dpr * 1.5);
+    for (let i = 0; i < 1024; i++) if (c[i] === state.focus) ctx.strokeRect((i % 32) * cell + 1, ((i / 32) | 0) * cell + 1, cell - 2, cell - 2);
+  }
+  ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  for (let i = 0; i < 1024; i++) {
+    if (c[i] !== 0xFC) continue;                              // player start: the game draws floor there
+    const x = (i % 32 + 0.5) * cell, y = (((i / 32) | 0) + 0.5) * cell;
+    ctx.fillStyle = "hsl(52 100% 55%)"; ctx.beginPath(); ctx.arc(x, y, cell * 0.45, 0, 7); ctx.fill();
+    ctx.fillStyle = "#1b1600"; ctx.font = `700 ${Math.floor(cell * 0.42)}px ${css.getPropertyValue("--font-mono")}`;
+    ctx.fillText("1P", x, y + 0.5);
+  }
+  if (state.codes && cell >= 13) {
+    ctx.font = `500 ${Math.floor(cell * 0.38)}px ${css.getPropertyValue("--font-mono")}`;
+    for (let i = 0; i < 1024; i++) {
+      const v = c[i]; if (v === 0 || (state.focus !== null && state.focus !== v)) continue;
+      const x = (i % 32 + 0.5) * cell, y = (((i / 32) | 0) + 0.5) * cell;
+      ctx.fillStyle = "rgba(0,0,0,0.7)"; ctx.fillRect(x - cell * 0.42, y - cell * 0.26, cell * 0.84, cell * 0.52);
+      ctx.fillStyle = "#ffffff"; ctx.fillText(hex2(v), x, y + 0.5);
+    }
+  }
+}
+
+function render() {
+  const s = DATA.slots[state.slot], rec = DATA.recs[s.r], c = cells(s), raw = remapName(s) === "raw";
+  for (const t of Object.keys(TABLE_INFO)) $("tab-" + t).setAttribute("aria-selected", t === state.table);
+  $("tabnote").textContent = TABLE_INFO[state.table].note;
+  // chips
+  const chips = $("chips"); chips.textContent = "";
+  for (const i of slotsBy[state.table]) {
+    const sl = DATA.slots[i], b = document.createElement("button");
+    b.className = "chip"; b.textContent = levelLabel(sl);
+    if (sl.t === "arcade_alt") {
+      const main = DATA.slots.find(o => o.t === "arcade" && o.l === sl.l);
+      b.classList.add(main && main.r === sl.r ? "same" : "diff");
+      b.title = main && main.r === sl.r ? `Level ${sl.l}: same map as Arcade` : `Level ${sl.l}: different map from Arcade`;
+    } else b.title = sl.t === "quest_battle" ? `0x${levelLabel(sl)}: ${questPlace(sl.l)}` : `Level ${levelLabel(sl)}`;
+    if (i === state.slot) b.setAttribute("aria-current", "true");
+    b.onclick = () => { state.slot = i; state.focus = null; render(); };
+    chips.append(b);
+  }
+  const cur = chips.querySelector('[aria-current="true"]');
+  if (cur) { const top = cur.offsetTop - chips.offsetTop; if (top < chips.scrollTop || top > chips.scrollTop + chips.clientHeight - 30) chips.scrollTop = top - 60; }
+  // title + controls
+  $("maptitle").textContent = s.t === "quest_battle" ? `${questPlace(s.l)} · level 0x${levelLabel(s)}` : `${TABLE_INFO[s.t].label} · level ${levelLabel(s)}`;
+  $("remap").value = state.remap; $("codes").checked = state.codes; $("view").value = state.view;
+  $("remap").disabled = state.view === "gfx";
+  $("remap").title = state.view === "gfx" ? "The rendered graphics always use the game's own setting for this level" : "";
+  // legend
+  const counts = new Map(); c.forEach(v => counts.set(v, (counts.get(v) || 0) + 1));
+  const lg = $("legend"); lg.textContent = "";
+  [...counts.entries()].sort((a, b) => a[0] - b[0]).forEach(([v, n]) => {
+    const b = document.createElement("button"); b.className = "lg"; b.setAttribute("aria-pressed", state.focus === v);
+    const sw = document.createElement("span"); sw.className = "sw"; sw.style.background = colour(v, raw);
+    const code = document.createElement("span"); code.className = "mono"; code.textContent = (raw ? "raw " : "") + hex2(v);
+    const what = document.createElement("span"); what.className = "what";
+    what.textContent = raw ? (v === 0 ? "empty" : v === 1 ? "wall run / border" : "before remap") : (info(v) ? info(v).name : "unknown");
+    if (!raw && info(v)) b.title = info(v).evidence;
+    const cnt = document.createElement("span"); cnt.className = "n mono"; cnt.textContent = n;
+    b.append(sw, code, what, cnt);
+    b.onclick = () => { state.focus = state.focus === v ? null : v; render(); };
+    lg.append(b);
+  });
+  // facts
+  const shared = DATA.slots.filter(o => o.r === s.r && o !== s).map(o => `${TABLE_INFO[o.t].label} ${levelLabel(o)}`);
+  const facts = [
+    ["Record", "0x" + rec.a.toString(16).toUpperCase().padStart(6, "0")],
+    ["Header", rec.h.map(hex2).join(" ")],
+    ["Option flags", "byte 7 = " + hex2(rec.h[7])],
+    ["Nibbles", `$FFE7DC ${rec.n[0]} · $FFE7E0 ${rec.n[1]} · $FFE7DE ${rec.n[2]} · $FFE7E2 ${rec.n[3]}`],
+    ["Palette", rec.p.map(hex2).join(" ")],
+    ["Remap", REMAPS.find(r => r[0] === remapName(s))[1]],
+    ["Also used by", shared.length ? shared.join(", ") : "no other slot"],
+  ];
+  const dl = $("facts"); dl.textContent = "";
+  facts.forEach(([k, v]) => { const dt = document.createElement("dt"); dt.textContent = k; const dd = document.createElement("dd"); dd.className = "mono"; dd.textContent = v; dl.append(dt, dd); });
+  draw(); save();
+}
+
+function step(d) {
+  const list = slotsBy[state.table], k = list.indexOf(state.slot);
+  state.slot = list[(k + d + list.length) % list.length]; state.focus = null; render();
+}
+$("prev").onclick = () => step(-1); $("next").onclick = () => step(1);
+document.addEventListener("keydown", e => {
+  if (e.target.matches("select, input")) return;
+  if (e.key === "ArrowLeft") { step(-1); e.preventDefault(); }
+  if (e.key === "ArrowRight") { step(1); e.preventDefault(); }
+});
+function readout(e) {
+  const r = cv.getBoundingClientRect(), x = Math.floor((e.clientX - r.left) / r.width * 32), y = Math.floor((e.clientY - r.top) / r.height * 32);
+  if (x < 0 || y < 0 || x > 31 || y > 31) return;
+  const s = DATA.slots[state.slot], i = y * 32 + x, rv = grids[s.r][i], m = remapName(s);
+  $("readout").innerHTML = `x <b>${x}</b> · y <b>${y}</b> · offset <b>0x${i.toString(16).toUpperCase().padStart(3, "0")}</b> · raw <b>${hex2(rv)}</b>` +
+    (m === "raw" ? "" : ` · cell <b>${hex2(DATA.tables[m][rv])}</b> <b>${(info(DATA.tables[m][rv]) || { name: "" }).name}</b>`);
+}
+cv.addEventListener("pointermove", readout);
+cv.addEventListener("pointerdown", readout);
+new ResizeObserver(() => draw()).observe(cv);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", render);
+new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+render();
+</script>

@@ -1,0 +1,96 @@
+
+undefined8 FUN_000008c2(void)
+
+{
+  undefined4 in_D0;
+  short sVar1;
+  undefined4 in_D1;
+  bool bVar2;
+  
+LAB_000008c6:
+  FUN_0001e99a();
+  FUN_0001ea08();
+  FUN_0001e64a();
+  FUN_0001e406();
+  FUN_0001d52c();
+  FUN_00001f2e();
+  FUN_00002116();
+  FUN_0000f41c();
+  FUN_00003d9a();
+  FUN_0001d6d8();
+  wait_vblank();
+  FUN_0001ce30();
+  FUN_00000a58();
+  DAT_00ffe81d = 0xff;
+  DAT_00ffe7ec = 0;
+  DAT_00ffe7ee = 0;
+  DAT_00ffeb64 = 0;
+  DAT_00ffe794 = '\0';
+  FUN_0000431e();
+  wait_vblank();
+  wait_vblank();
+  FUN_0001ce16();
+  FUN_0000288e();
+  FUN_000029d2();
+LAB_0000094c:
+  FUN_00003d9a();
+  DAT_00ffe81c = '\0';
+  if (DAT_00ffe7ea != 0) {
+    FUN_00000ade();
+    DAT_00ffe7ea = DAT_00ffe7ea + -1;
+    if (DAT_00ffe7ea == 0) {
+      wait_vblank();
+      FUN_0001ce16();
+      FUN_00000b1e();
+      goto LAB_0000097c;
+    }
+    goto LAB_000009e8;
+  }
+LAB_0000097c:
+  FUN_0000393e();
+  if (DAT_00ff0b60 < 0) goto LAB_000009f2;
+  if ((DAT_00ff0b60 == 0) && (DAT_00ffe838 == 2)) {
+    if (DAT_00ffe76a == 0) goto LAB_000009f2;
+    if (DAT_00ffe78d != '\0') {
+      DAT_00ffe76a = 0x50;
+      DAT_00ffe78d = '\0';
+    }
+    DAT_00ffe76a = DAT_00ffe76a + -1;
+  }
+  FUN_00003b68();
+  FUN_0001d6d8();
+  FUN_0000431e();
+  FUN_0000a82c();
+  bVar2 = DAT_00ffe81e == '\0';
+  if ((!bVar2) && (FUN_0001fb80(), bVar2)) {
+    DAT_00ffe792 = 0xff;
+    DAT_00ffe821 = 0;
+    DAT_00ffe799 = 0;
+    DAT_00ffe793 = 0;
+    DAT_00ffe81d = 0;
+    do {
+      sVar1 = player_reset();
+    } while (sVar1 != 0);
+    goto LAB_00000a52;
+  }
+  if (DAT_00ffe81c == '\0') {
+LAB_000009e8:
+    wait_vblank();
+  }
+  goto LAB_0000094c;
+LAB_000009f2:
+  if ((DAT_00ffe876 & DAT_00ffe866) != 0) {
+    do {
+      sVar1 = wait_vblank();
+    } while (sVar1 != 0);
+  }
+  gameover_dispatch();
+  if (DAT_00ffe794 == '\0') {
+LAB_00000a52:
+    return CONCAT44(in_D0,in_D1);
+  }
+  goto LAB_000008c6;
+}
+
+
+CALLEES: ["FUN_0001ce30", "FUN_00003d9a", "FUN_00003b68", "player_reset", "FUN_0001d52c", "FUN_0000393e", "FUN_0001d6d8", "FUN_0001ea08", "FUN_0000f41c", "FUN_000029d2", "FUN_0001fb80", "FUN_00000a58", "FUN_0001ce16", "FUN_0000431e", "FUN_00000ade", "FUN_00002116", "FUN_0001e99a", "FUN_0000288e", "FUN_0000a82c", "wait_vblank", "FUN_00000b1e", "FUN_00001f2e", "gameover_dispatch", "FUN_0001e64a", "FUN_0001e406"]

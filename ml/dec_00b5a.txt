@@ -1,0 +1,35 @@
+
+undefined8 FUN_00000b5a(void)
+
+{
+  undefined4 in_D0;
+  undefined4 in_D1;
+  
+  DAT_00ffe778 = *(undefined4 *)((int)&DAT_0002667e + (int)(short)(DAT_00ffe776 * 4));
+  DAT_00ffe810 = 0x3c;
+  DAT_00ffaf14 = 0xffff;
+  DAT_00ff0b60 = 0xffff;
+  DAT_00ffe7ea = 0;
+  DAT_00ffe792 = 0;
+  DAT_00ffe81d = 0;
+  DAT_00ffe799 = 0;
+  DAT_00ffe78d = 0;
+  DAT_00ffe79a = 0;
+  DAT_00ffe794 = 0;
+  DAT_00ffe797 = 0;
+  DAT_00ffe874 = 0;
+  DAT_00ffe875 = 0;
+  DAT_00ffe876 = 0;
+  DAT_00ffe870 = 0;
+  DAT_00ffe950 = 0;
+  DAT_00fff014 = 6;
+  DAT_00ffa3ae = 0xff;
+  DAT_00ffa362 = 0;
+  (**(code **)((short)(DAT_00ffe838 * 4) + 0xc16))();
+  wait_vblank();
+  FUN_0001f6d0();
+  return CONCAT44(in_D0,in_D1);
+}
+
+
+CALLEES: ["wait_vblank", "FUN_0001f6d0"]

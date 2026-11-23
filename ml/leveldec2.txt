@@ -1,0 +1,139 @@
+0191d8 02400030             andi.w #$30, d0
+0191dc e488                 lsr.l #$2, d0
+0191de 267b00e8             movea.l $191c8(pc, d0.w), a3
+0191e2 7600                 moveq #$0, d3
+0191e4 1613                 move.b (a3), d3
+0191e6 3203                 move.w d3, d1
+0191e8 024100c0             andi.w #$c0, d1
+0191ec 0c410000             cmpi.w #$0, d1
+0191f0 6714                 beq.b $19206
+0191f2 0c410040             cmpi.w #$40, d1
+0191f6 674c                 beq.b $19244
+0191f8 0c410080             cmpi.w #$80, d1
+0191fc 6764                 beq.b $19262
+0191fe 0c4100c0             cmpi.w #$c0, d1
+019202 67000084             beq.w $19288
+019206 7000                 moveq #$0, d0
+019208 103900ffe976         move.b $ffe976.l, d0
+01920e b043                 cmp.w d3, d0
+019210 670a                 beq.b $1921c
+019212 103900ffe978         move.b $ffe978.l, d0
+019218 b043                 cmp.w d3, d0
+01921a 6614                 bne.b $19230
+01921c 0244000f             andi.w #$f, d4
+019220 5244                 addq.w #$1, d4
+019222 3003                 move.w d3, d0
+019224 0240003f             andi.w #$3f, d0
+019228 610000fa             bsr.w $19324
+01922c 6000ff58             bra.w $19186
+019230 0244000f             andi.w #$f, d4
+019234 5244                 addq.w #$1, d4
+019236 3003                 move.w d3, d0
+019238 0240003f             andi.w #$3f, d0
+01923c 610000cc             bsr.w $1930a
+019240 6000ff44             bra.w $19186
+019244 0244000f             andi.w #$f, d4
+019248 5244                 addq.w #$1, d4
+01924a 303c0000             move.w #$0, d0
+01924e 610000ba             bsr.w $1930a
+019252 7801                 moveq #$1, d4
+019254 3003                 move.w d3, d0
+019256 0240003f             andi.w #$3f, d0
+01925a 610000ae             bsr.w $1930a
+01925e 6000ff26             bra.w $19186
+019262 48e70800             movem.l d4, -(a7)
+019266 7801                 moveq #$1, d4
+019268 3003                 move.w d3, d0
+01926a 0240003f             andi.w #$3f, d0
+01926e 6100009a             bsr.w $1930a
+019272 4cdf0010             movem.l (a7)+, d4
+019276 0244000f             andi.w #$f, d4
+01927a 5244                 addq.w #$1, d4
+01927c 303c0000             move.w #$0, d0
+019280 61000088             bsr.w $1930a
+019284 6000ff00             bra.w $19186
+019288 0244000f             andi.w #$f, d4
+01928c 5244                 addq.w #$1, d4
+01928e 303c0001             move.w #$1, d0
+019292 6176                 bsr.b $1930a
+019294 7801                 moveq #$1, d4
+019296 3003                 move.w d3, d0
+019298 0240003f             andi.w #$3f, d0
+01929c 616c                 bsr.b $1930a
+01929e 6000fee6             bra.w $19186
+0192a2 08000005             btst.b #$5, d0
+0192a6 6726                 beq.b $192ce
+0192a8 08000004             btst.b #$4, d0
+0192ac 6710                 beq.b $192be
+0192ae 0244000f             andi.w #$f, d4
+0192b2 5244                 addq.w #$1, d4
+0192b4 303c0001             move.w #$1, d0
+0192b8 616a                 bsr.b $19324
+0192ba 6000feca             bra.w $19186
+0192be 0244000f             andi.w #$f, d4
+0192c2 5244                 addq.w #$1, d4
+0192c4 303c0001             move.w #$1, d0
+0192c8 6140                 bsr.b $1930a
+0192ca 6000feba             bra.w $19186
+0192ce 5244                 addq.w #$1, d4
+0192d0 3003                 move.w d3, d0
+0192d2 0240003f             andi.w #$3f, d0
+0192d6 6132                 bsr.b $1930a
+0192d8 6000feac             bra.w $19186
+0192dc 08000005             btst.b #$5, d0
+0192e0 6714                 beq.b $192f6
+0192e2 5244                 addq.w #$1, d4
+0192e4 303c0000             move.w #$0, d0
+0192e8 6120                 bsr.b $1930a
+0192ea 7801                 moveq #$1, d4
+0192ec 303c0001             move.w #$1, d0
+0192f0 6118                 bsr.b $1930a
+0192f2 6000fe92             bra.w $19186
+0192f6 5244                 addq.w #$1, d4
+0192f8 303c0000             move.w #$0, d0
+0192fc 610c                 bsr.b $1930a
+0192fe 6000fe86             bra.w $19186
+019302 613c                 bsr.b $19340
+019304 4cdf0e1f             movem.l (a7)+, d0-d4/a1-a3
+019308 4e75                 rts 
+01930a 48e748c0             movem.l d1/d4/a0-a1, -(a7)
+01930e 41f42000             lea.l (a4, d2.w), a0
+019312 3204                 move.w d4, d1
+019314 5341                 subq.w #$1, d1
+019316 10c0                 move.b d0, (a0)+
+019318 51c9fffc             dbra d1, $19316
+01931c d444                 add.w d4, d2
+01931e 4cdf0312             movem.l (a7)+, d1/d4/a0-a1
+019322 4e75                 rts 
+019324 48e76840             movem.l d1-d2/d4/a1, -(a7)
+019328 3204                 move.w d4, d1
+01932a 5341                 subq.w #$1, d1
+01932c 19802000             move.b d0, (a4, d2.w)
+019330 04420020             subi.w #$20, d2
+019334 5bc9fff6             dbmi d1, $1932c
+019338 4cdf0216             movem.l (a7)+, d1-d2/d4/a1
+01933c 5242                 addq.w #$1, d2
+01933e 4e75                 rts 
+019340 48e7c0c0             movem.l d0-d1/a0-a1, -(a7)
+019344 43f900031d2e         lea.l $31d2e.l, a1
+01934a 0c79000100ffe838     cmpi.w #$1, $ffe838.l
+019352 6632                 bne.b $19386
+019354 43f900031d6e         lea.l $31d6e.l, a1
+01935a 0c79000100ffe842     cmpi.w #$1, $ffe842.l
+019362 6608                 bne.b $1936c
+019364 43f900031dae         lea.l $31dae.l, a1
+01936a 601a                 bra.b $19386
+01936c 4a3900ffe875         tst.b $ffe875.l
+019372 660c                 bne.b $19380
+019374 0c79000a00ffe846     cmpi.w #$a, $ffe846.l
+01937c 6e02                 bgt.b $19380
+01937e 6006                 bra.b $19386
+019380 43f900031dee         lea.l $31dee.l, a1
+019386 204c                 movea.l a4, a0
+019388 7000                 moveq #$0, d0
+01938a 323c03ff             move.w #$3ff, d1
+01938e 1010                 move.b (a0), d0
+019390 10f10000             move.b (a1, d0.w), (a0)+
+019394 51c9fff8             dbra d1, $1938e
+019398 4cdf0303             movem.l (a7)+, d0-d1/a0-a1
+01939c 4e75                 rts 

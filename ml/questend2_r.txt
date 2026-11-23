@@ -1,0 +1,232 @@
+; ===== routine 001b2e  (60 instructions)
+001b2e  6100013e             bsr.w $1c6e
+001b32  4eb90001295a         jsr $1295a.l
+001b38  423900ffe874         clr.b $ffe874.l
+001b3e  423900ffe875         clr.b $ffe875.l
+001b44  423900ffe876         clr.b $ffe876.l
+001b4a  303900ffe85c         move.w $ffe85c.l, d0
+001b50  66000084             bne.w $1bd6
+001b54  33fc008e00ffe758     move.w #$8e, $ffe758.l
+001b5c  33fc000100ffe842     move.w #$1, $ffe842.l
+001b64  323900ffe844         move.w $ffe844.l, d1
+001b6a  d241                 add.w d1, d1
+001b6c  d241                 add.w d1, d1
+001b6e  43f900001c52         lea.l $1c52.l, a1
+001b74  4cb100301000         movem.w (a1, d1.w), d4-d5
+001b7a  48b9003000ffe848     movem.w d4-d5, $ffe848.l
+001b82  4eb90001f694         jsr $1f694.l
+001b88  48790002500c         pea.l $2500c.l
+001b8e  4eb90001ccfa         jsr $1ccfa.l
+001b94  588f                 addq.l #$4, a7
+001b96  41f900ff0040         lea.l $ff0040.l, a0
+001b9c  7203                 moveq #$3, d1
+001b9e  4a280167             tst.b $167(a0)
+001ba2  671c                 beq.b $1bc0
+001ba4  42280061             clr.b $61(a0)
+001ba8  42280167             clr.b $167(a0)
+001bac  4a3900ffe866         tst.b $ffe866.l
+001bb2  670c                 beq.b $1bc0
+001bb4  117c0000016d         move.b #$0, $16d(a0)
+001bba  317c000100d0         move.w #$1, $d0(a0)
+001bc0  4a280061             tst.b $61(a0)
+001bc4  6606                 bne.b $1bcc
+001bc6  2168013400b6         move.l $134(a0), $b6(a0)
+001bcc  41e802c4             lea.l $2c4(a0), a0
+001bd0  51c9ffcc             dbra d1, $1b9e
+001bd4  6074                 bra.b $1c4a
+001bd6  343900ffe846         move.w $ffe846.l, d2
+001bdc  d17900ffe846         add.w d0, $ffe846.l
+001be2  323900ffe844         move.w $ffe844.l, d1
+001be8  d241                 add.w d1, d1
+001bea  41f900001b24         lea.l $1b24.l, a0
+001bf0  30301000             move.w (a0, d1.w), d0
+001bf4  b07900ffe846         cmp.w $ffe846.l, d0
+001bfa  6638                 bne.b $1c34
+001bfc  4a3900ffe866         tst.b $ffe866.l
+001c02  670a                 beq.b $1c0e
+001c04  23fc0010001200ffe84c move.l #$100012, $ffe84c.l
+001c0e  50f900ffe875         st.b $ffe875.l
+001c14  423900ffe8e0         clr.b $ffe8e0.l
+001c1a  4eb90001f694         jsr $1f694.l
+001c20  323900ffe844         move.w $ffe844.l, d1
+001c26  033900ffe869         btst.l d1, $ffe869.l
+001c2c  6606                 bne.b $1c34
+001c2e  50f900ffe874         st.b $ffe874.l
+001c34  b042                 cmp.w d2, d0
+001c36  57f900ffe870         seq.b $ffe870.l
+001c3c  6606                 bne.b $1c44
+001c3e  4eb90001f694         jsr $1f694.l
+001c44  4eb90001310a         jsr $1310a.l
+001c4a  4eb90001ce4a         jsr $1ce4a.l
+001c50  4e75                 rts 
+; calls: 001c6e 01295a 01310a 01ccfa 01ce4a 01f694
+; ===== routine 001c6e  (168 instructions)
+001c6e  4a3900ffe86f         tst.b $ffe86f.l
+001c74  66000244             bne.w $1eba
+001c78  4a3900ffe866         tst.b $ffe866.l
+001c7e  6600023a             bne.w $1eba
+001c82  41f900ff0040         lea.l $ff0040.l, a0
+001c88  7e03                 moveq #$3, d7
+001c8a  4a280061             tst.b $61(a0)
+001c8e  6640                 bne.b $1cd0
+001c90  4a280167             tst.b $167(a0)
+001c94  663a                 bne.b $1cd0
+001c96  3428012e             move.w $12e(a0), d2
+001c9a  3628012c             move.w $12c(a0), d3
+001c9e  e24a                 lsr.w #$1, d2
+001ca0  e24b                 lsr.w #$1, d3
+001ca2  43f900ff0040         lea.l $ff0040.l, a1
+001ca8  7c03                 moveq #$3, d6
+001caa  4a290061             tst.b $61(a1)
+001cae  6618                 bne.b $1cc8
+001cb0  4a290167             tst.b $167(a1)
+001cb4  6612                 bne.b $1cc8
+001cb6  322800b4             move.w $b4(a0), d1
+001cba  b26900b4             cmp.w $b4(a1), d1
+001cbe  6708                 beq.b $1cc8
+001cc0  d5690132             add.w d2, $132(a1)
+001cc4  d7690130             add.w d3, $130(a1)
+001cc8  43e902c4             lea.l $2c4(a1), a1
+001ccc  51ceffdc             dbra d6, $1caa
+001cd0  41e802c4             lea.l $2c4(a0), a0
+001cd4  51cfffb4             dbra d7, $1c8a
+001cd8  43f900001ec2         lea.l $1ec2.l, a1
+001cde  45f900001ecc         lea.l $1ecc.l, a2
+001ce4  323900ffe860         move.w $ffe860.l, d1
+001cea  d241                 add.w d1, d1
+001cec  3a311000             move.w (a1, d1.w), d5
+001cf0  3c321000             move.w (a2, d1.w), d6
+001cf4  303900ffe85e         move.w $ffe85e.l, d0
+001cfa  ccc0                 mulu.w d0, d6
+001cfc  41f900ff0040         lea.l $ff0040.l, a0
+001d02  7e03                 moveq #$3, d7
+001d04  4a280061             tst.b $61(a0)
+001d08  6652                 bne.b $1d5c
+001d0a  4a280167             tst.b $167(a0)
+001d0e  664c                 bne.b $1d5c
+001d10  3028012e             move.w $12e(a0), d0
+001d14  d0680132             add.w $132(a0), d0
+001d18  c0c5                 mulu.w d5, d0
+001d1a  3140012e             move.w d0, $12e(a0)
+001d1e  d086                 add.l d6, d0
+001d20  d0a80128             add.l $128(a0), d0
+001d24  0c8000010000         cmpi.l #$10000, d0
+001d2a  6d06                 blt.b $1d32
+001d2c  203c0000ffff         move.l #$ffff, d0
+001d32  21400128             move.l d0, $128(a0)
+001d36  3028012c             move.w $12c(a0), d0
+001d3a  d0680130             add.w $130(a0), d0
+001d3e  c0c5                 mulu.w d5, d0
+001d40  3140012c             move.w d0, $12c(a0)
+001d44  d086                 add.l d6, d0
+001d46  d0a80124             add.l $124(a0), d0
+001d4a  0c8000010000         cmpi.l #$10000, d0
+001d50  6d06                 blt.b $1d58
+001d52  203c0000ffff         move.l #$ffff, d0
+001d58  21400124             move.l d0, $124(a0)
+001d5c  41e802c4             lea.l $2c4(a0), a0
+001d60  51cfffa2             dbra d7, $1d04
+001d64  3a321000             move.w (a2, d1.w), d5
+001d68  3c3900ffe85e         move.w $ffe85e.l, d6
+001d6e  41f900ff0040         lea.l $ff0040.l, a0
+001d74  7e03                 moveq #$3, d7
+001d76  4a280061             tst.b $61(a0)
+001d7a  66000122             bne.w $1e9e
+001d7e  4a280167             tst.b $167(a0)
+001d82  6600011a             bne.w $1e9e
+001d86  322800d6             move.w $d6(a0), d1
+001d8a  362800b4             move.w $b4(a0), d3
+001d8e  c6fc0005             mulu.w #$5, d3
+001d92  5c43                 addq.w #$6, d3
+001d94  7402                 moveq #$2, d2
+001d96  43f9000259c9         lea.l $259c9.l, a1
+001d9c  4eb90001d0f2         jsr $1d0f2.l
+001da2  4a46                 tst.w d6
+001da4  6742                 beq.b $1de8
+001da6  7406                 moveq #$6, d2
+001da8  702b                 moveq #$2b, d0
+001daa  4eb90001d054         jsr $1d054.l
+001db0  5242                 addq.w #$1, d2
+001db2  0c460004             cmpi.w #$4, d6
+001db6  6f0e                 ble.b $1dc6
+001db8  7805                 moveq #$5, d4
+001dba  3005                 move.w d5, d0
+001dbc  c0c6                 mulu.w d6, d0
+001dbe  4eb90001cf70         jsr $1cf70.l
+001dc4  6022                 bra.b $1de8
+001dc6  7803                 moveq #$3, d4
+001dc8  7000                 moveq #$0, d0
+001dca  3005                 move.w d5, d0
+001dcc  4eb90001cf70         jsr $1cf70.l
+001dd2  5642                 addq.w #$3, d2
+001dd4  702a                 moveq #$2a, d0
+001dd6  4eb90001d054         jsr $1d054.l
+001ddc  5242                 addq.w #$1, d2
+001dde  3006                 move.w d6, d0
+001de0  7801                 moveq #$1, d4
+001de2  4eb90001cf70         jsr $1cf70.l
+001de8  740d                 moveq #$d, d2
+001dea  702b                 moveq #$2b, d0
+001dec  4eb90001d054         jsr $1d054.l
+001df2  5242                 addq.w #$1, d2
+001df4  3028012e             move.w $12e(a0), d0
+001df8  7804                 moveq #$4, d4
+001dfa  4eb90001cf70         jsr $1cf70.l
+001e00  5c42                 addq.w #$6, d2
+001e02  703d                 moveq #$3d, d0
+001e04  4eb90001d054         jsr $1d054.l
+001e0a  5442                 addq.w #$2, d2
+001e0c  20280128             move.l $128(a0), d0
+001e10  7805                 moveq #$5, d4
+001e12  4eb90001cf70         jsr $1cf70.l
+001e18  5243                 addq.w #$1, d3
+001e1a  7402                 moveq #$2, d2
+001e1c  43f9000259ce         lea.l $259ce.l, a1
+001e22  4eb90001d0f2         jsr $1d0f2.l
+001e28  7406                 moveq #$6, d2
+001e2a  4a46                 tst.w d6
+001e2c  6740                 beq.b $1e6e
+001e2e  702b                 moveq #$2b, d0
+001e30  4eb90001d054         jsr $1d054.l
+001e36  5242                 addq.w #$1, d2
+001e38  0c460004             cmpi.w #$4, d6
+001e3c  6f0e                 ble.b $1e4c
+001e3e  7805                 moveq #$5, d4
+001e40  3005                 move.w d5, d0
+001e42  c0c6                 mulu.w d6, d0
+001e44  4eb90001cf70         jsr $1cf70.l
+001e4a  6022                 bra.b $1e6e
+001e4c  7803                 moveq #$3, d4
+001e4e  7000                 moveq #$0, d0
+001e50  3005                 move.w d5, d0
+001e52  4eb90001cf70         jsr $1cf70.l
+001e58  5642                 addq.w #$3, d2
+001e5a  702a                 moveq #$2a, d0
+001e5c  4eb90001d054         jsr $1d054.l
+001e62  5242                 addq.w #$1, d2
+001e64  3006                 move.w d6, d0
+001e66  7801                 moveq #$1, d4
+001e68  4eb90001cf70         jsr $1cf70.l
+001e6e  740d                 moveq #$d, d2
+001e70  702b                 moveq #$2b, d0
+001e72  4eb90001d054         jsr $1d054.l
+001e78  5242                 addq.w #$1, d2
+001e7a  3028012c             move.w $12c(a0), d0
+001e7e  7804                 moveq #$4, d4
+001e80  4eb90001cf70         jsr $1cf70.l
+001e86  5c42                 addq.w #$6, d2
+001e88  703d                 moveq #$3d, d0
+001e8a  4eb90001d054         jsr $1d054.l
+001e90  5442                 addq.w #$2, d2
+001e92  20280124             move.l $124(a0), d0
+001e96  7805                 moveq #$5, d4
+001e98  4eb90001cf70         jsr $1cf70.l
+001e9e  41e802c4             lea.l $2c4(a0), a0
+001ea2  51cffed2             dbra d7, $1d76
+001ea6  33fc000000ffe85e     move.w #$0, $ffe85e.l
+001eae  3f3c012c             move.w #$12c, -(a7)
+001eb2  4eb900004150         jsr $4150.l
+001eb8  548f                 addq.l #$2, a7
+001eba  423900ffe86f         clr.b $ffe86f.l
+001ec0  4e75                 rts 
+; calls: 004150 01cf70 01d054 01d0f2

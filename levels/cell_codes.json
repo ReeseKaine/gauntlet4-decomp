@@ -1,0 +1,442 @@
+{
+ "00": {
+  "name": "Floor",
+  "cat": "floor",
+  "evidence": "touch handler 0x67F0[00] = rts"
+ },
+ "01": {
+  "name": "Quest area event",
+  "cat": "quest",
+  "evidence": "touch 0x68A2: per-area routine from table 0x68C4, once per area ($FFE869 / player +$16D); invisible (drawn as floor)"
+ },
+ "02": {
+  "name": "Quest transition (state 0x18)",
+  "cat": "quest",
+  "evidence": "touch 0x6BEE sets player +$138 = 0x18"
+ },
+ "03": {
+  "name": "Quest transition (state 0x1C)",
+  "cat": "quest",
+  "evidence": "touch 0x6BF6 sets player +$138 = 0x1C"
+ },
+ "04": {
+  "name": "Exit",
+  "cat": "exit",
+  "evidence": "touch 0x6BFE (Quest: next level from table 0x1B24); 'FIND EXIT TO NEXT LEVEL'; drawn as 'EXIT' (render of arcade level 1)"
+ },
+ "05": {
+  "name": "Exit to 4 levels ahead",
+  "cat": "exit",
+  "evidence": "touch 0x6BFE (Quest: next level from table 0x1B24); 'FIND EXIT TO NEXT LEVEL'; drawn as 'EXIT TO 4'"
+ },
+ "06": {
+  "name": "Exit to 8 levels ahead",
+  "cat": "exit",
+  "evidence": "touch 0x6BFE (Quest: next level from table 0x1B24); 'FIND EXIT TO NEXT LEVEL'; drawn as 'EXIT TO 8'"
+ },
+ "07": {
+  "name": "Door",
+  "cat": "door",
+  "evidence": "touch 0x6D42 needs a key (player +$CC) and uses one; drawn joined to other 07/08 cells (0x19D8A)"
+ },
+ "08": {
+  "name": "Door",
+  "cat": "door",
+  "evidence": "touch 0x6D42 needs a key (player +$CC) and uses one; drawn joined to other 07/08 cells (0x19D8A)"
+ },
+ "09": {
+  "name": "Wall",
+  "cat": "wall",
+  "evidence": "touch 0x6D38 blocks; neighbour-mask wall drawer 0x19660, style from table 0x31EDE"
+ },
+ "0A": {
+  "name": "Wall",
+  "cat": "wall",
+  "evidence": "touch 0x6D38 blocks; neighbour-mask wall drawer 0x19660, style from table 0x31EDE"
+ },
+ "0B": {
+  "name": "Wall",
+  "cat": "wall",
+  "evidence": "touch 0x6D38 blocks; neighbour-mask wall drawer 0x19660, style from table 0x31EDE"
+ },
+ "0C": {
+  "name": "Wall",
+  "cat": "wall",
+  "evidence": "touch 0x6D38 blocks; neighbour-mask wall drawer 0x19660, style from table 0x31EDE"
+ },
+ "0D": {
+  "name": "Wall",
+  "cat": "wall",
+  "evidence": "touch 0x6D38 blocks; neighbour-mask wall drawer 0x19660, style from table 0x31EDE"
+ },
+ "0E": {
+  "name": "Wall (special)",
+  "cat": "wall",
+  "evidence": "same drawer as 09-0D, then extra setup at 0x1DDB8 (possibly destructible; unconfirmed)"
+ },
+ "0F": {
+  "name": "Wall (special)",
+  "cat": "wall",
+  "evidence": "same drawer as 09-0D, then extra setup at 0x1DDB8 (possibly destructible; unconfirmed)"
+ },
+ "10": {
+  "name": "Wall (special)",
+  "cat": "wall",
+  "evidence": "same drawer as 09-0D, then extra setup at 0x1DDB8 (possibly destructible; unconfirmed)"
+ },
+ "11": {
+  "name": "Wall (special)",
+  "cat": "wall",
+  "evidence": "same drawer as 09-0D, then extra setup at 0x1DDB8 (possibly destructible; unconfirmed)"
+ },
+ "12": {
+  "name": "Wall (special)",
+  "cat": "wall",
+  "evidence": "same drawer as 09-0D, then extra setup at 0x1DDB8 (possibly destructible; unconfirmed)"
+ },
+ "13": {
+  "name": "Transporter",
+  "cat": "transporter",
+  "evidence": "touch 0x6D92, message 'TRANSPORTERS MOVE YOU TO THE CLOSEST TRANSPORTER VISIBLE', intro flag $FFE7A7"
+ },
+ "14": {
+  "name": "Trap",
+  "cat": "trap",
+  "evidence": "touch 0x7346, message 'TRAPS MAKE WALLS DISAPPEAR'"
+ },
+ "15": {
+  "name": "Trap",
+  "cat": "trap",
+  "evidence": "touch 0x7346, message 'TRAPS MAKE WALLS DISAPPEAR'"
+ },
+ "16": {
+  "name": "Trap",
+  "cat": "trap",
+  "evidence": "touch 0x7346, message 'TRAPS MAKE WALLS DISAPPEAR'"
+ },
+ "17": {
+  "name": "Trap",
+  "cat": "trap",
+  "evidence": "touch 0x7346, message 'TRAPS MAKE WALLS DISAPPEAR'"
+ },
+ "18": {
+  "name": "Quest transition (state 0x28)",
+  "cat": "quest",
+  "evidence": "touch 0x6CFA sets player +$138 = 0x28 (conditions on $FFE866/$FFE842/$FFE867)"
+ },
+ "19": {
+  "name": "Quest stairs up",
+  "cat": "quest",
+  "evidence": "touch 0x6CC8 sets +$138 = 0x20 and $FFE85C = +1; drawn as up arrows"
+ },
+ "1A": {
+  "name": "Quest stairs down",
+  "cat": "quest",
+  "evidence": "touch 0x6CE0 sets +$138 = 0x24 and $FFE85C = -1; drawn as down arrows"
+ },
+ "1B": {
+  "name": "Key",
+  "cat": "item",
+  "evidence": "touch 0x752E, messages 'SAVE KEYS TO OPEN DOORS' / 'FULL OF BOMBS AND/OR KEYS'"
+ },
+ "1C": {
+  "name": "Treasure (x bonus multiplier)",
+  "cat": "item",
+  "evidence": "touch 0x765C adds (player +$CA + 1) x 100 to score +$C6"
+ },
+ "1D": {
+  "name": "Invisibility",
+  "cat": "item",
+  "evidence": "touch 0x7446, message 'LIMITED INVISIBILITY'"
+ },
+ "1E": {
+  "name": "Treasure (100 points)",
+  "cat": "item",
+  "evidence": "touch 0x76CA, message 'TREASURE: 100 POINTS'"
+ },
+ "1F": {
+  "name": "Item (unidentified)",
+  "cat": "item",
+  "evidence": "touch 0x780A: effect via table 0x35708"
+ },
+ "20": {
+  "name": "Quest relic (ring / orb)",
+  "cat": "quest",
+  "evidence": "touch 0x7878: 'YOU GET FLOAT RING / FIGHT RING / HEAL RING / MIRROR RING / DEFEND ORB' by area $FFE844; drawn as floor in the level render (its graphic is not loaded at level start)"
+ },
+ "21": {
+  "name": "No touch effect",
+  "cat": "item",
+  "evidence": "touch handler 0x7924 = rts; not used by any remap table"
+ },
+ "22": {
+  "name": "Food",
+  "cat": "item",
+  "evidence": "touch 0x7926 adds 100 health (+$B6), message 'FOOD: HEALTH INCREASED BY 100'"
+ },
+ "25": {
+  "name": "Food",
+  "cat": "item",
+  "evidence": "touch 0x7926 adds 100 health (+$B6), message 'FOOD: HEALTH INCREASED BY 100'"
+ },
+ "23": {
+  "name": "Magic potion",
+  "cat": "item",
+  "evidence": "touch 0x7A5C, message 'SAVE POTIONS FOR LATER USE'"
+ },
+ "24": {
+  "name": "Magic potion",
+  "cat": "item",
+  "evidence": "touch 0x7A5C, message 'SAVE POTIONS FOR LATER USE'"
+ },
+ "26": {
+  "name": "Extra magic power",
+  "cat": "powerup",
+  "evidence": "touch 0x7AF4 raises stat +$96; message table 0x7C0A[0]"
+ },
+ "27": {
+  "name": "Extra shot power",
+  "cat": "powerup",
+  "evidence": "touch 0x7AF4 raises stat +$98; message table 0x7C0A[1]"
+ },
+ "28": {
+  "name": "Extra shot speed",
+  "cat": "powerup",
+  "evidence": "touch 0x7AF4 raises stat +$9A; message table 0x7C0A[2]"
+ },
+ "29": {
+  "name": "Extra fight power",
+  "cat": "powerup",
+  "evidence": "touch 0x7AF4 raises stat +$9C; message table 0x7C0A[3]"
+ },
+ "2A": {
+  "name": "Extra armor",
+  "cat": "powerup",
+  "evidence": "touch 0x7AF4 raises stat +$9E; message table 0x7C0A[4]"
+ },
+ "2B": {
+  "name": "Extra speed",
+  "cat": "powerup",
+  "evidence": "touch 0x7AF4 raises stat +$A0; message table 0x7C0A[5]"
+ },
+ "80": {
+  "name": "Ghost (level 1)",
+  "cat": "monster",
+  "evidence": "object type 0x04, AI 0xADE0 (calls the GHOST intro); +$16 = 0"
+ },
+ "84": {
+  "name": "Ghost generator (level 1)",
+  "cat": "generator",
+  "evidence": "object type 0x8004: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 0"
+ },
+ "81": {
+  "name": "Ghost (level 2)",
+  "cat": "monster",
+  "evidence": "object type 0x04, AI 0xADE0 (calls the GHOST intro); +$16 = 1"
+ },
+ "85": {
+  "name": "Ghost generator (level 2)",
+  "cat": "generator",
+  "evidence": "object type 0x8004: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 1"
+ },
+ "82": {
+  "name": "Ghost (level 3)",
+  "cat": "monster",
+  "evidence": "object type 0x04, AI 0xADE0 (calls the GHOST intro); +$16 = 2"
+ },
+ "86": {
+  "name": "Ghost generator (level 3)",
+  "cat": "generator",
+  "evidence": "object type 0x8004: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 2"
+ },
+ "88": {
+  "name": "Grunt (level 1)",
+  "cat": "monster",
+  "evidence": "object type 0x08, AI 0xB692 (calls the GRUNT intro); +$16 = 0"
+ },
+ "8C": {
+  "name": "Grunt generator (level 1)",
+  "cat": "generator",
+  "evidence": "object type 0x8008: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 0"
+ },
+ "89": {
+  "name": "Grunt (level 2)",
+  "cat": "monster",
+  "evidence": "object type 0x08, AI 0xB692 (calls the GRUNT intro); +$16 = 1"
+ },
+ "8D": {
+  "name": "Grunt generator (level 2)",
+  "cat": "generator",
+  "evidence": "object type 0x8008: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 1"
+ },
+ "8A": {
+  "name": "Grunt (level 3)",
+  "cat": "monster",
+  "evidence": "object type 0x08, AI 0xB692 (calls the GRUNT intro); +$16 = 2"
+ },
+ "8E": {
+  "name": "Grunt generator (level 3)",
+  "cat": "generator",
+  "evidence": "object type 0x8008: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 2"
+ },
+ "90": {
+  "name": "Demon (level 1)",
+  "cat": "monster",
+  "evidence": "object type 0x0c, AI 0xBFDE (calls the DEMON intro); +$16 = 0"
+ },
+ "94": {
+  "name": "Demon generator (level 1)",
+  "cat": "generator",
+  "evidence": "object type 0x800c: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 0"
+ },
+ "91": {
+  "name": "Demon (level 2)",
+  "cat": "monster",
+  "evidence": "object type 0x0c, AI 0xBFDE (calls the DEMON intro); +$16 = 1"
+ },
+ "95": {
+  "name": "Demon generator (level 2)",
+  "cat": "generator",
+  "evidence": "object type 0x800c: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 1"
+ },
+ "92": {
+  "name": "Demon (level 3)",
+  "cat": "monster",
+  "evidence": "object type 0x0c, AI 0xBFDE (calls the DEMON intro); +$16 = 2"
+ },
+ "96": {
+  "name": "Demon generator (level 3)",
+  "cat": "generator",
+  "evidence": "object type 0x800c: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 2"
+ },
+ "98": {
+  "name": "Sorcerer (level 1)",
+  "cat": "monster",
+  "evidence": "object type 0x10, AI 0xCB82 (calls the SORCERER intro); +$16 = 0"
+ },
+ "9C": {
+  "name": "Sorcerer generator (level 1)",
+  "cat": "generator",
+  "evidence": "object type 0x8010: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 0"
+ },
+ "99": {
+  "name": "Sorcerer (level 2)",
+  "cat": "monster",
+  "evidence": "object type 0x10, AI 0xCB82 (calls the SORCERER intro); +$16 = 1"
+ },
+ "9D": {
+  "name": "Sorcerer generator (level 2)",
+  "cat": "generator",
+  "evidence": "object type 0x8010: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 1"
+ },
+ "9A": {
+  "name": "Sorcerer (level 3)",
+  "cat": "monster",
+  "evidence": "object type 0x10, AI 0xCB82 (calls the SORCERER intro); +$16 = 2"
+ },
+ "9E": {
+  "name": "Sorcerer generator (level 3)",
+  "cat": "generator",
+  "evidence": "object type 0x8010: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 2"
+ },
+ "A0": {
+  "name": "Lobber (level 1)",
+  "cat": "monster",
+  "evidence": "object type 0x14, AI 0xD4DC (calls the LOBBER intro); +$16 = 0"
+ },
+ "A4": {
+  "name": "Lobber generator (level 1)",
+  "cat": "generator",
+  "evidence": "object type 0x8014: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 0"
+ },
+ "A1": {
+  "name": "Lobber (level 2)",
+  "cat": "monster",
+  "evidence": "object type 0x14, AI 0xD4DC (calls the LOBBER intro); +$16 = 1"
+ },
+ "A5": {
+  "name": "Lobber generator (level 2)",
+  "cat": "generator",
+  "evidence": "object type 0x8014: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 1"
+ },
+ "A2": {
+  "name": "Lobber (level 3)",
+  "cat": "monster",
+  "evidence": "object type 0x14, AI 0xD4DC (calls the LOBBER intro); +$16 = 2"
+ },
+ "A6": {
+  "name": "Lobber generator (level 3)",
+  "cat": "generator",
+  "evidence": "object type 0x8014: flag bit -> generator update 0xAA82, static graphic 0x21BCC; +$16 = 2"
+ },
+ "A8": {
+  "name": "Death",
+  "cat": "monster",
+  "evidence": "object type 0x18, AI 0xDE46 (calls the DEATH intro); +$16 = 0"
+ },
+ "A9": {
+  "name": "Death",
+  "cat": "monster",
+  "evidence": "object type 0x18, AI 0xDE46 (calls the DEATH intro); +$16 = 1"
+ },
+ "AA": {
+  "name": "Death",
+  "cat": "monster",
+  "evidence": "object type 0x18, AI 0xDE46 (calls the DEATH intro); +$16 = 2"
+ },
+ "C2": {
+  "name": "Mimic (moving treasure, type 0x24)",
+  "cat": "monster",
+  "evidence": "object type 0x24, update 0x134D0: looks like treasure (graphic 0xB1, as item 1E), moves (edge checks 0x10/0x1F0), and within 16 px of its target player plays sound 0x2B+class and adds (0x28 - player +$27C)/4 to player +$C0 (damage less armour)"
+ },
+ "CA": {
+  "name": "Mimic (moving treasure, type 0x28)",
+  "cat": "monster",
+  "evidence": "object type 0x28, update 0x13BA6: same treasure graphic 0xB1 (look 0x21CC4) with its own movement code"
+ },
+ "D0": {
+  "name": "Earth tower gem",
+  "cat": "quest",
+  "evidence": "object type 0x2C slot 0 ($FFE726+0), update 0x14244, green gem sprite: in the hub it animates until bit 0 of $FFE86A is set; in the Castle (area 4) a per-gem timer $FFE93A[0] clears bit 0 of $FFE878. Slot order = area-name order at 0x29DE6 (Earth, Water, Fire, Wind)"
+ },
+ "D1": {
+  "name": "Water tower gem",
+  "cat": "quest",
+  "evidence": "object type 0x2C slot 1 ($FFE726+4), update 0x14244, blue gem sprite: in the hub it animates until bit 1 of $FFE86A is set; in the Castle (area 4) a per-gem timer $FFE93A[1] clears bit 1 of $FFE878. Slot order = area-name order at 0x29DE6 (Earth, Water, Fire, Wind)"
+ },
+ "D2": {
+  "name": "Fire tower gem",
+  "cat": "quest",
+  "evidence": "object type 0x2C slot 2 ($FFE726+8), update 0x14244, red gem sprite: in the hub it animates until bit 2 of $FFE86A is set; in the Castle (area 4) a per-gem timer $FFE93A[2] clears bit 2 of $FFE878. Slot order = area-name order at 0x29DE6 (Earth, Water, Fire, Wind)"
+ },
+ "D3": {
+  "name": "Wind tower gem",
+  "cat": "quest",
+  "evidence": "object type 0x2C slot 3 ($FFE726+12), update 0x14244, yellow gem sprite: in the hub it animates until bit 3 of $FFE86A is set; in the Castle (area 4) a per-gem timer $FFE93A[3] clears bit 3 of $FFE878. Slot order = area-name order at 0x29DE6 (Earth, Water, Fire, Wind)"
+ },
+ "D8": {
+  "name": "Invisible effect trigger (type 0x30)",
+  "cat": "quest",
+  "evidence": "object type 0x30, update 0x142FE: graphic 0x8A is blank; look 0x21CD2 starts an animation (data 0x65A80 + 0/0x120/0x240) in the shared effect slot $FFA362, the slot the transporter code also uses"
+ },
+ "FC": {
+  "name": "Player start",
+  "cat": "start",
+  "evidence": "0x18E9E stores the cell in slot $FFE7BC; level start (0x2140) places player 1 there, others beside"
+ },
+ "FD": {
+  "name": "Marker slot 2",
+  "cat": "start",
+  "evidence": "0x18E9E slot $FFE7BC+8; not used by any map"
+ },
+ "FE": {
+  "name": "Marker slot 3",
+  "cat": "start",
+  "evidence": "0x18E9E slot $FFE7BC+16; not used by any map"
+ },
+ "FF": {
+  "name": "Marker slot 4",
+  "cat": "start",
+  "evidence": "0x18E9E slot $FFE7BC+24; not used by any map"
+ }
+}

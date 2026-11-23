@@ -1,0 +1,63 @@
+# class_sites.txt -- instructions whose read of $b4(aN) means the hero CLASS (not the player slot).
+# lift.py turns those reads into g4_hero_class(aN): the class a player chose (character select),
+# or the record's own $B4 when none was chosen (the original game). Address, then why.
+# Not here (per PLAYER, pitch rising 1P-4P; user's sound test 2026-11-20): sounds 4-7 exit (0x6CB8,
+# 0x130D8), 9-0x0C key pickup (0x75F4, 0x76BE, 0xFFA6), 0x11-0x14 low-health beep (0x5822).
+0021a4  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+002234  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+004898  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+004d06  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+005070  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+00507a  per-hero sound (table 0x509C)
+005482  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+00549e  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+0054a8  death sound: table 0x26DFE[4 * hero + random 0/2] -> 0x1F5E8 (2 when +$1A1 is set)
+0058f2  per-hero sound (table 0x5918)
+0069c6  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+00745a  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+007486  per-hero sound (table 0x74FE)
+007782  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+00786c  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+0079c2  eating sound: d1 + 4 * hero (four add.w $b4,d1 in a row) -> table 0x79DE -> 0x1F5E8 (user: Wizard said Valkyrie's "YUM")
+0079c6  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+0079ca  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+0079ce  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+0079f0  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+007a38  per-hero sound (table 0x7A54)
+007ae8  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+007b62  per-hero sound (table 0x7B86)
+007f30  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+008094  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+0085ac  hero abilities: tables 0x27DAE/0x27E7E/0x27EFE -> record +$224, +$226.., +$280..+$296
+008d94  per-hero sound (table 0x8DC0)
+008d98  per-hero sound (table 0x8DC0)
+008e82  per-hero sound (table 0x8EAE)
+008e86  per-hero sound (table 0x8EAE)
+0096c4  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+00970e  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+00981c  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+0098aa  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+00a5a2  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+00b412  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+00bd3e  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+00c744  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+00d23e  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+00dbdc  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+00e4ea  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+00f11a  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+010222  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+010272  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+01306c  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+013b62  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+0143f8  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+01bec0  panel name text 0x1BF22/0x1BF12
+01f406  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+01fda6  speech: add.w $b4,d1 -> phrase + hero (0x1F616/0x1F5E8)
+0207a8  animation frame table 0x34E08
+0207d4  animation frame table 0x34F08
+02080e  animation frame table 0x35308
+020882  animation frame table 0x35508 (walking)
+020960  shot picture: frame table 0x2099E by hero -> $8E (copied into the player's shot slot)
+0223c2  hero picture tiles 0x58E + 3 * hero
+0074b2  message naming the hero: table 0x7506[hero + 1] (texts 0x278D1...)
+007bac  message naming the hero: table 0x7C0A[hero + 1]

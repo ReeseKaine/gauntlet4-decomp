@@ -1,0 +1,10 @@
+
+void FUN_00000edc(void)
+
+{
+  (**(code **)((short)(DAT_00ffe838 * 4) + 0xef6))();
+  return;
+}
+
+
+CALLEES: []

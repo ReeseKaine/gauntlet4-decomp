@@ -1,0 +1,57 @@
+; ===== routine 001a0e  (53 instructions)
+001a0e  4cb9003000ffe84c     movem.w $ffe84c.l, d4-d5
+001a16  0c45001f             cmpi.w #$1f, d5
+001a1a  6700008c             beq.w $1aa8
+001a1e  e84c                 lsr.w #$4, d4
+001a20  e64d                 lsr.w #$3, d5
+001a22  da45                 add.w d5, d5
+001a24  d845                 add.w d5, d4
+001a26  d844                 add.w d4, d4
+001a28  43f900001b0a         lea.l $1b0a.l, a1
+001a2e  30314000             move.w (a1, d4.w), d0
+001a32  33c000ffe844         move.w d0, $ffe844.l
+001a38  d040                 add.w d0, d0
+001a3a  43f900001b1a         lea.l $1b1a.l, a1
+001a40  33f1000000ffe846     move.w (a1, d0.w), $ffe846.l
+001a48  33fc000000ffe85c     move.w #$0, $ffe85c.l
+001a50  33fc000000ffe85e     move.w #$0, $ffe85e.l
+001a58  4eb90001310a         jsr $1310a.l
+001a5e  33fc000000ffe842     move.w #$0, $ffe842.l
+001a66  423900ffe874         clr.b $ffe874.l
+001a6c  423900ffe875         clr.b $ffe875.l
+001a72  423900ffe876         clr.b $ffe876.l
+001a78  423900ffe86d         clr.b $ffe86d.l
+001a7e  423900ffe872         clr.b $ffe872.l
+001a84  4eb900011e96         jsr $11e96.l
+001a8a  3f3c0064             move.w #$64, -(a7)
+001a8e  4eb900004150         jsr $4150.l
+001a94  548f                 addq.l #$2, a7
+001a96  323c0006             move.w #$6, d1
+001a9a  d27900ffe844         add.w $ffe844.l, d1
+001aa0  4eb90001f664         jsr $1f664.l
+001aa6  6060                 bra.b $1b08
+001aa8  3f3c0078             move.w #$78, -(a7)
+001aac  4eb900004150         jsr $4150.l
+001ab2  548f                 addq.l #$2, a7
+001ab4  50f900ffe792         st.b $ffe792.l
+001aba  50f900ffe871         st.b $ffe871.l
+001ac0  41f900ff0040         lea.l $ff0040.l, a0
+001ac6  7203                 moveq #$3, d1
+001ac8  4a280061             tst.b $61(a0)
+001acc  660a                 bne.b $1ad8
+001ace  4eb90001292e         jsr $1292e.l
+001ad4  50e80061             st.b $61(a0)
+001ad8  41e802c4             lea.l $2c4(a0), a0
+001adc  51c9ffea             dbra d1, $1ac8
+001ae0  4a3900ffe866         tst.b $ffe866.l
+001ae6  6606                 bne.b $1aee
+001ae8  610013a4             bsr.w $2e8e
+001aec  601a                 bra.b $1b08
+001aee  423900ffe871         clr.b $ffe871.l
+001af4  4eb9000164e6         jsr $164e6.l
+001afa  4eb9000040aa         jsr $40aa.l
+001b00  33fc000000ffe838     move.w #$0, $ffe838.l
+001b08  4e75                 rts 
+; calls: 002e8e 0040aa 004150 011e96 01292e 01310a 0164e6 01f664
+; ===== routine 001b28  (0 instructions)
+; calls: 

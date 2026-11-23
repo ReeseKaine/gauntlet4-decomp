@@ -1,0 +1,261 @@
+0000  f3        DI
+0001  f3        DI
+0002  f3        DI
+0003  ed56      IM 1
+0005  31fe1f    LD SP,0x1ffe
+0008  c31601    JP 0x0116
+0116  018329    LD BC,0x2983
+0119  cdad02    CALL 0x02ad
+011c  01002b    LD BC,0x2b00
+011f  cdad02    CALL 0x02ad
+0122  3af202    LD A,(0x02f2)
+0125  321001    LD (0x0110),A
+0128  210a01    LD HL,0x10a
+012b  7e        LD A,(HL)
+012c  b7        OR A
+012d  cacd01    JP z,0x01cd
+0130  3600      LD (HL),0
+0132  1600      LD D,0
+0134  87        ADD A,A
+0135  cb12      RL D
+0137  5f        LD E,A
+0138  21f202    LD HL,0x2f2
+013b  19        ADD HL,DE
+013c  5e        LD E,(HL)
+013d  23        INC HL
+013e  56        LD D,(HL)
+013f  21e102    LD HL,0x2e1
+0142  1a        LD A,(DE)
+0143  13        INC DE
+0144  be        CP (HL)
+0145  dacd01    JP c,0x01cd
+0148  77        LD (HL),A
+0149  3eff      LD A,0xff
+014b  320901    LD (0x0109),A
+014e  1a        LD A,(DE)
+014f  13        INC DE
+0150  87        ADD A,A
+0151  0600      LD B,0
+0153  4f        LD C,A
+0154  21d001    LD HL,0x1d0
+0157  09        ADD HL,BC
+0158  7e        LD A,(HL)
+0159  23        INC HL
+015a  66        LD H,(HL)
+015b  6f        LD L,A
+015c  22ce01    LD (0x01ce),HL
+015f  1a        LD A,(DE)
+0160  13        INC DE
+0161  210004    LD HL,0x400
+0164  0600      LD B,0
+0166  4f        LD C,A
+0167  b7        OR A
+0168  ed42      SBC HL,BC
+016a  7d        LD A,L
+016b  e603      AND 3
+016d  0625      LD B,0x25
+016f  4f        LD C,A
+0170  cdad02    CALL 0x02ad
+0173  7d        LD A,L
+0174  e6fc      AND 0xfc
+0176  b4        OR H
+0177  0f        RRCA
+0178  0f        RRCA
+0179  0624      LD B,0x24
+017b  4f        LD C,A
+017c  cdad02    CALL 0x02ad
+017f  3a1501    LD A,(0x0115)
+0182  e601      AND 1
+0184  0f        RRCA
+0185  0f        RRCA
+0186  f61f      OR 0x1f
+0188  0627      LD B,0x27
+018a  4f        LD C,A
+018b  cdad02    CALL 0x02ad
+018e  1a        LD A,(DE)
+018f  0606      LD B,6
+0191  21a401    LD HL,0x1a4
+0194  0e75      LD C,0x75
+0196  0f        RRCA
+0197  3002      JR nc,0x019b
+0199  0c        INC C
+019a  0c        INC C
+019b  71        LD (HL),C
+019c  23        INC HL
+019d  10f5      DJNZ 0x0194
+019f  210060    LD HL,0x6000
+01a2  3eff      LD A,0xff
+01a4  75        LD (HL),L
+01a5  75        LD (HL),L
+01a6  75        LD (HL),L
+01a7  75        LD (HL),L
+01a8  75        LD (HL),L
+01a9  75        LD (HL),L
+01aa  75        LD (HL),L
+01ab  75        LD (HL),L
+01ac  75        LD (HL),L
+01ad  d5        PUSH DE
+01ae  dde1      POP IX
+01b0  d9        EXX
+01b1  dd6e01    LD L,(IX+1)
+01b4  dd6602    LD H,(IX+2)
+01b7  dd5e03    LD E,(IX+3)
+01ba  dd5604    LD D,(IX+4)
+01bd  01802a    LD BC,0x2a80
+01c0  d9        EXX
+01c1  01c0b6    LD BC,0xb6c0
+01c4  cdc502    CALL 0x02c5
+01c7  01802b    LD BC,0x2b80
+01ca  cdad02    CALL 0x02ad
+01cd  c32801    JP 0x0128
+01e4  d9        EXX
+01e5  4e        LD C,(HL)
+01e6  23        INC HL
+01e7  1b        DEC DE
+01e8  7a        LD A,D
+01e9  b3        OR E
+01ea  d9        EXX
+01eb  ca6302    JP z,0x0263
+01ee  cd9802    CALL 0x0298
+01f1  c32801    JP 0x0128
+01f4  d9        EXX
+01f5  7e        LD A,(HL)
+01f6  91        SUB C
+01f7  cb2f      SRA A
+01f9  81        ADD A,C
+01fa  4f        LD C,A
+01fb  d9        EXX
+01fc  cd9802    CALL 0x0298
+01ff  d9        EXX
+0200  4e        LD C,(HL)
+0201  23        INC HL
+0202  1b        DEC DE
+0203  7a        LD A,D
+0204  b3        OR E
+0205  d9        EXX
+0206  ca6302    JP z,0x0263
+0209  cd9802    CALL 0x0298
+020c  c32801    JP 0x0128
+020f  d9        EXX
+0210  7e        LD A,(HL)
+0211  91        SUB C
+0212  cb2f      SRA A
+0214  81        ADD A,C
+0215  4f        LD C,A
+0216  1b        DEC DE
+0217  7a        LD A,D
+0218  b3        OR E
+0219  d9        EXX
+021a  2847      JR z,0x0263
+021c  cd9802    CALL 0x0298
+021f  d9        EXX
+0220  4e        LD C,(HL)
+0221  23        INC HL
+0222  1b        DEC DE
+0223  7a        LD A,D
+0224  b3        OR E
+0225  d9        EXX
+0226  283b      JR z,0x0263
+0228  cd9802    CALL 0x0298
+022b  c32801    JP 0x0128
+022e  d9        EXX
+022f  7e        LD A,(HL)
+0230  d9        EXX
+0231  0f        RRCA
+0232  0f        RRCA
+0233  0f        RRCA
+0234  0f        RRCA
+0235  e60f      AND 15
+0237  0600      LD B,0
+0239  4f        LD C,A
+023a  21e202    LD HL,0x2e2
+023d  09        ADD HL,BC
+023e  7e        LD A,(HL)
+023f  d9        EXX
+0240  81        ADD A,C
+0241  4f        LD C,A
+0242  d9        EXX
+0243  cd9802    CALL 0x0298
+0246  d9        EXX
+0247  7e        LD A,(HL)
+0248  d9        EXX
+0249  e60f      AND 15
+024b  0600      LD B,0
+024d  4f        LD C,A
+024e  21e202    LD HL,0x2e2
+0251  09        ADD HL,BC
+0252  7e        LD A,(HL)
+0253  d9        EXX
+0254  81        ADD A,C
+0255  4f        LD C,A
+0256  23        INC HL
+0257  1b        DEC DE
+0258  7a        LD A,D
+0259  b3        OR E
+025a  d9        EXX
+025b  2806      JR z,0x0263
+025d  cd9802    CALL 0x0298
+0260  c32801    JP 0x0128
+0263  212801    LD HL,0x128
+0266  22ce01    LD (0x01ce),HL
+0269  3a1401    LD A,(0x0114)
+026c  06b6      LD B,0xb6
+026e  4f        LD C,A
+026f  cdc502    CALL 0x02c5
+0272  01002b    LD BC,0x2b00
+0275  cdad02    CALL 0x02ad
+0278  af        XOR A
+0279  32e102    LD (0x02e1),A
+027c  320901    LD (0x0109),A
+027f  210b01    LD HL,0x10b
+0282  7e        LD A,(HL)
+0283  b7        OR A
+0284  ca2801    JP z,0x0128
+0287  110a01    LD DE,0x10a
+028a  12        LD (DE),A
+028b  13        INC DE
+028c  23        INC HL
+028d  7e        LD A,(HL)
+028e  12        LD (DE),A
+028f  13        INC DE
+0290  23        INC HL
+0291  7e        LD A,(HL)
+0292  12        LD (DE),A
+0293  3600      LD (HL),0
+0295  c32801    JP 0x0128
+0298  3a0040    LD A,(0x4000)
+029b  0f        RRCA
+029c  30fa      JR nc,0x0298
+029e  d9        EXX
+029f  cdad02    CALL 0x02ad
+02a2  d9        EXX
+02a3  3a1501    LD A,(0x0115)
+02a6  0f        RRCA
+02a7  0f        RRCA
+02a8  f61f      OR 0x1f
+02aa  0627      LD B,0x27
+02ac  4f        LD C,A
+02ad  3eff      LD A,0xff
+02af  321301    LD (0x0113),A
+02b2  3a0040    LD A,(0x4000)
+02b5  17        RLA
+02b6  38fa      JR c,0x02b2
+02b8  78        LD A,B
+02b9  320040    LD (0x4000),A
+02bc  79        LD A,C
+02bd  320140    LD (0x4001),A
+02c0  af        XOR A
+02c1  321301    LD (0x0113),A
+02c4  c9        RET
+02c5  3eff      LD A,0xff
+02c7  321301    LD (0x0113),A
+02ca  3a0040    LD A,(0x4000)
+02cd  17        RLA
+02ce  38fa      JR c,0x02ca
+02d0  78        LD A,B
+02d1  320240    LD (0x4002),A
+02d4  79        LD A,C
+02d5  320340    LD (0x4003),A
+02d8  af        XOR A
+02d9  321301    LD (0x0113),A
+02dc  c9        RET

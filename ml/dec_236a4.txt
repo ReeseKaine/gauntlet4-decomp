@@ -1,0 +1,51 @@
+
+/* WARNING: Removing unreachable block (ram,0x00023780) */
+
+undefined8 FUN_000236a4(void)
+
+{
+  code *pcVar1;
+  undefined4 in_D0;
+  undefined4 in_D1;
+  undefined *puVar2;
+  undefined1 uVar3;
+  short local_16;
+  
+  DAT_00ffe79b = 0xff;
+  FUN_0001e406();
+  FUN_0001e43c();
+  FUN_0001e576();
+  FUN_0001e5ac();
+  FUN_0001e99a();
+  FUN_0001ea08();
+  FUN_0001ce30();
+  local_16 = 0;
+  if (DAT_00ffe82c != '\0') goto LAB_00023746;
+  local_16 = 1;
+  if (DAT_00ffe871 != '\0') goto LAB_00023746;
+  do {
+    wait_vblank();
+    FUN_0001ce30();
+    puVar2 = &DAT_00039766;
+    if (DAT_00ffe791 != '\0') {
+      puVar2 = &DAT_00039960;
+    }
+    FUN_0001ccfa(puVar2);
+    local_16 = 4;
+    menu_select();
+LAB_00023746:
+    DAT_00ffe83c = local_16 << 5;
+    uVar3 = local_16 == 0;
+    pcVar1 = *(code **)((int)&PTR_DAT_00023796 + (int)(short)(local_16 * 4));
+    DAT_00ffe838 = local_16;
+    DAT_00ffe83a = local_16;
+    wait_vblank();
+    FUN_0001e4de();
+    FUN_0001f6d0();
+    (*pcVar1)();
+  } while (!(bool)uVar3);
+  return CONCAT44(in_D0,in_D1);
+}
+
+
+CALLEES: ["FUN_0001ce30", "FUN_0001e5ac", "FUN_0001ccfa", "FUN_0001e43c", "FUN_0001e99a", "wait_vblank", "FUN_0001e4de", "FUN_0001f6d0", "FUN_0001e406", "FUN_0001ea08", "menu_select", "FUN_0001e576"]

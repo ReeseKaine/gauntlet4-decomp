@@ -1,0 +1,355 @@
+0000  f3        DI
+0001  f3        DI
+0002  f3        DI
+0003  ed56      IM 1
+0005  31fe1f    LD SP,0x1ffe
+0008  c31601    JP 0x0116
+0038  00        NOP
+0039  00        NOP
+003a  00        NOP
+003b  00        NOP
+003c  00        NOP
+003d  00        NOP
+003e  00        NOP
+003f  00        NOP
+0040  00        NOP
+0041  00        NOP
+0042  00        NOP
+0043  00        NOP
+0044  00        NOP
+0045  00        NOP
+0046  00        NOP
+0047  00        NOP
+0048  00        NOP
+0049  00        NOP
+004a  00        NOP
+004b  00        NOP
+004c  00        NOP
+004d  00        NOP
+004e  00        NOP
+004f  00        NOP
+0050  00        NOP
+0051  00        NOP
+0052  00        NOP
+0053  00        NOP
+0054  00        NOP
+0055  00        NOP
+0056  00        NOP
+0057  00        NOP
+0058  00        NOP
+0059  00        NOP
+005a  00        NOP
+005b  00        NOP
+005c  00        NOP
+005d  00        NOP
+005e  00        NOP
+005f  00        NOP
+0060  00        NOP
+0061  00        NOP
+0062  00        NOP
+0063  00        NOP
+0064  00        NOP
+0065  00        NOP
+0066  00        NOP
+0067  00        NOP
+0068  00        NOP
+0069  00        NOP
+006a  00        NOP
+006b  00        NOP
+006c  00        NOP
+006d  00        NOP
+006e  00        NOP
+006f  00        NOP
+0070  00        NOP
+0071  00        NOP
+0072  00        NOP
+0073  00        NOP
+0074  00        NOP
+0075  00        NOP
+0076  00        NOP
+0077  00        NOP
+0078  00        NOP
+0079  00        NOP
+007a  00        NOP
+007b  00        NOP
+007c  00        NOP
+007d  00        NOP
+007e  00        NOP
+007f  00        NOP
+0080  00        NOP
+0081  00        NOP
+0082  00        NOP
+0083  00        NOP
+0084  00        NOP
+0085  00        NOP
+0086  00        NOP
+0087  00        NOP
+0088  00        NOP
+0089  00        NOP
+008a  00        NOP
+008b  00        NOP
+008c  00        NOP
+008d  00        NOP
+008e  00        NOP
+008f  00        NOP
+0090  00        NOP
+0091  00        NOP
+0092  00        NOP
+0093  00        NOP
+0094  00        NOP
+0095  00        NOP
+0096  00        NOP
+0097  00        NOP
+0098  00        NOP
+0099  00        NOP
+009a  00        NOP
+009b  00        NOP
+009c  00        NOP
+009d  00        NOP
+009e  00        NOP
+009f  00        NOP
+00a0  00        NOP
+00a1  00        NOP
+00a2  00        NOP
+00a3  00        NOP
+00a4  00        NOP
+00a5  00        NOP
+00a6  00        NOP
+00a7  00        NOP
+00a8  00        NOP
+00a9  00        NOP
+00aa  00        NOP
+00ab  00        NOP
+00ac  00        NOP
+00ad  00        NOP
+00ae  00        NOP
+00af  00        NOP
+00b0  00        NOP
+00b1  00        NOP
+00b2  00        NOP
+00b3  00        NOP
+00b4  00        NOP
+00b5  00        NOP
+00b6  00        NOP
+00b7  00        NOP
+00b8  00        NOP
+00b9  00        NOP
+00ba  00        NOP
+00bb  00        NOP
+00bc  00        NOP
+00bd  00        NOP
+00be  00        NOP
+00bf  00        NOP
+00c0  00        NOP
+00c1  00        NOP
+00c2  00        NOP
+00c3  00        NOP
+00c4  00        NOP
+00c5  00        NOP
+00c6  00        NOP
+00c7  00        NOP
+00c8  00        NOP
+00c9  00        NOP
+00ca  00        NOP
+00cb  00        NOP
+00cc  00        NOP
+00cd  00        NOP
+00ce  00        NOP
+00cf  00        NOP
+00d0  00        NOP
+00d1  00        NOP
+00d2  00        NOP
+00d3  00        NOP
+00d4  00        NOP
+00d5  00        NOP
+00d6  00        NOP
+00d7  00        NOP
+00d8  00        NOP
+00d9  00        NOP
+00da  00        NOP
+00db  00        NOP
+00dc  00        NOP
+00dd  00        NOP
+00de  00        NOP
+00df  00        NOP
+00e0  00        NOP
+00e1  00        NOP
+00e2  00        NOP
+00e3  00        NOP
+00e4  00        NOP
+00e5  00        NOP
+00e6  00        NOP
+00e7  00        NOP
+00e8  00        NOP
+00e9  00        NOP
+00ea  00        NOP
+00eb  00        NOP
+00ec  00        NOP
+00ed  00        NOP
+00ee  00        NOP
+00ef  00        NOP
+00f0  00        NOP
+00f1  00        NOP
+00f2  00        NOP
+00f3  00        NOP
+00f4  00        NOP
+00f5  00        NOP
+00f6  00        NOP
+00f7  00        NOP
+00f8  00        NOP
+00f9  00        NOP
+00fa  00        NOP
+00fb  00        NOP
+00fc  00        NOP
+00fd  00        NOP
+00fe  00        NOP
+00ff  00        NOP
+0100  00        NOP
+0101  00        NOP
+0102  00        NOP
+0103  00        NOP
+0104  00        NOP
+0105  04        INC B
+0106  00        NOP
+0107  00        NOP
+0108  00        NOP
+0109  00        NOP
+010a  00        NOP
+010b  00        NOP
+010c  00        NOP
+010d  00        NOP
+010e  00        NOP
+010f  00        NOP
+0110  00        NOP
+0111  0a        LD A,(BC)
+0112  3c        INC A
+0113  00        NOP
+0114  c0        RET nz
+0116  018329    LD BC,0x2983
+0119  cdad02    CALL 0x02ad
+011c  01002b    LD BC,0x2b00
+011f  cdad02    CALL 0x02ad
+0122  3af202    LD A,(0x02f2)
+0125  321001    LD (0x0110),A
+0128  210a01    LD HL,0x10a
+012b  7e        LD A,(HL)
+012c  b7        OR A
+012d  cacd01    JP z,0x01cd
+0130  3600      LD (HL),0
+0132  1600      LD D,0
+0134  87        ADD A,A
+0135  cb12      RL D
+0137  5f        LD E,A
+0138  21f202    LD HL,0x2f2
+013b  19        ADD HL,DE
+013c  5e        LD E,(HL)
+013d  23        INC HL
+013e  56        LD D,(HL)
+013f  21e102    LD HL,0x2e1
+0142  1a        LD A,(DE)
+0143  13        INC DE
+0144  be        CP (HL)
+0145  dacd01    JP c,0x01cd
+0148  77        LD (HL),A
+0149  3eff      LD A,0xff
+014b  320901    LD (0x0109),A
+014e  1a        LD A,(DE)
+014f  13        INC DE
+0150  87        ADD A,A
+0151  0600      LD B,0
+0153  4f        LD C,A
+0154  21d001    LD HL,0x1d0
+0157  09        ADD HL,BC
+0158  7e        LD A,(HL)
+0159  23        INC HL
+015a  66        LD H,(HL)
+015b  6f        LD L,A
+015c  22ce01    LD (0x01ce),HL
+015f  1a        LD A,(DE)
+0160  13        INC DE
+0161  210004    LD HL,0x400
+0164  0600      LD B,0
+0166  4f        LD C,A
+0167  b7        OR A
+0168  ed42      SBC HL,BC
+016a  7d        LD A,L
+016b  e603      AND 3
+016d  0625      LD B,0x25
+016f  4f        LD C,A
+0170  cdad02    CALL 0x02ad
+0173  7d        LD A,L
+0174  e6fc      AND 0xfc
+0176  b4        OR H
+0177  0f        RRCA
+0178  0f        RRCA
+0179  0624      LD B,0x24
+017b  4f        LD C,A
+017c  cdad02    CALL 0x02ad
+017f  3a1501    LD A,(0x0115)
+0182  e601      AND 1
+0184  0f        RRCA
+0185  0f        RRCA
+0186  f61f      OR 0x1f
+0188  0627      LD B,0x27
+018a  4f        LD C,A
+018b  cdad02    CALL 0x02ad
+018e  1a        LD A,(DE)
+018f  0606      LD B,6
+0191  21a401    LD HL,0x1a4
+0194  0e75      LD C,0x75
+0196  0f        RRCA
+0197  3002      JR nc,0x019b
+0199  0c        INC C
+019a  0c        INC C
+019b  71        LD (HL),C
+019c  23        INC HL
+019d  10f5      DJNZ 0x0194
+019f  210060    LD HL,0x6000
+01a2  3eff      LD A,0xff
+01a4  75        LD (HL),L
+01a5  75        LD (HL),L
+01a6  75        LD (HL),L
+01a7  75        LD (HL),L
+01a8  75        LD (HL),L
+01a9  75        LD (HL),L
+01aa  75        LD (HL),L
+01ab  75        LD (HL),L
+01ac  75        LD (HL),L
+01ad  d5        PUSH DE
+01ae  dde1      POP IX
+01b0  d9        EXX
+01b1  dd6e01    LD L,(IX+1)
+01b4  dd6602    LD H,(IX+2)
+01b7  dd5e03    LD E,(IX+3)
+01ba  dd5604    LD D,(IX+4)
+01bd  01802a    LD BC,0x2a80
+01c0  d9        EXX
+01c1  01c0b6    LD BC,0xb6c0
+01c4  cdc502    CALL 0x02c5
+01c7  01802b    LD BC,0x2b80
+01ca  cdad02    CALL 0x02ad
+01cd  c32801    JP 0x0128
+02ad  3eff      LD A,0xff
+02af  321301    LD (0x0113),A
+02b2  3a0040    LD A,(0x4000)
+02b5  17        RLA
+02b6  38fa      JR c,0x02b2
+02b8  78        LD A,B
+02b9  320040    LD (0x4000),A
+02bc  79        LD A,C
+02bd  320140    LD (0x4001),A
+02c0  af        XOR A
+02c1  321301    LD (0x0113),A
+02c4  c9        RET
+02c5  3eff      LD A,0xff
+02c7  321301    LD (0x0113),A
+02ca  3a0040    LD A,(0x4000)
+02cd  17        RLA
+02ce  38fa      JR c,0x02ca
+02d0  78        LD A,B
+02d1  320240    LD (0x4002),A
+02d4  79        LD A,C
+02d5  320340    LD (0x4003),A
+02d8  af        XOR A
+02d9  321301    LD (0x0113),A
+02dc  c9        RET

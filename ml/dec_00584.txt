@@ -1,0 +1,59 @@
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined8 FUN_00000584(void)
+
+{
+  undefined4 in_D0;
+  short sVar1;
+  undefined4 in_D1;
+  
+  FUN_0001d64a();
+  do {
+    sVar1 = player_reset();
+  } while (sVar1 != 0);
+  DAT_00ffe838 = 0;
+  _DAT_00ffe836 = 7;
+  DAT_00ffe73a = 2;
+  DAT_00ffe9ba = 0;
+  _DAT_00ffeb6a = 0;
+  DAT_00ffeb74 = 0;
+  _DAT_00ffeb76 = 0;
+  DAT_00ff0b60 = 0xffff;
+  DAT_00ffaf14 = 0xffff;
+  DAT_00ffeb5e = 0;
+  DAT_00ffe824 = 0;
+  DAT_00ffe821 = 0;
+  DAT_00ffe81f = 0;
+  DAT_00ffe793 = 0;
+  DAT_00ffe820 = 0;
+  DAT_00ffe81d = 0;
+  DAT_00ffe796 = 0;
+  DAT_00ffe798 = 0;
+  DAT_00ffe795 = 0;
+  DAT_00ffe81e = 0;
+  DAT_00ffe874 = 0;
+  DAT_00ffe7bb = 0;
+  DAT_00ffeb5a = 0;
+  DAT_00ffeb59 = 0xff;
+  DAT_00ffe79b = 0xff;
+  DAT_00ffe823 = 0;
+  DAT_00ffe82a = 0;
+  DAT_00ffe871 = 0;
+  DAT_00ffe8e2 = 0;
+  DAT_00ffe8e3 = 0;
+  FUN_000007ea();
+  if (DAT_00ffeb5c != '\0') {
+    FUN_0001dd3c();
+    FUN_000006ca();
+    FUN_00000ea2();
+    DAT_00ffe7e4 = 0x34eb;
+    FUN_0001f574();
+  }
+  FUN_0001ccfa(0x6be);
+  _DAT_00c00004 = 0x8164;
+  return CONCAT44(in_D0,in_D1);
+}
+
+
+CALLEES: ["FUN_000007ea", "FUN_0001ccfa", "FUN_00000ea2", "player_reset", "FUN_000006ca", "FUN_0001dd3c", "FUN_0001d64a", "FUN_0001f574"]
